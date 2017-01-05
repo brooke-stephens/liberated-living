@@ -62,13 +62,42 @@ div.vertical-line{
   opacity:0;
 }
 
-/*_____________________________________________________*/
+/*___________________end css reset__________________________________*/
 
-/*_____________________Home Page________________________________*/
+/*___________________start fonts __________________________________*/
 
+@font-face {
+
+    font-family: 'sacramento';
+    src: url('/fonts/SacramentoRegular.eot');
+    src: url('/fonts/SacramentoRegular.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/SacramentoRegular.woff') format('woff'),
+         url('/fonts/SacramentoRegular.ttf') format('truetype');
+
+         /*font-family:sacramento, "Book Antiqua", Palatino, serif;*/
+}
+
+@font-face {
+
+    font-family: 'fred';
+    src: url('/fonts/fredrickthegreat.eot');
+    src: url('/fonts/fredrickthegreat.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/fredrickthegreat.woff') format('woff'),
+         url('/fonts/fredrickthegreat.ttf') format('truetype');
+
+         /*font-family:fred, "Book Antiqua", Palatino, serif;*/
+}
+
+
+
+/*___________________end fonts __________________________________*/
+
+/*_____________________Home Page (header 1st section)________________________________*/
 
 #container{
-	height: 2000px;
+	height: 4000px;
 }
 
 #header{
@@ -87,45 +116,77 @@ div.vertical-line{
 	justify-content: center;*/
 }
 
+.flexi {
+  display: flex;
+}
+
 
 #navcontainer {
-  display: flex;
+  width: 100%;
   height: 100px;
+  z-index: 10;
 
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  /*background-color: rgba(255, 255, 255, 0.1);*/
 }
+
 
 #logowrap {
+  width: 30%;
   flex: 1;
-  height: 100px;
+  min-width: 115px;
   max-width: 500px;
-  min-width: 150px;
-  background: lightblue;
-  display: flex;
-	align-items: center;
-	justify-content: center;
+  height: 100px;
+  display: inline-block;
 
-	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-	border-right: 1px solid rgba(255, 255, 255, 0.4);
-	background: url('/images/homepage/logo.svg') no-repeat center;
-	background-color: rgba(255, 255, 255, 0.1);
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background-image 1s ease-in-out;
+
+  background: url('/images/homepage/logo.svg') no-repeat center;
+  background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+
+
+@media all and (max-width: 910px) {
+  #logowrap { 
+
+  background: url('/images/homepage/logocompact.svg') no-repeat center;
+  background-color: rgba(255, 255, 255, 0.1);
+  }
 
 
 }
-#navwrap {
-	height: 100px;
-  	flex: 1;
-  	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
- 
+
+#navwrap {
+  width: 55%;
+  min-width: 115px;
+  flex: 1;
+  display: inline-block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+height: 100px;
+
 }
 #loginwrap {
- 	width: 175px;
- 	height: 100px;
-  	border-left: 1px solid rgba(255, 255, 255, 0.4);
- 	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 15%;
+  min-width: 150px;
+  max-width: 200px;
+  display: inline-block;
+  /*height: 100px;*/
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 
 }
 
@@ -139,24 +200,99 @@ div.vertical-line{
 
 #moto {
 
-margin-top: 300px;
-margin-left: 48%;
+/*margin-top: 300px;
+margin-left: 48%;*/
+width: 100%;
 color: white;
+height: 100%;
+text-align: right;
+
+
+
+
+}
+
+#moto h1 {
+ font-size: 50px;
+  font-size: 3.3vw;
+  font-family:sacramento, "Book Antiqua", Palatino, serif;
+  margin-right: 200px;
+  position: relative;  
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+
+}
+
+
+
+#moto h3 {
+
+  font-size: 1.3vw;
+  font-family:fred, "Book Antiqua", Palatino, serif;
+  margin-right: 250px;
+   position: relative;
+   
+   top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media all and (max-width: 1000px) {
+ 
+#moto h1 {
+ 
+    font-size: 45px;
+     text-align: center;
+    margin-right: 0px;
+     top: 62%;
+    -ms-transform: translateY(-62%);
+    -webkit-transform: translateY(-62%);
+    transform: translateY(-62%);
+
+}
+
+#moto h3 {
+    font-size: 20px;
+    font-weight: bold;
+     top: 56%;
+    -ms-transform: translateY(-56%);
+    -webkit-transform: translateY(-56%);
+    transform: translateY(-56%);
+
+    margin-right: 0px;
+   text-align: center;
+}
+
 }
 
 .searchimg {
 	padding-right: 15px;
+ 
 }
 
+.loginimg {
+
+height: 35px;
+
+}
+
+.glyphicon-search {
+  font-size: 32px;
+  color: #cccccc;
+}
+
+/*_____________________End Home Page________________________________*/
 
 
-
-
-
-
+/*_____________________ Navigation menu start________________________________*/
 
 
 .navigation {
+
   list-style: none;
   margin: 0; 
   line-height: 100px;
@@ -191,34 +327,197 @@ color: white;
 }
 
 .navigation a:hover {
+  text-decoration: underline;
+  color: white;
+  
  
 }
 
-/*@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
-}*/
 
-/*@media all and (max-width: 600px) {
-  .navigation {
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
-    
-  }
+   
+
+/*_____________________End Navigation Page________________________________*/
+
+/*_____________________ Start Navigation slide in________________________________*/
+
+#navwrap span {
   
-  .navigation a { 
+    display: none;
+}
 
-    text-align: center; 
-    padding: 10px;
+@media all and (max-width: 900px) {
+  #navwrap span {
+  
+    display: block;
+    font-size: 30px;
+    color: white;
+
+    }
+  .navigation {
+    display: none;
+
   }
 
+  #navwrap {
+     
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  }
+
+  .toggle-menu:hover {
+    cursor: pointer;
+  }
+
+}
+
+
+
+
+/* General styles for  menu */
+.cbp-spmenu {
+    background-color: rgba(171, 78, 18, 0.85);
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.cbp-spmenu a {
+    display: block;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.cbp-spmenu a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.cbp-spmenu a:active {
+    background: #afdefa;
+    color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+    width: 240px;
+    height: 100%;
+    top: 100px;
+    z-index: 1000;
+    overflow: auto; 
+    overflow-y: hidden;
+}
+
+.cbp-spmenu-vertical a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 1em;
+
+}
+
+
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+    left: -240px;
+}
+
+.cbp-spmenu-left.menu-open {
+    left: 0px;
+}
+
+
+/* Transitions */
+.cbp-spmenu,
+.push-body {
+
+    -webkit-transition: all 0.3s ease;
+       -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+}
+
+/*_____________________ end Navigation slide in________________________________*/
+
+/*_____________________ Start Navigation fixed top________________________________*/
+
+.sticky {
+    top: 0;
+    position: fixed;
     
-}*/
+
+}
+
+
+.active{
+  /*background-color: #AB4E01;*/
+  background-color: rgba(171, 78, 18, .85)!important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+/*==================================================
+ * Drop shadow effect with box-shadow
+ * ===============================================*/
+.active:after{
+ content:"";
+    position:absolute;
+    z-index:-1;
+    top:100%;
+    bottom:0;
+    width:120%;
+    height:15px;
+    left:-42%;
+    right:-10%;
+    background:-webkit-radial-gradient(50% -3%, ellipse cover, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+    background:radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+}
+
+/*the moto was being bumped down. this is the corrction*/
+.motocorrection{ 
+  position: relative;
+  top: 112px;
+
+}
+
+
+ 
 
 
 
-/*_____________________End Home Page________________________________*/
+
+/*_____________________ end Navigation fixed top________________________________*/
 
 
+
+.circleBase {
+    
+
+    
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.circle {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background: #ff9933;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    margin:0px auto;
+    position: relative;
+    bottom: 75px;
+
+
+}
+
+.circle h4 {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;
+
+
+}
 
