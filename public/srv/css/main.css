@@ -68,6 +68,18 @@ div.vertical-line{
 
 @font-face {
 
+    font-family: 'raleway';
+    src: url('/fonts/Raleway.eot');
+    src: url('/fonts/Raleway.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/Raleway.woff') format('woff'),
+         url('/fonts/Raleway.ttf') format('truetype');
+
+         /*font-family:raleway, "Book Antiqua", Palatino, serif;*/
+}
+
+@font-face {
+
     font-family: 'sacramento';
     src: url('/fonts/SacramentoRegular.eot');
     src: url('/fonts/SacramentoRegular.eot?#iefix')
@@ -76,6 +88,19 @@ div.vertical-line{
          url('/fonts/SacramentoRegular.ttf') format('truetype');
 
          /*font-family:sacramento, "Book Antiqua", Palatino, serif;*/
+}
+
+
+@font-face {
+
+    font-family: 'satisfy';
+    src: url('/fonts/Satisfy.eot');
+    src: url('/fonts/Satisfy.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/Satisfy.woff') format('woff'),
+         url('/fonts/Satisfy.ttf') format('truetype');
+
+         /*font-family:satisfy, "Book Antiqua", Palatino, serif;*/
 }
 
 @font-face {
@@ -97,6 +122,7 @@ div.vertical-line{
 /*_____________________Home Page (header 1st section)________________________________*/
 
 #container{
+  width: 100%;
 	height: 4000px;
 }
 
@@ -377,7 +403,7 @@ height: 35px;
 
 /* General styles for  menu */
 .cbp-spmenu {
-    background-color: rgba(171, 78, 18, 0.85);
+    background-color: rgba(171, 78, 18, 0.9);
     /*background-color: rgba(0, 0, 0, 0.4);*/
     position: fixed;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -452,7 +478,7 @@ height: 35px;
 
 .active{
   /*background-color: #AB4E01;*/
-  background-color: rgba(171, 78, 18, .85)!important;
+  background-color: rgba(171, 78, 18, .9)!important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
@@ -491,33 +517,88 @@ height: 35px;
 
 
 
-.circleBase {
-    
-
-    
-    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
-}
-
 .circle {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background: #ff9933;
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */
     margin:0px auto;
     position: relative;
-    bottom: 75px;
+    bottom: 60px;
+    z-index: 100;
 
 
 }
 
 .circle h4 {
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   text-align: center;
   vertical-align: middle;
-  line-height: 150px;
+  line-height: 100px;
 
 
 }
+
+#aboutsection {
+  height: 1000px;
+  border-bottom: 1px solid #ff9933;
+
+}
+
+.inneraboutsec {
+  height: 100%;
+  margin-top: -100px;
+}
+
+.portraitwrapcon{
+
+height: 100%;
+}
+
+
+.portraitwrap {
+  height: 100%;
+
+}
+
+.portraitimg {
+
+  width: 650px;
+  display: block;
+  position: absolute;
+    left: 0;
+    bottom: 0;
+    
+}
+
+.aboutcontentwrap {
+  
+  height: 100%;
+
+
+}
+
+.aboutcontentwrap p {
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  font-size: 17px;
+   position: absolute;
+    bottom: 150px;
+    left: 0;   
+
+}
+
+.aboutcontentwrap h2 {
+  
+    font-family:satisfy, "Book Antiqua", Palatino, serif;
+    font-size: 50px;
+   position: absolute;
+    bottom: 450px;
+    left: 0;   
+
+}
+
+
+
 

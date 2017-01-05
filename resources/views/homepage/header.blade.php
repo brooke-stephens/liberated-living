@@ -58,9 +58,7 @@
 
 
 </div>	<!-- end header -->
-<div class="circle">
-	<h4>Scroll</h4>
-</div>
+
 
 
 			

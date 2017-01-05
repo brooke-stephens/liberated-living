@@ -14,8 +14,12 @@
 <body>
 	<div id="container">
 
-		<div id="content">
+		<div id="homepageheader">
 			@include('homepage.header')
+		</div>
+
+		<div id="homepageabout">
+			@include('homepage.about')
 		</div>
 
 		<div id="salespitch">
