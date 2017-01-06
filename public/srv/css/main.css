@@ -150,7 +150,7 @@ div.vertical-line{
 #navcontainer {
   width: 100%;
   height: 100px;
-  z-index: 10;
+  z-index: 11;
 
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -232,7 +232,7 @@ width: 100%;
 color: white;
 height: 100%;
 text-align: right;
-
+line-height: 40px;
 
 
 
@@ -464,6 +464,48 @@ height: 35px;
             transition: all 0.3s ease;
 }
 
+/* top menu */
+
+
+.cbp-spmenu-vertical a {
+    border-bottom: 1px solid white;
+    padding: 1em;
+}
+
+.cbp-spmenu-horizontal {
+    width: 100%;
+    height: 50px;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+
+.cbp-spmenu-horizontal a {
+    float: left;
+    width: 20%;
+    padding: 0.8em;
+    border-left: 1px solid white;
+}
+
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+    top: -50px;
+}
+
+.cbp-spmenu-top.menu-open {
+    top: 100px;
+}
+
+
+
 /*_____________________ end Navigation slide in________________________________*/
 
 /*_____________________ Start Navigation fixed top________________________________*/
@@ -476,7 +518,7 @@ height: 35px;
 }
 
 
-.active{
+.stickytopstyle{
   /*background-color: #AB4E01;*/
   background-color: rgba(171, 78, 18, .9)!important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -516,6 +558,8 @@ height: 35px;
 /*_____________________ end Navigation fixed top________________________________*/
 
 
+/*_____________________ starting about section  ________________________________*/
+
 
 .circle {
     border-radius: 50%;
@@ -526,7 +570,7 @@ height: 35px;
     margin:0px auto;
     position: relative;
     bottom: 60px;
-    z-index: 100;
+    
 
 
 }
@@ -542,8 +586,9 @@ height: 35px;
 }
 
 #aboutsection {
-  height: 1000px;
+  height: 950px;
   border-bottom: 1px solid #ff9933;
+
 
 }
 
@@ -570,13 +615,16 @@ height: 100%;
   position: absolute;
     left: 0;
     bottom: 0;
+    z-index: 8
     
 }
+
+
 
 .aboutcontentwrap {
   
   height: 100%;
-
+  z-index: 9;
 
 }
 
@@ -586,6 +634,8 @@ height: 100%;
    position: absolute;
     bottom: 150px;
     left: 0;   
+    margin-left: 20px;
+    line-height: 23px;
 
 }
 
@@ -598,6 +648,94 @@ height: 100%;
     left: 0;   
 
 }
+
+.verticalline {
+
+  background-color: #ff9933;
+  height: 350px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  border-radius: 5px;
+  z-index: 7;
+
+  bottom:-415px;
+  visibility: hidden;
+
+}
+
+.verticalhorizontalline {
+
+  border-left:2px #ff9933 solid;
+  border-bottom:2px #ff9933 solid;
+  height: 365px;
+  width: 150px;
+  border-bottom-left-radius: 50px;
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+
+  bottom:-415px;
+  
+}
+
+@media all and (max-width: 1000px) {
+.portraitimg { 
+    width: 85%;
+  }
+
+  .aboutcontentwrap p {
+    text-align: center; 
+    top: 120px;
+    left: 0;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 0px;
+  }
+
+  .aboutcontentwrap h2 {
+    text-align: center;
+    top:0;
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .aboutcontentwrap {
+    margin-right: 0px; 
+
+  }  
+
+  .verticalline {
+
+  visibility: visible;
+  }
+
+  .verticalhorizontalline {
+    visibility: hidden;
+}
+
+@media all and (max-width: 750px) {
+
+  .portraitimg { 
+    width: 100%;
+  }
+
+  #aboutsection {
+    height: 750px;
+  }
+
+
+
+}
+
+/*_____________________ end about section ________________________________*/
+
+
+
+
+
 
 
 

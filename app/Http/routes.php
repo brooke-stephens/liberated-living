@@ -23,6 +23,12 @@ Route::get('/', function(){
 
 });
 
+Route::get('/test', function(){
+
+	return view('homepage.testmenu');
+
+});
+
 Route::get('/home', 'HomeController@index');
 
 

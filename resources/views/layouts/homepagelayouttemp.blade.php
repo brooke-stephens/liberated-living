@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/main.css') }}">	
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/component.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/demo.css') }}">
-	<script type='text/javascript' src="{{ URL::to('srv/js/modernizr.custom.js') }}"></script>
+					
+		<script type='text/javascript' src="{{ URL::to('srv/js/modernizr.custom.js') }}"></script>
 
 
 </head>

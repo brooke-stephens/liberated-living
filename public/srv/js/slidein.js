@@ -13,11 +13,11 @@ $(document).ready(function() {
 		var fromTop = $(document).scrollTop(); 	
 
 			if ( fromTop > $('#navcontainer').height() ) 				
-				$('#navcontainer').addClass('sticky active'); 
+				$('#navcontainer').addClass('sticky stickytopstyle'); 
 				
 
 				else if (fromTop == 0 )				
-					$('#navcontainer').removeClass('sticky active'); 
+					$('#navcontainer').removeClass('sticky stickytopstyle'); 
 
 					if ( fromTop > $('#navcontainer').height() ) 				
 						$('#moto').addClass('motocorrection');

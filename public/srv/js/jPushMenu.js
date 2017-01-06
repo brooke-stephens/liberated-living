@@ -89,6 +89,6 @@
         activeClass        : 'menu-active',
         menuOpenClass      : 'menu-open',
         closeOnClickOutside: true,
-        closeOnClickLink   : true
+        closeOnClickLink   : false
     };
 })(jQuery);
