@@ -13,15 +13,15 @@
 					  <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span>
 
 					  	<ul class="navigation" >
-					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();">Home</a></li>
-							<li><a href="#section-2" onclick="$('#section-2').animatescroll();">About</a></li>
+					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();return false;">Home</a></li>
+							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
 							<li><a class="toggle-menu menu-top">Services</a></li>
 							<li><a href="#">WorkShops</a></li>
 							<li><a href="#">Contact</a></li>	
 						</ul>
 
 					  </div>
-	
+
 
 						  <div id="loginwrap">
 

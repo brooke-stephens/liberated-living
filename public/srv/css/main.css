@@ -316,7 +316,15 @@ height: 35px;
 
 /*_____________________ Navigation menu start________________________________*/
 
+/*if java isnt working this needs to be applied to sticky the nav on top*/
+/*#navcontainer{
+top: 0;
+position: fixed;
+background-color: rgba(171, 78, 18, .9)!important;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
 
+    
 .navigation {
 
   list-style: none;
@@ -371,7 +379,7 @@ height: 35px;
     display: none;
 }
 
-@media all and (max-width: 1050px) {
+@media all and (max-width: 1100px) {
   #navwrap span {
   
     display: block;
@@ -569,7 +577,7 @@ height: 35px;
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */
     margin:0px auto;
     position: relative;
-    bottom: 60px;
+    bottom: 50px;
     
 
 

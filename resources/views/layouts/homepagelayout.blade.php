@@ -7,12 +7,19 @@
 
 	
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     
 
     <link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/main.css') }}">	
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/component.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/demo.css') }}">
+
+	<noscript>
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/nojava.css') }}">
+	</noscript>
+
 	<script type='text/javascript' src="{{ URL::to('srv/js/modernizr.custom.js') }}"></script>
+	
 
 
 </head>
@@ -54,7 +61,9 @@
 <script type="text/javascript">
 	new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ), {
 	type : 'cover'
+
 } );
+
 </script>	
 
 
