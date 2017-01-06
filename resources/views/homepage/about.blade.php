@@ -1,4 +1,4 @@
-<section>
+<section id="section-2">
 
 <div id="aboutsection">
 
@@ -35,4 +35,3 @@
 	
 
 </section>
-

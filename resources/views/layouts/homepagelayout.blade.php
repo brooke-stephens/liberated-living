@@ -49,12 +49,15 @@
 <script type='text/javascript' src="{{ URL::to('srv/js/jPushMenu.js') }}"></script>
 <script type='text/javascript' src="{{ URL::to('srv/js/classie.js') }}"></script>
 <script type='text/javascript' src="{{ URL::to('srv/js/mlpushmenu.js') }}"></script>
+<script type='text/javascript' src="{{ URL::to('srv/js/animatescroll.js') }}"></script>
 
 <script type="text/javascript">
 	new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ), {
 	type : 'cover'
 } );
 </script>	
+
+
 
 
 

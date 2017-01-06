@@ -12,8 +12,9 @@
 					  <!--  	<h4 class="toggle-menu menu-left">Menu</a></h4> -->
 					  <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span>
 
-					  	<ul class="navigation">
-							<li><a href="#">About</a></li>
+					  	<ul class="navigation" >
+					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();">Home</a></li>
+							<li><a href="#section-2" onclick="$('#section-2').animatescroll();">About</a></li>
 							<li><a class="toggle-menu menu-top">Services</a></li>
 							<li><a href="#">WorkShops</a></li>
 							<li><a href="#">Contact</a></li>	
@@ -44,31 +45,35 @@
 						<ul>
 							
 							<li>
-								<a href="#">Magazines</a>						
+								<a href="#">About</a>						
 							</li>
 							<li>
-								<a  href="#">Store</a>
+								<a  href="#">Services</a>
 								<div class="mp-level">
 									<h2>Store</h2>
 									<a class="mp-back" href="#">back</a>
 									<ul>
 										<li>
-											<a href="#">Clothes</a>											
+											<a href="#">Reiki & Energy work</a>											
 										</li>
 										<li>
-											<a href="#">Jewelry</a>
+											<a href="#">Live Blood Analysis</a>
 										</li>
 										<li>
-											<a href="#">Music</a>
+											<a href="#">Tongue Diagnosis</a>
 										</li>
 										<li>
-											<a href="#">Grocery</a>
+											<a href="#">Wisdom and Counseling</a>
 										</li>
+										<li>
+											<a href="#">Nutrition Counseltations</a>
+										</li>
+
 									</ul>
 								</div>
 							</li>
-							<li><a  href="#">Collections</a></li>
-							<li><a  href="#">Credits</a></li>
+							<li><a  href="#">WorkShops</a></li>
+							<li><a  href="#">Contact</a></li>
 						</ul>
 							
 					</div>
@@ -82,11 +87,11 @@
 		
 		<!-- Top slide in menu element-->
 		<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
-		    <a href="tst">Celery seakale</a>
-		    <a href="#">Dulse daikon</a>
-		    <a href="#">Zucchini garlic</a>
-		    <a href="#">Catsear azuki bean</a>
-		    <a href="#">Dandelion bunya</a>
+		    <a href="tst">Reiki & Energy work</a>
+		    <a href="#">Live Blood Analysis</a>
+		    <a href="#">Tongue Diagnosis</a>
+		    <a href="#">Wisdom and Counseling</a>
+		    <a href="#">Nutrition Counseltations</a>
 		    
 		</nav>
 
