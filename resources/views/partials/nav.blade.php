@@ -18,7 +18,7 @@
 					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();return false;">Home</a></li>
 							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
 							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;" class="toggle-menu menu-top">Services</a></li>
-							<li><a href="#section-3" class="toggle-menu menu-left">WorkShops</a></li>
+							<li><a href="#section-3" >WorkShops</a></li>
 							<li><a href="#">Contact</a></li>	
 						</ul>
 
