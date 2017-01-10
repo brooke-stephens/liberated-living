@@ -11,13 +11,14 @@
 					  <div id="navwrap">
 					  <!--  	<h4 class="toggle-menu menu-left">Menu</a></h4> -->
 					  <!-- <li><a class="toggle-menu menu-top">Services</a></li> -->
-					  <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span>
+					  <!-- <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span> -->
+					  <span class="glyphicon glyphicon-align-justify toggle-menu menu-left" aria-hidden="true"></span>
 
 					  	<ul class="navigation" >
 					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();return false;">Home</a></li>
 							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
-							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
-							<li><a href="#">WorkShops</a></li>
+							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;" class="toggle-menu menu-top">Services</a></li>
+							<li><a href="#section-3" class="toggle-menu menu-left">WorkShops</a></li>
 							<li><a href="#">Contact</a></li>	
 						</ul>
 
@@ -55,7 +56,7 @@
 									<a class="mp-back" href="#">back</a>
 									<ul>
 										<li>
-											<a href="#">Services Overview</a>											
+											<a href="#section-3">Services Overview</a>											
 										</li>
 										<li>
 											<a href="#">Reiki & Energy work</a>											
@@ -86,17 +87,26 @@
 
 			</div><!-- /pusher -->
 
-			
+		
+		  <!-- Left slide menu element-->
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+
+						<!-- <h3>Menu</h3> -->
+				<a href="#">About</a>
+				<a href="#">Services</a>
+				<a href="#">Work Shops</a>
+				<a href="#">Contact</a>
+			</nav>
 
 		
 		<!-- Top slide in menu element-->
-		<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
+		<!-- <nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
 		    <a href="tst">Reiki & Energy work</a>
 		    <a href="#">Live Blood Analysis</a>
 		    <a href="#">Tongue Diagnosis</a>
 		    <a href="#">Wisdom and Counseling</a>
 		    <a href="#">Nutrition Counseltations</a>
 		    
-		</nav>
+		</nav> -->
 
 </div> <!-- end navcontainer -->

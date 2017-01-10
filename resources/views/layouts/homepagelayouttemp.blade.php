@@ -58,7 +58,11 @@
 </script>	
 
 
-
+   <!--  <script type='text/javascript' src="{{ URL::to('srv/js/TweenMax.js') }}"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script type='text/javascript' src="{{ URL::to('srv/js/main.js') }}"></script> -->
 
 
 
