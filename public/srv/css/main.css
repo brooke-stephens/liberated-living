@@ -126,6 +126,7 @@ div.vertical-line{
 	height: 4000px;
 }
 
+
 #header{
 	background: url('/images/homepage/wispheader.jpg');
 	width: 100%;
@@ -177,6 +178,17 @@ div.vertical-line{
   background: url('/images/homepage/logo.svg') no-repeat center;
   background-color: rgba(255, 255, 255, 0.1);
 
+}
+
+.verticalline {
+
+  background-color: #ff9933;
+  height: 350px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  border-radius: 5px;
+  z-index: 7;
 }
 
 
@@ -596,6 +608,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 #aboutsection {
   height: 950px;
   border-bottom: 1px solid #ff9933;
+  margin-bottom: 100px;
 
 
 }
@@ -639,11 +652,12 @@ height: 100%;
 .aboutcontentwrap p {
   font-family:raleway, "Book Antiqua", Palatino, serif;
   font-size: 17px;
+  line-height: 23px;
    position: absolute;
     bottom: 150px;
     left: 0;   
     margin-left: 20px;
-    line-height: 23px;
+    
 
 }
 
@@ -657,19 +671,12 @@ height: 100%;
 
 }
 
-.verticalline {
 
-  background-color: #ff9933;
-  height: 350px;
-  width: 2px;
-  position: absolute;
-  left: 50%;
-  border-radius: 5px;
-  z-index: 7;
 
-  bottom:-415px;
-  visibility: hidden;
+.aboutline {
 
+    bottom:-415px;
+    visibility: hidden;
 }
 
 .verticalhorizontalline {
@@ -691,6 +698,22 @@ height: 100%;
 .portraitimg { 
     width: 85%;
   }
+
+  .aboutcontentwrap p {
+
+      position: relative;
+      
+    }
+
+     .aboutcontentwrap  {
+
+
+      height: auto;
+      margin-bottom: 200px;
+      
+    }
+
+
 
   .aboutcontentwrap p {
     text-align: center; 
@@ -722,6 +745,9 @@ height: 100%;
 
   .verticalhorizontalline {
     visibility: hidden;
+
+  }
+
 }
 
 @media all and (max-width: 750px) {
@@ -742,7 +768,76 @@ height: 100%;
 
 
 
+/*_____________________ starting services section  ________________________________*/
 
+#services h2 { 
+
+  font-family:satisfy, "Book Antiqua", Palatino, serif;
+  font-size: 50px;
+  
+}
+
+.servicetitle {
+
+  margin-bottom: 100px;
+}
+
+#services h3 { 
+
+  font-family:fred, "Book Antiqua", Palatino, serif;
+  font-size: 30px;
+
+}
+
+#services p { 
+
+font-family:raleway, "Book Antiqua", Palatino, serif;
+font-size: 17px;
+line-height: 23px;
+
+}
+
+
+.leftservicebox {
+
+  width: 350px;
+  height: 400px;
+  margin: 0px auto;
+
+/*  opacity: 0;*/
+}
+
+.rightservicebox {
+
+  width: 350px;
+  height: 400px;
+  margin: 0px auto;
+  margin-top: 150px;
+}
+
+.serviceicon {
+
+  margin: 20px 0 20px 0;
+
+
+}
+
+.servicesline{
+
+  height: 1600px;
+/*  height: 0px;
+  opacity: 0;
+*/
+
+}
+
+.circleicon {
+
+position: absolute;
+left: calc(50% - 14px);
+top: 2250px;
+z-index: 8;
+}
 
 
 

@@ -19,7 +19,7 @@ Route::auth();
 
 Route::get('/', function(){
 
-	return view('layouts.homepagelayout');
+	return view('index');
 
 });
 

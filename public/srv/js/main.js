@@ -1,28 +1,18 @@
 
 	// init controller
 	var controller = new ScrollMagic.Controller();
-	var tweeney = TweenMax.to(".test",3, {x:200, opacity:1, ease:Cubic.easeInOut});
-	var tween = TweenMax.to(".vertical-line",3, {height:"1900", opacity:1, ease:Strong.easeInOut});
-	var $img = $('#box');
-	TweenMax.set($img,{opacity:0});
-	
+	var tweeney = TweenMax.to(".leftservicebox",3, {opacity:1, ease:Cubic.easeInOut});
+	var tween = TweenMax.to(".verticalline",3, {height:"1600", opacity:1, ease:Strong.easeInOut});
   // build scene
 	var scene = new ScrollMagic.Scene({
-						triggerElement: "#target",offset: 200, reverse:false 
+						triggerElement: "#services",offset: -600, reverse:false 
 						})
 						.setTween(tween) // trigger a TweenMax.to tween
 						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 						.addTo(controller);
 
 	var scene = new ScrollMagic.Scene({
-						triggerElement: $img,3, {opacity:1 
-						})
-						.setTween(tween) // trigger a TweenMax.to tween
-						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-						.addTo(controller);					
-
-	var scene = new ScrollMagic.Scene({
-						triggerElement: "#target",offset: 200, reverse:false 
+						triggerElement: "#services",offset: -600, reverse:false 
 						})
 						.setTween(tweeney) // trigger a TweenMax.to tween
 						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)

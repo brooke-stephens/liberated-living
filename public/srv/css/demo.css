@@ -1,12 +1,18 @@
-a {
+#mp-pusher a {
 	text-decoration: none;
 	color: #f7f7f7;
 	outline: none;
 }
 
-a:hover, a:focus {
+#mp-pusher a:hover, #mp-pusher a:focus {
+	text-decoration: none;
 	color: #fff;
 	outline: none;
+}
+
+#mp-pusher h2 {
+
+	color: white;
 }
 
 

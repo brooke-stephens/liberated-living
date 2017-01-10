@@ -10,12 +10,13 @@
 				  
 					  <div id="navwrap">
 					  <!--  	<h4 class="toggle-menu menu-left">Menu</a></h4> -->
+					  <!-- <li><a class="toggle-menu menu-top">Services</a></li> -->
 					  <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span>
 
 					  	<ul class="navigation" >
 					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();return false;">Home</a></li>
 							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
-							<li><a class="toggle-menu menu-top">Services</a></li>
+							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
 							<li><a href="#">WorkShops</a></li>
 							<li><a href="#">Contact</a></li>	
 						</ul>
@@ -53,6 +54,9 @@
 									<h2>Store</h2>
 									<a class="mp-back" href="#">back</a>
 									<ul>
+										<li>
+											<a href="#">Services Overview</a>											
+										</li>
 										<li>
 											<a href="#">Reiki & Energy work</a>											
 										</li>
