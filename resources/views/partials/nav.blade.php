@@ -37,10 +37,10 @@
 
 				
 
-			<!-- slide in menu Wrapper from left -->
-			<div class="mp-pusher" id="mp-pusher">
+				<!-- slider with sub menus -->
+			<!-- <div class="mp-pusher" id="mp-pusher">
 
-				<!-- mp-menu -->
+				
 				<nav id="mp-menu" class="mp-menu">
 					<div class="mp-level">
 						<h2>All Categories</h2>
@@ -83,9 +83,9 @@
 							
 					</div>
 				</nav>
-				<!-- /mp-menu -->
+				
 
-			</div><!-- /pusher -->
+			</div> -->
 
 		
 		  <!-- Left slide menu element-->
