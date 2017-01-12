@@ -223,13 +223,14 @@ border: 1px solid #d87b27;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   /*background-color: rgba(255, 255, 255, 0.1);*/
+
 }
 
 
 #logowrap {
   
   flex: 1;
-  min-width: 115px;
+  min-width: 75px;
   max-width: 500px;
   height: 100px;
   display: inline-block;
@@ -244,8 +245,17 @@ border: 1px solid #d87b27;
   background: url('/images/homepage/logo.svg') no-repeat center;
   background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
+
   line-height: 100px;
   font-size: 2.6vw;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+
+
+
 }
 
 #navwrap {
@@ -254,20 +264,28 @@ border: 1px solid #d87b27;
   flex: 1;
   display: inline-block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-height: 100px;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  height: 100px;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
 }
 #loginwrap {
   width: 15%;
-  min-width: 150px;
+  min-width: 125px;
   max-width: 200px;
   display: inline-block;
-  /*height: 100px;*/
-  border-left: 1px solid rgba(255, 255, 255, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center; 
+   height: 100px;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 
@@ -350,29 +368,30 @@ line-height: 40px;
 
 @media all and (max-width: 1000px) {
  
-#moto h1 {
- 
-    font-size: 45px;
+  #moto h1 {
+   
+      font-size: 45px;
+       text-align: center;
+      margin-right: 0px;
+       top: 62%;
+      -ms-transform: translateY(-62%);
+      -webkit-transform: translateY(-62%);
+      transform: translateY(-62%);
+
+  }
+
+  #moto h2 {
+      top: 56%;
+      -ms-transform: translateY(-56%);
+      -webkit-transform: translateY(-56%);
+      transform: translateY(-56%);
+
+      margin-right: 0px;
      text-align: center;
-    margin-right: 0px;
-     top: 62%;
-    -ms-transform: translateY(-62%);
-    -webkit-transform: translateY(-62%);
-    transform: translateY(-62%);
+  }
 
 }
 
-#moto h2 {
-    top: 56%;
-    -ms-transform: translateY(-56%);
-    -webkit-transform: translateY(-56%);
-    transform: translateY(-56%);
-
-    margin-right: 0px;
-   text-align: center;
-}
-
-}
 
 .searchimg {
 	padding-right: 15px;
@@ -430,6 +449,8 @@ height: 35px;
     bottom: -25px;
      z-index: 11;
  }
+
+
 
 /*_____________________End Home Page________________________________*/
 
