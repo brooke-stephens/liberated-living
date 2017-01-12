@@ -11,19 +11,15 @@ $(document).ready(function() {
 	$(window).scroll(function() { 
 
 		var fromTop = $(document).scrollTop(); 	
-
-			if ( fromTop > $('#navcontainer').height() ) 				
+			// if ( fromTop > $('#navcontainer').height() ) 	
+			if ( fromTop > 1 ) 				
 				$('#navcontainer').addClass('sticky stickytopstyle'); 
 				
 
 				else if (fromTop == 0 )				
 					$('#navcontainer').removeClass('sticky stickytopstyle'); 
 
-					if ( fromTop > $('#navcontainer').height() ) 				
-						$('#moto').addClass('motocorrection');
-
-					else if (fromTop == 0 )
-						$('#moto').removeClass('motocorrection');
+					
 
 
 

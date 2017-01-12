@@ -47,48 +47,52 @@
 					</div><!-- end flexi -->
 				</div> <!-- end navcontainer -->
 
-						<!-- Push Wrapper -->
-			<div class="mp-pusher" id="mp-pusher">
+								<!-- slider with sub menus -->
+			<!-- <div class="mp-pusher" id="mp-pusher">
 
-				<!-- mp-menu -->
+				
 				<nav id="mp-menu" class="mp-menu">
 					<div class="mp-level">
 						<h2>All Categories</h2>
 						<ul>
 							
 							<li>
-								<a href="#">Magazines</a>						
+								<a href="#">About</a>						
 							</li>
 							<li>
-								<a  href="#">Store</a>
+								<a  href="#">Services</a>
 								<div class="mp-level">
 									<h2>Store</h2>
 									<a class="mp-back" href="#">back</a>
 									<ul>
 										<li>
-											<a href="#">Clothes</a>											
+											<a href="#section-3">Services Overview</a>											
 										</li>
 										<li>
-											<a href="#">Jewelry</a>
+											<a href="#">Reiki & Energy work</a>											
 										</li>
 										<li>
-											<a href="#">Music</a>
+											<a href="#">Live Blood Analysis</a>
 										</li>
 										<li>
-											<a href="#">Grocery</a>
+											<a href="#">Tongue Diagnosis</a>
 										</li>
+										<li>
+											<a href="#">Wisdom and Counseling</a>
+										</li>
+										<li>
+											<a href="#">Nutrition Counseltations</a>
+										</li>
+
 									</ul>
 								</div>
 							</li>
-							<li><a  href="#">Collections</a></li>
-							<li><a  href="#">Credits</a></li>
+							<li><a  href="#">WorkShops</a></li>
+							<li><a  href="#">Contact</a></li>
 						</ul>
 							
 					</div>
 				</nav>
-				<!-- /mp-menu -->
-
-			</div><!-- /pusher -->
 
 				<div id="moto">
 					<h3>Nutrition, Counseling. Feel Good.</h3>

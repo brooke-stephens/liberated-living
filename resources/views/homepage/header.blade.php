@@ -6,7 +6,7 @@
 
 
 		<div id="moto">
-			<h3>Nutrition, Counseling. Feel Good.</h3>
+			<h2>Nutrition, Counseling. Feel Good.</h2>
 			<h1>Shake what your momma gave ya!</h1>		
 
 		</div>

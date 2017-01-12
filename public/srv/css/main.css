@@ -116,6 +116,72 @@ div.vertical-line{
 }
 
 
+a {
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  font-size: 17px;
+
+}
+
+p {
+
+  line-height: 23px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  font-size: 17px;
+
+}
+
+h1 {
+    font-family:sacramento, "Book Antiqua", Palatino, serif;
+    font-size: 55px;
+
+
+}
+
+h2 {  
+  font-size: 24px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+
+}
+
+h5 {
+
+
+}
+
+
+.btn-primary {
+font-size: 17px;
+font-family:raleway, "Book Antiqua", Palatino, serif;
+margin: 15px auto;
+background-color: #ab4e12;
+border: 1px solid #8c3b0e;
+  webkit-transition: all 0.6s ease;
+       -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+}
+
+.btn-primary:hover {
+font-size: 17px;
+font-family:raleway, "Book Antiqua", Palatino, serif;
+margin: 15px auto;
+background-color: #ff9933;
+border: 1px solid #d87b27;
+  webkit-transition: all 0.6s ease;
+       -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+}
+
+
+
 
 /*___________________end fonts __________________________________*/
 
@@ -151,7 +217,7 @@ div.vertical-line{
 #navcontainer {
   width: 100%;
   height: 100px;
-  z-index: 11;
+  z-index: 12;
 
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -161,7 +227,7 @@ div.vertical-line{
 
 
 #logowrap {
-  width: 30%;
+  
   flex: 1;
   min-width: 115px;
   max-width: 500px;
@@ -177,32 +243,10 @@ div.vertical-line{
 
   background: url('/images/homepage/logo.svg') no-repeat center;
   background-color: rgba(255, 255, 255, 0.1);
-
+  text-align: center;
+  line-height: 100px;
+  font-size: 2.6vw;
 }
-
-.verticalline {
-
-  background-color: #ff9933;
-  height: 350px;
-  width: 2px;
-  position: absolute;
-  left: 50%;
-  border-radius: 5px;
-  z-index: 7;
-}
-
-
-
-@media all and (max-width: 910px) {
-  #logowrap { 
-
-  background: url('/images/homepage/logocompact.svg') no-repeat center;
-  background-color: rgba(255, 255, 255, 0.1);
-  }
-
-
-}
-
 
 #navwrap {
   width: 55%;
@@ -223,17 +267,47 @@ height: 100px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
-  justify-content: center;
-
-
+  justify-content: center; 
 }
 
 
+@media all and (max-width: 850px) {
+  #logowrap { 
+
+  background: url('/images/homepage/logocompact.svg') no-repeat center;
+  background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  #navcontainer {
+  height: 55px;
+  
+  }
+
+  #logowrap {
+  height: 55px;
+  
+  }
+  #navwrap {
+  height: 55px;
+  
+  }
+  #loginwrap {
+  height: 55px;
+  
+  }
+}
+
+
+
 #logoh1text {
-      margin:0; padding:0;
+  margin:0; padding:0;
       
-         }
-#logoh1text span { visibility: hidden; }
+  }
+#logoh1text span { 
+
+visibility: hidden;
+
+   }
 
 
 #moto {
@@ -251,11 +325,9 @@ line-height: 40px;
 }
 
 #moto h1 {
- font-size: 50px;
-  font-size: 3.3vw;
-  font-family:sacramento, "Book Antiqua", Palatino, serif;
-  margin-right: 200px;
-  position: relative;  
+    font-size: 3.3vw;
+    margin-right: 200px;
+    position: relative;  
     top: 50%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -266,14 +338,11 @@ line-height: 40px;
 
 
 
-#moto h3 {
+#moto h2 {
 
-  font-size: 1.3vw;
-  font-family:fred, "Book Antiqua", Palatino, serif;
-  margin-right: 250px;
+   margin-right: 250px;
    position: relative;
-   
-   top: 50%;
+     top: 50%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -293,10 +362,8 @@ line-height: 40px;
 
 }
 
-#moto h3 {
-    font-size: 20px;
-    font-weight: bold;
-     top: 56%;
+#moto h2 {
+    top: 56%;
     -ms-transform: translateY(-56%);
     -webkit-transform: translateY(-56%);
     transform: translateY(-56%);
@@ -323,19 +390,56 @@ height: 35px;
   color: #cccccc;
 }
 
+.verticalline {
+
+  background-color: #ff9933;
+  height: 360px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  border-radius: 5px;
+  z-index: 7;
+  position: absolute;
+  
+ 
+}
+
+.verticalhorizontalline {
+
+  border-left:2px #ff9933 solid;
+  border-bottom:2px #ff9933 solid;
+  height: 365px;
+  width: 150px;
+  border-bottom-left-radius: 50px;
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+
+    
+}
+
+.circle {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    border: 2px solid #ff9933;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    margin:0px auto;
+    position: relative;
+    bottom: -25px;
+     z-index: 11;
+ }
+
 /*_____________________End Home Page________________________________*/
 
 
 /*_____________________ Navigation menu start________________________________*/
 
-/*if java isnt working this needs to be applied to sticky the nav on top*/
-/*#navcontainer{
-top: 0;
-position: fixed;
-background-color: rgba(171, 78, 18, .9)!important;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}*/
-
+#navcontainer{
+  top: 0;
+  position: fixed;
+}
     
 .navigation {
 
@@ -348,8 +452,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
-  
+  display: flex;  
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
 
@@ -367,7 +470,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navigation li {
-	
+	display: inline-block;
 
 
 }
@@ -384,23 +487,25 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 /*_____________________End Navigation Page________________________________*/
 
-/*_____________________ Start Navigation slide in________________________________*/
+/*_____________________  sub Start Navigation slide in________________________________*/
 
-#navwrap span {
+.glyphicon-align-justify {
   
     display: none;
 }
 
-@media all and (max-width: 1100px) {
-  #navwrap span {
+@media all and (max-width: 1000px) {
+  .glyphicon-align-justify {
   
     display: block;
     font-size: 30px;
     color: white;
 
     }
+
   .navigation {
     display: none;
+    list-style: none;
 
   }
 
@@ -416,8 +521,9 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
   }
 
-}
 
+
+}
 
 
 
@@ -426,7 +532,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(171, 78, 18, 0.9);
     /*background-color: rgba(0, 0, 0, 0.4);*/
     position: fixed;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 
 }
 
@@ -436,6 +542,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 1.1em;
     font-weight: 300;
     color: #ffffff;
+
 }
 
 .cbp-spmenu a:hover {
@@ -470,6 +577,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     left: -240px;
 }
 
+
 .cbp-spmenu-left.menu-open {
     left: 0px;
 }
@@ -488,8 +596,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 .cbp-spmenu-vertical a {
-    border-bottom: 1px solid white;
-    padding: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 1em;text-align:center
 }
 
 .cbp-spmenu-horizontal {
@@ -508,9 +616,29 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 .cbp-spmenu-horizontal a {
     float: left;
-    width: 20%;
+    
     padding: 0.8em;
-    border-left: 1px solid white;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cbp-spmenu-horizontal li:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.navtopslider {
+  height: 100%;
+  list-style: none;
+      
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
 }
 
 
@@ -518,10 +646,26 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 .cbp-spmenu-top {
     top: -70px;
+
 }
 
 .cbp-spmenu-top.menu-open {
     top: 100px;
+}
+
+@media all and (max-width: 850px) {
+
+    .cbp-spmenu-top.menu-open {
+    
+    top: 55px;
+    }
+
+    .cbp-spmenu-horizontal {
+   
+    height: 55px;
+
+    }
+
 }
 
 
@@ -531,8 +675,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 /*_____________________ Start Navigation fixed top________________________________*/
 
 .sticky {
-    top: 0;
-    position: fixed;
+    
     
 
 }
@@ -548,7 +691,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 /*==================================================
  * Drop shadow effect with box-shadow
  * ===============================================*/
-.active:after{
+.stickytopstyle:after{
  content:"";
     position:absolute;
     z-index:-1;
@@ -562,14 +705,6 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background:radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
 }
 
-/*the moto was being bumped down. this is the corrction*/
-.motocorrection{ 
-  position: relative;
-  top: 112px;
-
-}
-
-
  
 
 
@@ -581,32 +716,11 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 /*_____________________ starting about section  ________________________________*/
 
 
-.circle {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background: #ff9933;
-    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
-    margin:0px auto;
-    position: relative;
-    bottom: 50px;
-    
 
 
-}
-
-.circle h4 {
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 100px;
-
-
-}
 
 #aboutsection {
-    height: 100vh;
+  height: 100vh;
   border-bottom: 1px solid #ff9933;
   margin-bottom: 100px;
 
@@ -615,7 +729,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 .inneraboutsec {
   height: 100%;
-  margin-top: -100px;
+  margin-top: -25px;
 }
 
 .portraitwrapcon{
@@ -646,14 +760,12 @@ height: 100%;
   
   height: 100%;
   z-index: 9;
+  margin-top: 50px;
 
 }
 
 .aboutcontentwrap p {
-  font-family:raleway, "Book Antiqua", Palatino, serif;
-  font-size: 17px;
-  line-height: 23px;
-   position: absolute;
+    position: absolute;
     bottom: 150px;
     left: 0;   
     margin-left: 20px;
@@ -661,11 +773,9 @@ height: 100%;
 
 }
 
-.aboutcontentwrap h2 {
+.aboutcontentwrap h1 {
   
-    font-family:satisfy, "Book Antiqua", Palatino, serif;
-    font-size: 50px;
-   position: absolute;
+    position: absolute;
     bottom: 450px;
     left: 0;   
 
@@ -679,20 +789,7 @@ height: 100%;
     visibility: hidden;
 }
 
-.verticalhorizontalline {
 
-  border-left:2px #ff9933 solid;
-  border-bottom:2px #ff9933 solid;
-  height: 365px;
-  width: 150px;
-  border-bottom-left-radius: 50px;
-  position: absolute;
-  left: 50%;
-  z-index: 10;
-
-  bottom:-415px;
-  
-}
 
 @media all and (max-width: 1000px) {
 .portraitimg { 
@@ -709,7 +806,7 @@ height: 100%;
 
 
       height: auto;
-      margin-bottom: 200px;
+      margin-bottom: 250px;
       
     }
 
@@ -724,7 +821,7 @@ height: 100%;
     margin-left: 0px;
   }
 
-  .aboutcontentwrap h2 {
+  .aboutcontentwrap h1 {
     text-align: center;
     top:0;
     margin-top: 40px;
@@ -770,30 +867,13 @@ height: 100%;
 
 /*_____________________ starting services section  ________________________________*/
 
-#services h2 { 
-
-  font-family:satisfy, "Book Antiqua", Palatino, serif;
-  font-size: 50px;
-  
-}
 
 .servicetitle {
 
   margin-bottom: 100px;
 }
 
-#services h3 { 
-
-  font-family:fred, "Book Antiqua", Palatino, serif;
-  font-size: 30px;
-
-}
-
-#services p { 
-
-font-family:raleway, "Book Antiqua", Palatino, serif;
-font-size: 17px;
-line-height: 23px;
+#services h2 { 
 
 }
 
@@ -804,6 +884,7 @@ line-height: 23px;
   height: 400px;
   margin: 0px auto;
 
+
 /*  opacity: 0;*/
 }
 
@@ -813,6 +894,7 @@ line-height: 23px;
   height: 400px;
   margin: 0px auto;
   margin-top: 150px;
+
 }
 
 .serviceicon {
@@ -839,39 +921,9 @@ top: 2250px;
 z-index: 8;
 }
 
-
-.learnmorebutton {
-
-  width: 150px;
-  height: 30px;
-  background-color: #ab4e12;
-  
-  border-radius: 5px;
-  margin: 15px auto;
-  font-size: 17px;
-  color: white;
-}
-
-.learnmoretext {
-line-height: 30px;
-}
-
 .leftservicebox a:hover, .rightservicebox a:hover {
   text-decoration: none;
 }
 
-.learnmorebutton:hover {
 
-  width: 150px;
-  height: 30px;
-  background-color: #ff9933;
-  border-radius: 5px;
-  margin: 15px auto;
-  font-size: 17px;
-  webkit-transition: all 0.6s ease;
-       -moz-transition: all 0.6s ease;
-            transition: all 0.6s ease;
-  
-
-}
 
