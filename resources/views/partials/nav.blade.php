@@ -2,12 +2,12 @@
   
 				  <div class="flexi">
 
-					   <a href="#section-1" onclick="$('#section-1').animatescroll();return false;">
+					   <!-- <a href="#section-1" onclick="$('#section-1').animatescroll();return false;"> -->
 						  <div id="logowrap" class="ttt">
 						  	<h1 id="logoh1text"><span>Liberated Living</span></h1>
 
 						  </div>
-					  </a>
+					  <!-- </a> -->
 
 				  
 					  <div id="navwrap">
