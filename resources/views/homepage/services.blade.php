@@ -1,4 +1,4 @@
-<section id="section-3">
+<section>
 
 	<div id="services">
 		<div class="container">
@@ -6,7 +6,7 @@
 			<div class="row row-centered text-center">
 				
 				<div class="col-md-12 servicetitle">
-					<h1>My <span style="color: #ff9933;">Services</h1>
+					<h1 id="section-3">My <span style="color: #ff9933;">Services</h1>
 
 				</div>
 
@@ -106,7 +106,7 @@
 
 			      </div>
 
-			      <div class="col-md-6 text-center">
+			      <div class="col-md-6 text-center pull-right">
 
 			      			      		
 			      </div>
@@ -116,5 +116,7 @@
 
 		</div>    
 	</div>	<!-- end services -->
+
+<div style="clear:both"></div>
 
 </section>

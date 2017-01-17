@@ -17,11 +17,9 @@
 
 Route::auth();
 
-Route::get('/', function(){
+Route::get('/', 'HomePageController@index');
 
-	return view('index');
-
-});
+Route::post('/','HomePageController@isCaptchaValid');
 
 Route::get('/test', function(){
 
@@ -29,7 +27,7 @@ Route::get('/test', function(){
 
 });
 
-Route::get('/home', 'HomeController@index');
+
 
 
 

@@ -2,11 +2,15 @@
   
 				  <div class="flexi">
 
-					   <!-- <a href="#section-1" onclick="$('#section-1').animatescroll();return false;"> -->
-						  <div id="logowrap" class="ttt">
-						  	<h1 id="logoh1text"><span>Liberated Living</span></h1>
-
-						  </div>
+					   
+						  
+						  <div id="logowrap">
+							 <a href="#section-1" onclick="$('#section-1').animatescroll();return false;">
+							  		<div>
+							  		<h1 id="logoh1text"><span>Liberated Living</span></h1>
+									</div>
+								</a>
+						  </div> <!-- end logowrap -->
 					  <!-- </a> -->
 
 				  
@@ -14,13 +18,14 @@
 					  <!--  	<h4 class="toggle-menu menu-left">Menu</a></h4> -->
 					  <!-- <li><a class="toggle-menu menu-top">Services</a></li> -->
 					  <!-- <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span> -->
+					  <!-- <li><a href="#section-3" onclick="$('#section-3').animatescroll({padding:200});return false;">Services</a></li> -->
 					  <span class="glyphicon glyphicon-align-justify toggle-menu menu-top" aria-hidden="true"></span>
 
 					  	<ul class="navigation" >
 							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
 							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
 							<li><a href="#section-3" >WorkShops</a></li>
-							<li><a href="#">Contact</a></li>	
+							<li><a href="#section-4" onclick="$('#section-4').animatescroll();return false;">Contact</a></li>
 						</ul>
 
 					  </div>
@@ -46,7 +51,7 @@
 				<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
 				<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
 				<li><a href="#section-3" >WorkShops</a></li>
-				<li><a href="#">Contact</a></li>	
+				<li><a href="#section-4">Contact</a></li>	
 			</ul>
 		    
 		</nav>

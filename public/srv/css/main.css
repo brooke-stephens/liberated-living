@@ -193,6 +193,8 @@ border: 1px solid #d87b27;
 }
 
 
+
+
 #header{
 	background: url('/images/homepage/wispheader.jpg');
 	width: 100%;
@@ -230,7 +232,7 @@ border: 1px solid #d87b27;
 #logowrap {
   
   flex: 1;
-  min-width: 100px;
+  min-width: 90px;
   max-width: 500px;
   height: 100px;
   display: inline-block;
@@ -260,7 +262,7 @@ border: 1px solid #d87b27;
 
 #navwrap {
   width: 55%;
-  min-width: 115px;
+  min-width: 100px;
   flex: 1;
   display: inline-block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -878,6 +880,11 @@ height: 100%;
     height: 750px;
   }
 
+    .verticalline {
+
+  visibility: visible;
+  }
+
 
 
 }
@@ -901,7 +908,8 @@ height: 100%;
 
 .leftservicebox {
 
-  width: 350px;
+  max-width: 350px;
+  min-width: 280px;
   height: 400px;
   margin: 0px auto;
 
@@ -911,7 +919,8 @@ height: 100%;
 
 .rightservicebox {
 
-  width: 350px;
+  max-width: 350px;
+  min-width: 280px;
   height: 400px;
   margin: 0px auto;
   margin-top: 150px;
@@ -934,6 +943,26 @@ height: 100%;
 
 }
 
+@media all and (max-width: 1000px) {
+  .servicesline{
+
+  height: 0px;
+  }
+
+  .rightservicebox {
+
+  margin-top: 25px;
+
+  }
+
+    .leftservicebox {
+
+  margin-top: 50px;
+
+  }
+
+}
+
 .circleicon {
 
 position: absolute;
@@ -947,4 +976,212 @@ z-index: 8;
 }
 
 
+/* ------------------------------forms --------------------*/
 
+.contacterrors {
+    font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  background-color: rgba(171, 78, 18, 0.9);
+  line-height: 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  min-height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding:10px 10px 10px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+    width: 60%;
+    color: white;
+    font-weight: bold;
+
+}
+
+.centerform{
+  
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 800px;
+}
+
+label {
+
+
+    display:inline-block;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 25px;
+
+    
+}
+
+input[type="text"],input[type="email"],input[type="password"] {
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  float: right;
+  padding: 5px;
+    margin-top: -25px;
+    display:inline-block; 
+   
+    width: 65%;
+    max-width: 550px;
+    height: 35px;
+
+    background-color: lightgrey;
+  border:1px solid lightgrey;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+
+  
+
+}
+
+.block {
+
+
+}
+
+
+
+textarea {
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  padding: 10px 5px 10px 5px;
+    display:inline-block; 
+    
+    float: right;
+    margin-top: -25px;
+    width: 65%;
+    max-width: 550px;
+    height: 200px;
+
+    background-color: lightgrey;
+  border:1px solid lightgrey;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  
+
+
+
+
+}
+
+/*.btn-default{
+   display:inline-block; 
+   
+ 
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  float: right;
+
+
+}
+
+.btn-default:hover {
+
+  background-color: #702424;
+  color: white;
+  
+
+}*/
+
+
+/* Radial Out */
+.btn-default {
+  color: white;
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  height: 40px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  float: right;
+  background-color: #ab4e12;
+border: 1px solid #8c3b0e;
+  webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  margin-top: 20px;
+  
+}
+
+.btn-default:hover {
+   color: white;
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  height: 40px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  float: right;
+background-color: #ff9933;
+border: 1px solid #d87b27;
+  webkit-transition: all 0.6s ease;
+       -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+margin-top: 20px;
+  
+}
+
+
+input:focus,
+textarea:focus {
+  border: 1px solid #ff9933;
+  box-shadow: 0 0 5px rgba(112, 36, 36, 1);
+  
+
+-webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+
+
+
+}
+
+
+
+
+@media only screen and (max-width: 1200px)
+ {
+  input[type="text"],input[type="email"],input[type="password"], textarea {
+  
+      width: 100%; 
+      margin-top: 5px;
+
+  }
+
+  .btn-default{
+
+    
+  }
+
+  
+}
+
+
+
+
+
+/* ------------------------------End forms --------------------*/
+
+
+#section-4 {padding-top: 125px;}
+#section-3 {padding-top: 125px;}
+
+@media all and (max-width: 850px) {
+  #section-3 {padding-top: 75px;}
+  #section-4 {padding-top: 75px;}
+}

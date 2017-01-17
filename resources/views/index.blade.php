@@ -15,6 +15,14 @@
 			@include('homepage.services')
 		</div>
 
+		<!-- <div id="testimonials">
+			
+		</div> -->
+
+		<div id="services">
+			@include('homepage.contact')
+		</div>
+
 		
 		<div id="footer">
 			@include('partials.footer')

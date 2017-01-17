@@ -1,4 +1,4 @@
-<section id="section-2">
+<section id="section-2" >
 
 <div id="aboutsection">
 
