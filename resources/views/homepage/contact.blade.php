@@ -8,8 +8,8 @@
    			<div class="col-md-12 text-center">
 
    				
-
-   				<h1 id="section-4">Contact</h1>	
+   				<a id="section-4"></a>
+   				<h1>Contact</h1>	
    				<br>
    				<h2>Contact me if you have any questions or would like to book an appointment. </h2>				
    				<br>
