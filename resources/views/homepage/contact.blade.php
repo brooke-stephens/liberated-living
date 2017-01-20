@@ -1,6 +1,6 @@
 <section >
 	
-<div id="about">
+<div id="contact">
    	<div class="container">
 
    		<div class="row">
@@ -8,7 +8,7 @@
    			<div class="col-md-12 text-center">
 
    				
-   				<a id="section-4"></a>
+   				<a id="section-5"></a>
    				<h1>Contact</h1>	
    				<br>
    				<h2>Contact me if you have any questions or would like to book an appointment. </h2>				

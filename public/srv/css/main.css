@@ -982,7 +982,7 @@ z-index: 8;
 }
 
 
-/* ------------------------------forms --------------------*/
+/* ------------------------------Contact fold and forms --------------------*/
 
 .contacterrors {
     font-size: 17px;
@@ -1178,17 +1178,25 @@ textarea:focus {
   
 }
 
+@media all and (max-width: 1000px) {
 
+  #contact{
+    margin-top: 50px;
+
+
+  }
+
+}
 
 
 
 /* ------------------------------End forms --------------------*/
 
 
-#section-4 {padding-top: 125px;}
+#section-5 {padding-top: 125px;}
 #section-3 {padding-top: 125px;}
 
 @media all and (max-width: 850px) {
   #section-3 {padding-top: 75px;}
-  #section-4 {padding-top: 75px;}
+  #section-5 {padding-top: 75px;}
 }
