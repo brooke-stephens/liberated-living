@@ -1226,12 +1226,27 @@ textarea:focus {
 
 /* ------------------------------End forms --------------------*/
 
+#section-3 {
+  padding: 100px;
+}
 
-#section-5 {padding-top: 125px;}
-#section-3 {padding-top: 125px;}
+#section-5 {
+  padding: 100px;
+}
+
+#section-2 {
+  padding: 30px;
+}
+
+
 
 
 @media all and (max-width: 850px) {
-  #section-3 {padding-top: 75px;}
-  #section-5 {padding-top: 75px;}
+  #section-3 {
+    padding: 50px;
+  }
+
+  #section-5 {
+    padding: 50px;
+  }
 }
