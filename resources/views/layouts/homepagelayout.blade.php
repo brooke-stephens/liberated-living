@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/main.css') }}">	
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('srv/css/sweetalert.css')}}">	
 
 
     <!-- these css sheets are for the sub menu slider -->
@@ -43,8 +44,8 @@
 <!-- <script type='text/javascript' src="{{ URL::to('srv/js/classie.js') }}"></script>
 <script type='text/javascript' src="{{ URL::to('srv/js/mlpushmenu.js') }}"></script> -->
 <script type='text/javascript' src="{{ URL::to('srv/js/animatescroll.js') }}"></script>
-
-
+<script type='text/javascript' src="{{ URL::to('srv/js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ URL::to('srv/js/sweetalert.min.js') }}"></script>
 
 <!-- submenu slider menu -->
 
@@ -56,10 +57,18 @@
 
 </script> -->	
 
+<script type="text/javascript">
+    	
+    	@if (notify()->ready())
+	    	swal({
 
+	    		title: "{!! notify()->message() !!}",	
+	    		type: "{{ notify()->type() }}"
 
+	    	});
+	    @endif
 
-
+</script>
 
 
 

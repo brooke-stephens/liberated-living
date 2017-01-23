@@ -75,13 +75,13 @@ class HomePageController extends Controller
   		  ];
 
   		//where the email layout file is --- the data being sent to the view 
-  		 Mail::send('email.email_layout', $data, function($message) use ($data) {
+  		 // Mail::send('email.email_layout', $data, function($message) use ($data) {
 
-  		 	$message->from($data['emailfrom'], $data['Namefrom']);
-  		 	$message->to($data['emailto'])->subject($data['subject']);
-  		 	// $message->subject($data['emailfrom'], $data['Namefrom']);
+  		 // 	$message->from($data['emailfrom'], $data['Namefrom']);
+  		 // 	$message->to($data['emailto']);
+  		 // 	$message->subject($data['subject']);
 
-  		 });
+  		 // });
 
 
     	 $this->emailSuccess();
@@ -90,7 +90,11 @@ class HomePageController extends Controller
 
     public function emailSuccess(){
 
-    	echo 'Success';
+      notify()->flash("Email Sent.", "success");
+
+      //return redirect('/');
+      //return Redirect::to('/')
+      Redirect::to('/')->send(); //the other redirect werent redirecting
     }
 
     

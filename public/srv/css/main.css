@@ -349,48 +349,82 @@ line-height: 40px;
     margin-right: 200px;
     position: relative;  
     top: 50%;
-    -ms-transform: translateY(-50%);
+  /*  -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-
+*/
 
 }
-
-
 
 #moto h2 {
 
    margin-right: 250px;
    position: relative;
-     top: 50%;
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+     top: 49%;
 }
+
+.btn-info {
+ position: relative;  
+ margin-right: 250px;
+ top: 54%; 
+
+ font-size: 16px;
+ font-family:raleway, "Book Antiqua", Palatino, serif;
+ border:1px solid white;
+ background-color: rgba(255, 255, 255, 0);
+ width: 200px;
+ border-radius: 3px;
+ height: 45px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+    
+
+
+
+}
+
+.btn-info:hover {
+ font-size: 16px;
+ font-family:raleway, "Book Antiqua", Palatino, serif;
+ border:1px solid white;
+ background-color: rgba(255, 153, 51, 0);
+ width: 200px;
+ border-radius: 3px;
+ height: 45px;
+color: #ff9933;
+-webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+ }
 
 @media all and (max-width: 1000px) {
  
   #moto h1 {
    
-      font-size: 45px;
+      font-size: 35px;
        text-align: center;
       margin-right: 0px;
        top: 62%;
-      -ms-transform: translateY(-62%);
-      -webkit-transform: translateY(-62%);
-      transform: translateY(-62%);
+      
 
   }
 
   #moto h2 {
-      top: 56%;
-      -ms-transform: translateY(-56%);
-      -webkit-transform: translateY(-56%);
-      transform: translateY(-56%);
-
-      margin-right: 0px;
-     text-align: center;
+    top: 60%;    
+    font-size: 20px;
+    margin-right: 0px;
+    text-align: center;
   }
+
+  .btn-info {
+      top: 65%; 
+      margin-right: auto; 
+
+    }
+
 
 }
 
@@ -1195,6 +1229,7 @@ textarea:focus {
 
 #section-5 {padding-top: 125px;}
 #section-3 {padding-top: 125px;}
+
 
 @media all and (max-width: 850px) {
   #section-3 {padding-top: 75px;}

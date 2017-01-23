@@ -1,4 +1,4 @@
-<section id="section-2" >
+<section>
 
 <div id="aboutsection">
 
@@ -14,7 +14,7 @@
 	    <div class="row row-centered portraitwrapcon">
 
 	        <div class="col-md-6 col-centered portraitwrap">
-	        	<img class="portraitimg" src="/images/homepage/portraitwhite.jpg">
+	        	<img id="section-2" class="portraitimg" src="/images/homepage/portraitwhite.jpg">
 	        </div>
 
 	        <div class="bottom-align-text col-md-6 aboutcontentwrap pull-left">
