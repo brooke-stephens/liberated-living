@@ -1,5 +1,9 @@
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
+p {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
 #navcontainer {
   background: url("/images/homepage/wispheader.jpg");
   width: 100%;
