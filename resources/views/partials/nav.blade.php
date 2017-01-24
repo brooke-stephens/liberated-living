@@ -1,11 +1,11 @@
 <div id="navcontainer">
-  
+
 				  <div class="flexi">
 
-					   
-						  
+
+
 						  <div id="logowrap">
-							 <a href="#section-1" onclick="$('#section-1').animatescroll();return false;">
+							 <a href="/#section-1" onclick="$('#section-1').animatescroll();return false;">
 							  		<div>
 							  		<h1 id="logoh1text"><span>Liberated Living</span></h1>
 									</div>
@@ -13,7 +13,7 @@
 						  </div> <!-- end logowrap -->
 					  <!-- </a> -->
 
-				  
+
 					  <div id="navwrap">
 					  <!--  	<h4 class="toggle-menu menu-left">Menu</a></h4> -->
 					  <!-- <li><a class="toggle-menu menu-top">Services</a></li> -->
@@ -36,16 +36,16 @@
 						  	<span class="glyphicon glyphicon-search searchimg" aria-hidden="true"></span>
 
 							<img type="button" data-toggle="modal" data-target="#myModal" class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
-						  
+
 						  </div>
 
 					</div><!-- end flexi -->
 
 
 
-		
+
 		<!-- Top slide in menu element-->
-	
+
 		<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
 		  	<ul class="navtopslider" >
 				<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
@@ -53,9 +53,9 @@
 				<li><a href="#section-4" onclick="$('#section-5').animatescroll();return false;">Tesimonials</a></li>
 				<li><a href="#section-5" onclick="$('#section-5').animatescroll();return false;">Contact</a></li>
 			</ul>
-		    
+
 		</nav>
-	
-		
+
+
 </div> <!-- end navcontainer -->
 
