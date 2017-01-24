@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,16 +24,26 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ul.navigation {
 	list-style: none;
 }
+
+ul {
+  margin-left: 40px;
+}
+
+
+.container ul li {
+  line-height: 23px;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -47,18 +57,16 @@ table {
 	border-spacing: 0;
 }
 
-.container {
-	height: 2000px;
-}
+
 
 div.vertical-line{
   width: 5px; /* Line width */
   background-color: black; /* Line color */
   /* Override in-line if you want specific height. */
-  float: left; /* Causes the line to float to left of content. 
+  float: left; /* Causes the line to float to left of content.
     You can instead use position:absolute or display:inline-block
     if this fits better with your design */
-  border-radius: 15px;  
+  border-radius: 15px;
   opacity:0;
 }
 
@@ -115,46 +123,43 @@ div.vertical-line{
          /*font-family:fred, "Book Antiqua", Palatino, serif;*/
 }
 
+body {
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+
+}
 
 a {
-  font-family:raleway, "Book Antiqua", Palatino, serif;
   font-size: 17px;
 
 }
 
 p {
-
+    margin-top: 1em;
+    margin-bottom: 1em;
   line-height: 23px;
-  font-family:raleway, "Book Antiqua", Palatino, serif;
   font-size: 17px;
 
 }
 
+
 h1 {
-    font-family:sacramento, "Book Antiqua", Palatino, serif;
-    font-size: 55px;
-
-
+  font-size: 55px;
 }
 
-h2 {  
+h2 {
   font-size: 24px;
-  font-family:raleway, "Book Antiqua", Palatino, serif;
-
 }
 
 h3 {
-
+  font-size: 20px;
 }
 
 h4 {
-
-
+  font-size: 16px;
 }
 
 h5 {
-
-
+  font-size: 12px;
 }
 
 /*services buttons*/
@@ -182,9 +187,9 @@ border: 1px solid #d87b27;
 
 /*header button*/
 .btn-info {
- position: relative;  
+ position: relative;
  margin-right: 250px;
- top: 54%; 
+ top: 54%;
 
  font-size: 16px;
  font-family:raleway, "Book Antiqua", Palatino, serif;
@@ -201,7 +206,7 @@ border: 1px solid #d87b27;
  -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  
+
 }
 
 .btn-info:hover {
@@ -218,7 +223,7 @@ color: #ff9933;
 
  .btn-info:focus {
 background-color: rgba(255, 255, 255, 0)!important;
-border:1px solid white!important;  
+border:1px solid white!important;
 color: #ff9933!important;
 }
 
@@ -231,7 +236,7 @@ color: #ff9933!important;
 
 #container{
   width: 100%;
-	height: 4000px;
+	/*height: 4000px;*/
 }
 
 
@@ -272,7 +277,7 @@ color: #ff9933!important;
 
 
 #logowrap {
-  
+
   flex: 1;
   min-width: 90px;
   max-width: 500px;
@@ -324,7 +329,7 @@ color: #ff9933!important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
    height: 100px;
 
   -webkit-transition: all 0.5s ease-in-out;
@@ -334,7 +339,7 @@ color: #ff9933!important;
 
 
 @media all and (max-width: 850px) {
-  #logowrap { 
+  #logowrap {
 
   background: url('/images/homepage/logocompact.svg') no-repeat center;
   background-color: rgba(255, 255, 255, 0.1);
@@ -342,20 +347,20 @@ color: #ff9933!important;
 
   #navcontainer {
   height: 55px;
-  
+
   }
 
   #logowrap {
   height: 55px;
-  
+
   }
   #navwrap {
   height: 55px;
-  
+
   }
   #loginwrap {
   height: 55px;
-  
+
   }
 }
 
@@ -363,9 +368,9 @@ color: #ff9933!important;
 
 #logoh1text {
   margin:0; padding:0;
-      
+
   }
-#logoh1text span { 
+#logoh1text span {
 
 visibility: hidden;
 
@@ -389,7 +394,7 @@ line-height: 40px;
 #moto h1 {
     font-size: 3.3vw;
     margin-right: 200px;
-    position: relative;  
+    position: relative;
     top: 50%;
   /*  -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -409,27 +414,27 @@ line-height: 40px;
 
 
 @media all and (max-width: 1000px) {
- 
+
   #moto h1 {
-   
+
       font-size: 35px;
        text-align: center;
       margin-right: 0px;
        top: 62%;
-      
+
 
   }
 
   #moto h2 {
-    top: 60%;    
+    top: 60%;
     font-size: 20px;
     margin-right: 0px;
     text-align: center;
   }
 
   .btn-info {
-      top: 65%; 
-      margin-right: auto; 
+      top: 65%;
+      margin-right: auto;
 
     }
 
@@ -439,7 +444,7 @@ line-height: 40px;
 
 .searchimg {
 	padding-right: 15px;
- 
+
 }
 
 .loginimg {
@@ -463,8 +468,8 @@ height: 35px;
   border-radius: 5px;
   z-index: 7;
   position: absolute;
-  
- 
+
+
 }
 
 .verticalhorizontalline {
@@ -478,7 +483,7 @@ height: 35px;
   left: 50%;
   z-index: 10;
 
-    
+
 }
 
 .circle {
@@ -505,26 +510,26 @@ height: 35px;
   top: 0;
   position: fixed;
 }
-    
+
 .navigation {
 
   list-style: none;
-  margin: 0; 
+  margin: 0;
   line-height: 100px;
 
-  
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;  
+  display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
 
 }
 
 .navigation a {
-  
+
   /*display: block;*/
   padding-left: 20px;
   padding-right: 20px;
@@ -544,29 +549,29 @@ height: 35px;
 .navigation a:hover {
   text-decoration: underline;
   color: white;
-   
+
 }
 
 /*fixed a glitch in IE11 where the bullets reappeared after menu expanded*/
-#navwrap ul { 
+#navwrap ul {
   color: rgba(255, 255, 255, 0);
    }
 
 
-   
+
 
 /*_____________________End Navigation Page________________________________*/
 
 /*_____________________  sub Start Navigation slide in________________________________*/
 
 .glyphicon-align-justify {
-  
+
     display: none;
 }
 
 @media all and (max-width: 1050px) {
   .glyphicon-align-justify {
-  
+
     display: block;
     font-size: 30px;
     color: white;
@@ -581,11 +586,11 @@ height: 35px;
   }
 
   #navwrap {
-     
+
   display: flex;
   align-items: center;
   justify-content: center;
- 
+
   }
 
   .toggle-menu:hover {
@@ -631,7 +636,7 @@ height: 35px;
     height: 100%;
     top: 100px;
     z-index: 1000;
-    overflow: auto; 
+    overflow: auto;
     overflow-y: hidden;
 }
 
@@ -687,7 +692,7 @@ height: 35px;
 
 .cbp-spmenu-horizontal a {
     float: left;
-    
+
     padding: 0.8em;
     border-left: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -699,12 +704,12 @@ height: 35px;
 .navtopslider {
   height: 100%;
   list-style: none;
-      
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
- 
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -727,12 +732,12 @@ height: 35px;
 @media all and (max-width: 850px) {
 
     .cbp-spmenu-top.menu-open {
-    
+
     top: 55px;
     }
 
     .cbp-spmenu-horizontal {
-   
+
     height: 55px;
 
     }
@@ -746,8 +751,8 @@ height: 35px;
 /*_____________________ Start Navigation fixed top________________________________*/
 
 .sticky {
-    
-    
+
+
 
 }
 
@@ -776,7 +781,7 @@ height: 35px;
     background:radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
 }
 
- 
+
 
 
 
@@ -822,13 +827,13 @@ height: 100%;
     left: 0;
     bottom: 0;
     z-index: 8
-    
+
 }
 
 
 
 .aboutcontentwrap {
-  
+
   height: 100%;
   z-index: 9;
   margin-top: 50px;
@@ -838,17 +843,17 @@ height: 100%;
 .aboutcontentwrap p {
     position: absolute;
     bottom: 150px;
-    left: 0;   
+    left: 0;
     margin-left: 20px;
-    
+
 
 }
 
 .aboutcontentwrap h1 {
-  
+
     position: absolute;
     bottom: 450px;
-    left: 0;   
+    left: 0;
 
 }
 
@@ -863,14 +868,14 @@ height: 100%;
 
 
 @media all and (max-width: 1000px) {
-.portraitimg { 
+.portraitimg {
     width: 85%;
   }
 
   .aboutcontentwrap p {
 
       position: relative;
-      
+
     }
 
      .aboutcontentwrap  {
@@ -878,13 +883,13 @@ height: 100%;
 
       height: auto;
       margin-bottom: 250px;
-      
+
     }
 
 
 
   .aboutcontentwrap p {
-    text-align: center; 
+    text-align: center;
     top: 120px;
     left: 0;
     width: 100%;
@@ -902,9 +907,9 @@ height: 100%;
   }
 
   .aboutcontentwrap {
-    margin-right: 0px; 
+    margin-right: 0px;
 
-  }  
+  }
 
   .verticalline {
 
@@ -920,7 +925,7 @@ height: 100%;
 
 @media all and (max-width: 750px) {
 
-  .portraitimg { 
+  .portraitimg {
     width: 100%;
   }
 
@@ -949,7 +954,7 @@ height: 100%;
   margin-bottom: 75px;
 }
 
-#services h2 { 
+#services h2 {
 
 }
 
@@ -1060,7 +1065,7 @@ z-index: 8;
 }
 
 .centerform{
-  
+
   width: 80%;
   margin-right: auto;
   margin-left: auto;
@@ -1075,7 +1080,7 @@ label {
     width: 100%;
     margin-bottom: 25px;
 
-    
+
 }
 
 input[type="text"],input[type="email"],input[type="password"] {
@@ -1084,8 +1089,8 @@ input[type="text"],input[type="email"],input[type="password"] {
   float: right;
   padding: 5px;
     margin-top: -25px;
-    display:inline-block; 
-   
+    display:inline-block;
+
     width: 65%;
     max-width: 550px;
     height: 35px;
@@ -1097,7 +1102,7 @@ input[type="text"],input[type="email"],input[type="password"] {
   -moz-border-radius: 5px;
 
 
-  
+
 
 }
 
@@ -1112,8 +1117,8 @@ textarea {
   font-size: 17px;
   font-family:raleway, "Book Antiqua", Palatino, serif;
   padding: 10px 5px 10px 5px;
-    display:inline-block; 
-    
+    display:inline-block;
+
     float: right;
     margin-top: -25px;
     width: 65%;
@@ -1125,7 +1130,7 @@ textarea {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  
+
 
 
 
@@ -1133,9 +1138,9 @@ textarea {
 }
 
 /*.btn-default{
-   display:inline-block; 
-   
- 
+   display:inline-block;
+
+
   height: 40px;
   width: 100px;
   font-size: 15px;
@@ -1152,7 +1157,7 @@ textarea {
 
   background-color: #702424;
   color: white;
-  
+
 
 }*/
 
@@ -1175,7 +1180,7 @@ border: 1px solid #8c3b0e;
   transition: all 0.6s ease;
   margin-top: 20px;
 
-  
+
 }
 
 .btn-default:hover {
@@ -1194,7 +1199,7 @@ border: 1px solid #d87b27;
        -moz-transition: all 0.6s ease;
             transition: all 0.6s ease;
 margin-top: 20px;
-  
+
 }
 
 
@@ -1202,7 +1207,7 @@ input:focus,
 textarea:focus {
   border: 1px solid #ff9933;
   box-shadow: 0 0 5px rgba(112, 36, 36, 1);
-  
+
 
 -webkit-transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
@@ -1219,18 +1224,18 @@ textarea:focus {
 @media only screen and (max-width: 1200px)
  {
   input[type="text"],input[type="email"],input[type="password"], textarea {
-  
-      width: 100%; 
+
+      width: 100%;
       margin-top: 5px;
 
   }
 
   .btn-default{
 
-    
+
   }
 
-  
+
 }
 
 @media all and (max-width: 1000px) {
