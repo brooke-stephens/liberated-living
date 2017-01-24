@@ -6,12 +6,13 @@
 
 
 		<div id="moto">
-			<h3>Nutrition, Counseling. Feel Good.</h3>
+			<h2>Nutrition, Counseling. Feel Good.</h2>
 			<h1>Shake what your momma gave ya!</h1>		
-
+			<a class="btn btn-info center-block"  href="#" role="button">Check out our videos!</a>
 		</div>
 
 
 	</div>	<!-- end header -->
-
+<div style="clear:both"></div>
 </section>
+

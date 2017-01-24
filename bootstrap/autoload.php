@@ -32,3 +32,6 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+//this was added to get the email function to work with the vagrant box
+ini_set('xdebug.max_nesting_level', 150);

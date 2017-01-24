@@ -2,24 +2,30 @@
   
 				  <div class="flexi">
 
-					  <div id="logowrap" class="ttt">
-					  	<h1 id="logoh1text"><span>Liberated Living</span></h1>
-
-					  </div>
+					   
+						  
+						  <div id="logowrap">
+							 <a href="#section-1" onclick="$('#section-1').animatescroll();return false;">
+							  		<div>
+							  		<h1 id="logoh1text"><span>Liberated Living</span></h1>
+									</div>
+								</a>
+						  </div> <!-- end logowrap -->
+					  <!-- </a> -->
 
 				  
 					  <div id="navwrap">
 					  <!--  	<h4 class="toggle-menu menu-left">Menu</a></h4> -->
 					  <!-- <li><a class="toggle-menu menu-top">Services</a></li> -->
 					  <!-- <span class="glyphicon glyphicon-align-justify" id="trigger" aria-hidden="true"></span> -->
-					  <span class="glyphicon glyphicon-align-justify toggle-menu menu-left" aria-hidden="true"></span>
+					  <!-- <li><a href="#section-3" onclick="$('#section-3').animatescroll({padding:200});return false;">Services</a></li> -->
+					  <span class="glyphicon glyphicon-align-justify toggle-menu menu-top" aria-hidden="true"></span>
 
 					  	<ul class="navigation" >
-					  		<li><a href="#section-1" onclick="$('#section-1').animatescroll();return false;">Home</a></li>
 							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
-							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;" class="toggle-menu menu-top">Services</a></li>
-							<li><a href="#section-3" >WorkShops</a></li>
-							<li><a href="#">Contact</a></li>	
+							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
+							<li><a href="#section-4" onclick="$('#section-5').animatescroll();return false;">Testimonials</a></li>
+							<li><a href="#section-5" onclick="$('#section-5').animatescroll();return false;">Contact</a></li>
 						</ul>
 
 					  </div>
@@ -29,84 +35,27 @@
 
 						  	<span class="glyphicon glyphicon-search searchimg" aria-hidden="true"></span>
 
-							<img class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
+							<img type="button" data-toggle="modal" data-target="#myModal" class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
 						  
 						  </div>
 
 					</div><!-- end flexi -->
 
-				
 
-			<!-- slide in menu Wrapper from left -->
-			<div class="mp-pusher" id="mp-pusher">
-
-				<!-- mp-menu -->
-				<nav id="mp-menu" class="mp-menu">
-					<div class="mp-level">
-						<h2>All Categories</h2>
-						<ul>
-							
-							<li>
-								<a href="#">About</a>						
-							</li>
-							<li>
-								<a  href="#">Services</a>
-								<div class="mp-level">
-									<h2>Store</h2>
-									<a class="mp-back" href="#">back</a>
-									<ul>
-										<li>
-											<a href="#section-3">Services Overview</a>											
-										</li>
-										<li>
-											<a href="#">Reiki & Energy work</a>											
-										</li>
-										<li>
-											<a href="#">Live Blood Analysis</a>
-										</li>
-										<li>
-											<a href="#">Tongue Diagnosis</a>
-										</li>
-										<li>
-											<a href="#">Wisdom and Counseling</a>
-										</li>
-										<li>
-											<a href="#">Nutrition Counseltations</a>
-										</li>
-
-									</ul>
-								</div>
-							</li>
-							<li><a  href="#">WorkShops</a></li>
-							<li><a  href="#">Contact</a></li>
-						</ul>
-							
-					</div>
-				</nav>
-				<!-- /mp-menu -->
-
-			</div><!-- /pusher -->
-
-		
-		  <!-- Left slide menu element-->
-			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
-
-						<!-- <h3>Menu</h3> -->
-				<a href="#">About</a>
-				<a href="#">Services</a>
-				<a href="#">Work Shops</a>
-				<a href="#">Contact</a>
-			</nav>
 
 		
 		<!-- Top slide in menu element-->
-		<!-- <nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
-		    <a href="tst">Reiki & Energy work</a>
-		    <a href="#">Live Blood Analysis</a>
-		    <a href="#">Tongue Diagnosis</a>
-		    <a href="#">Wisdom and Counseling</a>
-		    <a href="#">Nutrition Counseltations</a>
+	
+		<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
+		  	<ul class="navtopslider" >
+				<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
+				<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
+				<li><a href="#section-4" onclick="$('#section-5').animatescroll();return false;">Tesimonials</a></li>
+				<li><a href="#section-5" onclick="$('#section-5').animatescroll();return false;">Contact</a></li>
+			</ul>
 		    
-		</nav> -->
-
+		</nav>
+	
+		
 </div> <!-- end navcontainer -->
+

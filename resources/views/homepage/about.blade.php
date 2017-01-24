@@ -1,11 +1,9 @@
-<section id="section-2">
+<section>
 
 <div id="aboutsection">
 
 
-		<div class="circle">
-			<h4>Scroll</h4>
-		</div>
+		<div class="circle"></div>
 
 		<div class="verticalline aboutline"></div>
 		
@@ -16,11 +14,14 @@
 	    <div class="row row-centered portraitwrapcon">
 
 	        <div class="col-md-6 col-centered portraitwrap">
+
 	        	<img class="portraitimg" src="/images/homepage/portraitwhite.jpg">
+
 	        </div>
 
 	        <div class="bottom-align-text col-md-6 aboutcontentwrap pull-left">
-	        		<h2>About <span style="color: #ff9933;">Liberated Living</span></h2>
+	        		<a id="section-2"></a>
+	        		<h1>About <span style="color: #ff9933;">Liberated Living</span></h1>
 	        		<p>
 	        			Liberated Living offers nutrition consultations, live blood cell microscopy, breakthrough coaching, reiki, Intuitive Counseling, raw food and vegetarian cooking classes as well as seminars for individuals and businesses. 
 	        		<br><br>
@@ -33,5 +34,5 @@
 
 </div>
 	
-
+<div style="clear:both"></div>
 </section>
