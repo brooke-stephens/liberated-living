@@ -15,15 +15,14 @@
 			@include('homepage.services')
 		</div>
 
-		<!-- <div id="testimonials">
-			
-		</div> -->
+		<div id="testimonials">
+			@include('homepage.testimonials')
+		</div>
 
-		<div id="services">
+		<div id="contact">
 			@include('homepage.contact')
 		</div>
 
-		
 		<div id="footer">
 			@include('partials.footer')
 		</div>
@@ -31,4 +30,4 @@
 	</div>
 	
 
-@section('content')
+@end

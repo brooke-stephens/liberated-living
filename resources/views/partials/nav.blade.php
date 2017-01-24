@@ -24,7 +24,7 @@
 					  	<ul class="navigation" >
 							<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
 							<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
-							<li><a href="#section-4" >Testimonials</a></li>
+							<li><a href="#section-4" onclick="$('#section-5').animatescroll();return false;">Testimonials</a></li>
 							<li><a href="#section-5" onclick="$('#section-5').animatescroll();return false;">Contact</a></li>
 						</ul>
 
@@ -50,7 +50,7 @@
 		  	<ul class="navtopslider" >
 				<li><a href="#section-2" onclick="$('#section-2').animatescroll();return false;">About</a></li>
 				<li><a href="#section-3" onclick="$('#section-3').animatescroll();return false;">Services</a></li>
-				<li><a href="#section-3" >WorkShops</a></li>
+				<li><a href="#section-4" onclick="$('#section-5').animatescroll();return false;">Tesimonials</a></li>
 				<li><a href="#section-5" onclick="$('#section-5').animatescroll();return false;">Contact</a></li>
 			</ul>
 		    

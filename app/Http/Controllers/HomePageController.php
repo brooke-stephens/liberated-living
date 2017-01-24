@@ -68,10 +68,10 @@ class HomePageController extends Controller
        	'sitename' 	=> "liberatedliving.ca",
        	'message'   => $request->message,
        	'emailto'	=> 'mark2002david@hotmail.com',
-    	'emailfrom' => $request->email,
-    	'Namefrom'	=> $request->name,
-    	'subject'	=> 'Liberated Living contact form submission',
-    	'body' 		=> $request->message,
+    	  'emailfrom' => $request->email,
+    	  'Namefrom'	=> $request->name,
+    	  'subject'	=> 'Liberated Living contact form submission',
+    	  'body' 		=> $request->message,
   		  ];
 
   		// where the email layout file is --- the data being sent to the view 

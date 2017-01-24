@@ -1024,6 +1024,19 @@ z-index: 8;
 }
 
 
+/* ------------------------------testimonials fold --------------------*/
+
+#testimonialsfold {
+
+  background-color: red;
+  /*padding-top: 100px;*/
+  height: 1050px;
+}
+
+/* ------------------------------end testimonials --------------------*/
+
+
+
 /* ------------------------------Contact fold and forms --------------------*/
 
 .contacterrors {
@@ -1232,7 +1245,7 @@ textarea:focus {
 
 
 
-/* ------------------------------End forms --------------------*/
+/* ------------------------------End contact and forms --------------------*/
 
 /* ------------------------------scrolling fixes --------------------*/
 
