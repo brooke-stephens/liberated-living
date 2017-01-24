@@ -4,6 +4,7 @@
 $screen-lg-min: 1200px;
 $screen-md-min: 992px;
 $screen-sm-min: 768px;
+$header-orange: #ff9933;
 
 
 #navcontainer{
@@ -32,7 +33,11 @@ main {
 	  font-family:sacramento, "Book Antiqua", Palatino, serif;
 		font-size: 70px;
 		margin-bottom: 5px;
+		.header-orange {
+			color: $header-orange;
+		}
 	}
+
 
 	h3 {
 		margin-bottom: 20px;

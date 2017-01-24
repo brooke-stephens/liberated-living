@@ -11,7 +11,7 @@
 		<main class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Live blood analysis</h2>
+					<h2>Live <span class="header-orange">blood analysis</span></h2>
 					<h3>The cells of the blood are observed on a video monitor by both the practitioner and client.</h3>
 					<br>
 				</div>
@@ -34,13 +34,16 @@
 					<li>Dietary, Lifestyle &amp; Supplement Suggestions</li>
 					</ul>
 
-					<p>
-						Practitioner: Susan Stephens
-						<br>$150 for 1.5 hours
-					</p>
+					<hr>
 
+					<div class="text-center">
+						<p>
+							<strong>Practitioner: Susan Stephens</strong>
+							<br>$150 for 1.5 hours
+						</p>
 
-					<a href="" class="btn btn-primary">Book an appointment</a>
+						<a href="/#section-5" onclick="$('#section-5').animatescroll();return false;" class="btn btn-primary">Book an appointment</a>
+					</div>
 				</div>
 			</div>
 			<div class="row">
