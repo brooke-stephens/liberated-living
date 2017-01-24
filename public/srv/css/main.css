@@ -950,6 +950,10 @@ height: 100%;
 
 /*_____________________ starting services section  ________________________________*/
 
+#services {
+
+  margin-bottom: 150px;
+}
 
 .servicetitle {
 
@@ -1034,11 +1038,12 @@ z-index: 8;
 /* ------------------------------testimonials fold --------------------*/
 
 #testimonialsfold {
-  background-color: #4d727a;
+  /*background-color: #878787;*/
   /*padding-top: 100px;*/
-  height: 750px;
+  height: 800px;
   margin-top: 50px;
-
+  background: url('/images/homepage/testimonialbackground.jpg');
+  
 
 }
 
@@ -1046,7 +1051,7 @@ z-index: 8;
   position: relative;
  /* background-color: blue;*/
   width: 100%;
-  height: 750px;
+  height: 800px;
 
 }
 
@@ -1100,7 +1105,7 @@ z-index: 8;
 
 .testimonial-hr {
   width:150px;
-  background-color: #275256;
+  background-color: #cccccc;
    height: 1px;
    border: 0;
 }
@@ -1111,7 +1116,7 @@ position: relative;
 top:0px;
 font-size: 140px;
 height: 50px;
-color: #275256;
+color: #cccccc;
 margin-right: 10px;
 
 }
@@ -1121,7 +1126,7 @@ margin-right: 10px;
 position: relative;
 top:0px;
 font-size: 140px;
-color: #275256;
+color: #cccccc;
 margin-right: 10px;
 
 }
@@ -1131,7 +1136,7 @@ margin-right: 10px;
   height: 0;
   border-left: 70px solid transparent;
   border-right: 70px solid transparent;
-  border-top: 70px solid #4d727a;
+  border-top: 70px solid #5c5c5c;
   margin: auto;
   margin-bottom:100px;
 }
