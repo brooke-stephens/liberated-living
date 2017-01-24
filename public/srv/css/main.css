@@ -1032,11 +1032,111 @@ z-index: 8;
 /* ------------------------------testimonials fold --------------------*/
 
 #testimonialsfold {
-
-  background-color: red;
+  background-color: #4d727a;
   /*padding-top: 100px;*/
-  height: 1050px;
+  height: 750px;
+  margin-top: 50px;
+
+
 }
+
+.testimonials-container{
+  position: relative;
+ /* background-color: blue;*/
+  width: 100%;
+  height: 750px;
+  
+}
+
+.testimonials-inner-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;
+  height: 650px;
+
+  /*background-color: red;*/
+
+
+}
+
+.testimonial-image{
+
+  margin-bottom: 20px;
+}
+
+.quotewrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-content{
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.testimonial-content p {
+  font-family:satisfy, "Book Antiqua", Palatino, serif;
+  font-size: 28px;
+  line-height: 33px;
+  color: #ffffff;
+
+}
+
+.author {
+  color:#ff9833;
+  font-weight: bold;
+}
+
+.author-job {
+  color:#ff9833;
+}
+
+
+.testimonial-hr {
+  width:150px;
+  background-color: #275256;
+   height: 1px;
+   border: 0;
+}
+
+.quote-top {
+font-family:satisfy, "Book Antiqua", Palatino, serif; 
+position: relative;
+top:0px;
+font-size: 140px;
+height: 50px;
+color: #275256;
+margin-right: 10px;
+
+}
+
+.quote-bottom {
+ font-family:satisfy, "Book Antiqua", Palatino, serif; 
+position: relative;
+top:0px;
+font-size: 140px;
+color: #275256;
+margin-right: 10px;
+
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 70px solid #4d727a;
+  margin: auto;
+  margin-bottom:100px;
+}
+
+
+
+
 
 /* ------------------------------end testimonials --------------------*/
 
