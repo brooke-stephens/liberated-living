@@ -35,7 +35,7 @@
 
 						  	<span class="glyphicon glyphicon-search searchimg" aria-hidden="true"></span>
 
-							<img class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
+							<img type="button" data-toggle="modal" data-target="#myModal" class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
 						  
 						  </div>
 
@@ -58,3 +58,4 @@
 	
 		
 </div> <!-- end navcontainer -->
+

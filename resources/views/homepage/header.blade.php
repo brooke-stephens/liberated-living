@@ -13,5 +13,6 @@
 
 
 	</div>	<!-- end header -->
-
+<div style="clear:both"></div>
 </section>
+
