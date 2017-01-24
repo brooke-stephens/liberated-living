@@ -22,11 +22,7 @@ Route::get('/', 'HomePageController@index');
 Route::post('/','HomePageController@isCaptchaValid');
 
 Route::get('/services/one-on-one/live-blood-analysis/', function(){
-
-	// echo "string";
-
 	return view('services.livebloodanalysis');
-
 });
 
 
