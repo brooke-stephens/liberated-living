@@ -11,10 +11,10 @@
 			
 			<div class="col-md-12 testimonials-container text-center">
 
-				<h1 class="text-center">Testimonials</h1>
-			
-
+	
 				<div class="testimonials-inner-container text-center">
+
+					<h1 class="text-center">Testimonials</h1>	
 
 					<img class="testimonial-image" src="{{ URL::to('/images/homepage/testimonialsusan.png' )}}">
 
