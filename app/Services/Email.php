@@ -34,7 +34,7 @@ class Email {
 
 			// return redirect('/')
 			// Redirect::to('/')->send();
-			return Redirect::to("/#section-5")->send()
+			return Redirect::to("/#contact-me")->send()
 				->withInput($request->input())
 				->withErrors($this->messages);
 		} else {

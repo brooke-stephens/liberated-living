@@ -20,7 +20,7 @@
 	        </div>
 
 	        <div class="bottom-align-text col-md-6 aboutcontentwrap pull-left">
-	        		<a id="section-2"></a>
+	        		<a id="about-me"></a>
 	        		<h1>About <span style="color: #ff9933;">Liberated Living</span></h1>
 	        		<p>
 	        			Liberated Living offers nutrition consultations, live blood cell microscopy, breakthrough coaching, reiki, Intuitive Counseling, raw food and vegetarian cooking classes as well as seminars for individuals and businesses. 

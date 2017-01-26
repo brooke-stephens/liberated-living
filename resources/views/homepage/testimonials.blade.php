@@ -13,7 +13,7 @@
 
 	
 				<div class="testimonials-inner-container text-center">
-
+					<a id="my-testimonials"></a>
 					<h1 class="text-center">Testimonials</h1>	
 
 					<img class="testimonial-image" src="{{ URL::to('/images/homepage/testimonialsusan.png' )}}">

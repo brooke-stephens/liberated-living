@@ -6,7 +6,7 @@
 			<div class="row row-centered text-center">
 
 				<div class="col-md-12 servicetitle">
-					<a id="section-3"></a>
+					<a id="my-services"></a>
 					<h1>My <span style="color: #ff9933;">Services</h1>
 
 				</div>
