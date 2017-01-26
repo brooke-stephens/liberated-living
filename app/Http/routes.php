@@ -19,7 +19,7 @@ Route::auth();
 
 Route::get('/', 'HomePageController@index');
 
-Route::post('/','HomePageController@isCaptchaValid');
+Route::post('/','HomePageController@postIndex');
 
 Route::get('/services/one-on-one/live-blood-analysis/', function(){
 	return view('services.livebloodanalysis');

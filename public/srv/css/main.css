@@ -172,6 +172,10 @@ border: 1px solid #d87b27;
   webkit-transition: all 0.6s ease;
        -moz-transition: all 0.6s ease;
             transition: all 0.6s ease;
+/*  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -65%);*/
 }
 
 .btn-primary:hover {
@@ -963,26 +967,21 @@ height: 100%;
 }
 
 
-.leftservicebox {
+.servicebox {
 
   max-width: 350px;
   min-width: 280px;
   height: 400px;
   margin: 0px auto;
-
 
 /*  opacity: 0;*/
 }
 
-.rightservicebox {
-
-  max-width: 350px;
-  min-width: 280px;
-  height: 400px;
-  margin: 0px auto;
-  /*margin-top: 75px;*/
-
+.titlewrapper{
+width: 100%;
+height: 75px;
 }
+
 
 .serviceicon {
 
@@ -1001,11 +1000,11 @@ height: 100%;
 }
 
 @media all and (max-width: 1000px) {
-  .servicesline{
-
-  height: 0px;
-  }
-
+ 
+.titlewrapper{
+width: 100%;
+height: auto;
+}
 
 }
 
