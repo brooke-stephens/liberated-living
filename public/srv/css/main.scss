@@ -1,0 +1,1437 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	/*font: inherit;*/
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ul.navigation {
+	list-style: none;
+}
+
+ul {
+  margin-left: 40px;
+}
+
+
+.container ul li {
+  line-height: 23px;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+div.vertical-line{
+  width: 5px; /* Line width */
+  background-color: black; /* Line color */
+  /* Override in-line if you want specific height. */
+  float: left; /* Causes the line to float to left of content.
+    You can instead use position:absolute or display:inline-block
+    if this fits better with your design */
+  border-radius: 15px;
+  opacity:0;
+}
+
+/*___________________end css reset__________________________________*/
+
+/*___________________Main Colours__________________________________*/
+
+$orange:#ff9933;
+$darkorange:#ab4e12;
+
+/*___________________end  Colours__________________________________*/
+
+/*___________________start fonts styling  __________________________________*/
+
+@font-face {
+
+    font-family: 'raleway';
+    src: url('/fonts/Raleway.eot');
+    src: url('/fonts/Raleway.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/Raleway.woff') format('woff'),
+         url('/fonts/Raleway.ttf') format('truetype');
+
+         /*font-family:raleway, "Book Antiqua", Palatino, serif;*/
+}
+
+@font-face {
+
+    font-family: 'sacramento';
+    src: url('/fonts/SacramentoRegular.eot');
+    src: url('/fonts/SacramentoRegular.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/SacramentoRegular.woff') format('woff'),
+         url('/fonts/SacramentoRegular.ttf') format('truetype');
+
+         /*font-family:sacramento, "Book Antiqua", Palatino, serif;*/
+}
+
+
+@font-face {
+
+    font-family: 'satisfy';
+    src: url('/fonts/Satisfy.eot');
+    src: url('/fonts/Satisfy.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/Satisfy.woff') format('woff'),
+         url('/fonts/Satisfy.ttf') format('truetype');
+
+         /*font-family:satisfy, "Book Antiqua", Palatino, serif;*/
+}
+
+@font-face {
+
+    font-family: 'fred';
+    src: url('/fonts/fredrickthegreat.eot');
+    src: url('/fonts/fredrickthegreat.eot?#iefix')
+             format('embedded-opentype'),
+         url('/fonts/fredrickthegreat.woff') format('woff'),
+         url('/fonts/fredrickthegreat.ttf') format('truetype');
+
+         /*font-family:fred, "Book Antiqua", Palatino, serif;*/
+}
+
+body {
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+
+}
+
+a {
+  font-size: 17px;
+
+}
+
+p {
+
+  line-height: 23px;
+  font-size: 17px;
+
+}
+
+
+h1 {
+  font-family:sacramento, "Book Antiqua", Palatino, serif;
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+/*services buttons*/
+.btn-primary {
+font-size: 17px;
+font-family:raleway, "Book Antiqua", Palatino, serif;
+margin: 15px auto;
+background-color: $orange;
+border: 1px solid #d87b27;
+  webkit-transition: all 0.6s ease;
+       -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+/*  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -65%);*/
+}
+
+.btn-primary:hover {
+font-size: 17px;
+font-family:raleway, "Book Antiqua", Palatino, serif;
+margin: 15px auto;
+background-color: $darkorange;
+border: 1px solid #8c3b0e;
+  webkit-transition: all 0.6s ease;
+       -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+}
+
+/*header button*/
+.btn-info {
+ position: relative;
+ margin-right: 250px;
+ top: 54%;
+
+ font-size: 16px;
+ font-family:raleway, "Book Antiqua", Palatino, serif;
+ border:1px solid white;
+ background-color: rgba(255, 255, 255, 0);
+ width: 200px;
+ border-radius: 3px;
+ height: 45px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+}
+
+.btn-info:hover {
+ font-size: 16px;
+ font-family:raleway, "Book Antiqua", Palatino, serif;
+ border:1px solid white;
+ background-color: rgba(255, 153, 51, 0);
+ width: 200px;
+ border-radius: 3px;
+ height: 45px;
+color: $orange;
+
+ }
+
+ .btn-info:focus {
+background-color: rgba(255, 255, 255, 0)!important;
+border:1px solid white!important;
+color: $orange!important;
+}
+
+
+
+
+/*___________________end fonts __________________________________*/
+
+/*_____________________Home Page (header 1st section)________________________________*/
+
+#container{
+  width: 100%;
+	/*height: 4000px;*/
+}
+
+
+
+
+#header{
+	background: url('/images/homepage/wispheader.jpg');
+	width: 100%;
+	height: 100vh;
+
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+
+/*	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;*/
+}
+
+.flexi {
+  display: flex;
+}
+
+
+#navcontainer {
+  width: 100%;
+  height: 100px;
+  z-index: 12;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  /*background-color: rgba(255, 255, 255, 0.1);*/
+
+}
+
+
+#logowrap {
+
+  flex: 1;
+  min-width: 90px;
+  max-width: 500px;
+  height: 100px;
+  display: inline-block;
+
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background-image 1s ease-in-out;
+
+  background: url('/images/homepage/logo.svg') no-repeat center;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+
+  line-height: 100px;
+  font-size: 2.6vw;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+
+
+
+}
+
+#navwrap {
+  width: 55%;
+  min-width: 100px;
+  flex: 1;
+  display: inline-block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  height: 100px;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+}
+#loginwrap {
+  width: 10%;
+  min-width: 90px;
+  max-width: 125px;
+  display: inline-block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   height: 100px;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+
+@media all and (max-width: 850px) {
+  #logowrap {
+
+  background: url('/images/homepage/logocompact.svg') no-repeat center;
+  background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  #navcontainer {
+  height: 55px;
+
+  }
+
+  #logowrap {
+  height: 55px;
+
+  }
+  #navwrap {
+  height: 55px;
+
+  }
+  #loginwrap {
+  height: 55px;
+
+  }
+}
+
+
+
+#logoh1text {
+  margin:0; padding:0;
+
+  }
+#logoh1text span {
+
+visibility: hidden;
+
+   }
+
+
+#moto {
+
+/*margin-top: 300px;
+margin-left: 48%;*/
+width: 100%;
+color: white;
+height: 100%;
+text-align: right;
+line-height: 40px;
+
+
+
+}
+
+#moto h1 {
+    font-size: 3.3vw;
+    margin-right: 200px;
+    position: relative;
+    top: 50%;
+  /*  -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+*/
+
+}
+
+#moto h2 {
+
+   margin-right: 250px;
+   position: relative;
+     top: 49%;
+}
+
+
+
+
+@media all and (max-width: 1000px) {
+
+  #moto h1 {
+
+      font-size: 35px;
+       text-align: center;
+      margin-right: 0px;
+       top: 62%;
+
+
+  }
+
+  #moto h2 {
+    top: 60%;
+    font-size: 20px;
+    margin-right: 0px;
+    text-align: center;
+  }
+
+  .btn-info {
+      top: 65%;
+      margin-right: auto;
+
+    }
+
+
+}
+
+
+.searchimg {
+	padding-right: 15px;
+
+}
+
+.loginimg {
+
+height: 35px;
+
+}
+
+.glyphicon-search {
+  font-size: 32px;
+  color: #cccccc;
+}
+
+.verticalline {
+
+  background-color: $orange;
+  height: 360px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  border-radius: 5px;
+  z-index: 7;
+  position: absolute;
+
+
+}
+
+.verticalhorizontalline {
+
+  border-left:2px $orange solid;
+  border-bottom:2px $orange solid;
+  height: 475px;
+  width: 150px;
+  border-bottom-left-radius: 50px;
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+
+
+}
+
+.circle {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    border: 2px solid $orange;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    margin:0px auto;
+    position: relative;
+    bottom: -25px;
+     z-index: 11;
+ }
+
+
+
+/*_____________________End Home Page________________________________*/
+
+
+/*_____________________ Navigation menu start________________________________*/
+
+#navcontainer{
+  top: 0;
+  position: fixed;
+}
+
+.navigation {
+
+  list-style: none;
+  margin: 0;
+  line-height: 100px;
+
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+
+  padding-right: 15px;
+}
+
+.navigation a {
+
+  /*display: block;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  list-style:none !important;
+
+
+}
+
+.navigation li {
+	display: inline-block;
+  text-decoration: none;
+
+}
+
+
+.navigation a:hover {
+  text-decoration: underline;
+  color: white;
+
+}
+
+/*fixed a glitch in IE11 where the bullets reappeared after menu expanded*/
+#navwrap ul {
+  color: rgba(255, 255, 255, 0);
+   }
+
+
+
+
+/*_____________________End Navigation Page________________________________*/
+
+/*_____________________  sub Start Navigation slide in________________________________*/
+
+.glyphicon-align-justify {
+
+    display: none;
+}
+
+@media all and (max-width: 1050px) {
+  .glyphicon-align-justify {
+
+    display: block;
+    font-size: 30px;
+    color: white;
+
+    }
+
+  .navigation {
+    display: none;
+    list-style: none;
+    text-decoration: none;
+
+  }
+
+  #navwrap {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+
+  .toggle-menu:hover {
+    cursor: pointer;
+  }
+
+
+
+}
+
+
+
+/* General styles for  menu */
+.cbp-spmenu {
+    background-color: rgba(171, 78, 18, 0.9);
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+    position: fixed;
+   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+}
+
+.cbp-spmenu a {
+    display: block;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #ffffff;
+
+}
+
+.cbp-spmenu a:hover {
+   /* background-color: rgba(255, 255, 255, 0.7);*/
+    
+}
+
+.cbp-spmenu a:active {
+    background: #afdefa;
+    color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+    width: 240px;
+    height: 100%;
+    top: 100px;
+    z-index: 1000;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.cbp-spmenu-vertical a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    /*padding: 1em;*/
+
+}
+
+
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+    left: -240px;
+}
+
+
+.cbp-spmenu-left.menu-open {
+    left: 0px;
+}
+
+
+/* Transitions */
+.cbp-spmenu,
+.push-body {
+
+    -webkit-transition: all 0.3s ease;
+       -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+}
+
+/* top menu */
+
+
+.cbp-spmenu-vertical a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    /*padding: 1em;text-align:center*/
+}
+
+.cbp-spmenu-horizontal {
+    width: 100%;
+    height:70px;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+    /*height: 100%;*/
+    /*width: 20%;*/
+    
+}
+
+.cbp-spmenu-horizontal a {
+    padding: 0.8em;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cbp-spmenu-horizontal li:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.navtopslider {
+  height: 100%;
+  list-style: none;
+  margin-left: 0;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+    top: -70px;
+
+}
+
+.cbp-spmenu-top.menu-open {
+    top: 100px;
+}
+
+@media all and (max-width: 850px) {
+
+    .navtopslider {
+
+    display: flex;  
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 0px;
+
+
+
+}
+
+    .cbp-spmenu-top.menu-open {
+
+    top: 55px;
+    }
+
+
+    .cbp-spmenu-top {
+    top: -180px;
+
+    }
+
+    .cbp-spmenu-horizontal {
+
+    height: 180px;
+
+    }
+
+     .cbp-spmenu-horizontal li {
+        
+
+    }
+
+    .cbp-spmenu-horizontal a {
+      border-left:none;
+    }
+
+    .cbp-spmenu-horizontal li:last-child {
+        border-right:none;
+
+    }
+
+
+}
+
+
+
+/*_____________________ end Navigation slide in________________________________*/
+
+/*_____________________ Start Navigation fixed top________________________________*/
+
+.sticky {
+
+
+
+}
+
+
+.stickytopstyle{
+  /*background-color: #AB4E01;*/
+  background-color: rgba(171, 78, 18, .9)!important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+/*==================================================
+ * Drop shadow effect with box-shadow
+ * ===============================================*/
+.stickytopstyle:after{
+ content:"";
+    position:absolute;
+    z-index:-1;
+    top:100%;
+    bottom:0;
+    width:120%;
+    height:15px;
+    left:-42%;
+    right:-10%;
+    background:-webkit-radial-gradient(50% -3%, ellipse cover, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+    background:radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+}
+
+
+
+
+
+
+/*_____________________ end Navigation fixed top________________________________*/
+
+
+/*_____________________ starting about section  ________________________________*/
+
+
+
+
+
+#aboutsection {
+  height: 1025px;
+  border-bottom: 1px solid $orange;
+  margin-bottom: 100px;
+
+
+}
+
+.inneraboutsec {
+  height: 100%;
+  margin-top: -25px;
+}
+
+.portraitwrapcon{
+
+height: 100%;
+}
+
+
+.portraitwrap {
+  height: 100%;
+
+}
+
+.portraitimg {
+
+  width: 650px;
+  display: block;
+  position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 8
+
+}
+
+
+
+.aboutcontentwrap {
+
+  height: 100%;
+  z-index: 9;
+  margin-top: 50px;
+
+}
+
+.aboutcontentwrap p {
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    margin-left: 20px;
+
+
+}
+
+.aboutcontentwrap h1 {
+
+    position: absolute;
+    bottom: 450px;
+    left: 0;
+
+}
+
+
+
+.aboutline {
+
+    bottom:-415px;
+    visibility: hidden;
+}
+
+
+
+@media all and (max-width: 1000px) {
+.portraitimg {
+    width: 85%;
+  }
+
+  .aboutcontentwrap p {
+
+      position: relative;
+
+    }
+
+     .aboutcontentwrap  {
+
+
+      height: auto;
+      margin-bottom: 250px;
+
+    }
+
+
+
+  .aboutcontentwrap p {
+    text-align: center;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 0px;
+  }
+
+  .aboutcontentwrap h1 {
+    text-align: center;
+    top:0;
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .aboutcontentwrap {
+    margin-right: 0px;
+
+  }
+
+  .verticalline {
+
+  visibility: visible;
+  }
+
+  .verticalhorizontalline {
+    visibility: hidden;
+
+  }
+
+}
+
+@media all and (max-width: 750px) {
+
+  .portraitimg {
+    width: 100%;
+  }
+
+  #aboutsection {
+    height: 750px;
+  }
+
+    .verticalline {
+
+  visibility: visible;
+  }
+
+
+
+}
+
+/*_____________________ end about section ________________________________*/
+
+
+
+/*_____________________ starting services section  ________________________________*/
+
+#services {
+
+  margin-bottom: 100px;
+}
+
+.servicetitle {
+  margin-bottom: 75px;
+}
+
+#services h2 {
+
+}
+
+
+.servicebox {
+
+  max-width: 350px;
+  min-width: 280px;
+  height: 400px;
+  margin: 0px auto;
+
+/*  opacity: 0;*/
+}
+
+.titlewrapper{
+width: 100%;
+height: 75px;
+}
+
+
+.serviceicon {
+
+  margin: 20px 0 20px 0;
+
+
+}
+
+.servicesline{
+
+  height: 1600px;
+/*  height: 0px;
+  opacity: 0;
+*/
+
+}
+
+@media all and (max-width: 1000px) {
+ 
+.titlewrapper{
+width: 100%;
+height: auto;
+}
+
+}
+
+.circleicon {
+
+position: absolute;
+left: calc(50% - 14px);
+top: 2250px;
+z-index: 8;
+}
+
+.leftservicebox a:hover, .rightservicebox a:hover {
+  text-decoration: none;
+}
+
+
+/* ------------------------------testimonials fold --------------------*/
+
+#testimonialsfold {
+  
+  /*padding-top: 100px;*/
+  min-height: 825px;
+  margin-top: 50px;
+  background: url('/images/homepage/testimonialbackground.jpg') no-repeat;
+  padding-top: 50px;
+  background-color: #5c5c5c;
+}
+
+.testimonials-container{
+  position: relative;
+  min-height: 825px;
+
+}
+
+.testimonials-inner-container {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  min-height: 650px;
+ 
+}
+
+.testimonials-container h1 {
+  color: #ffffff;
+
+}
+
+
+.testimonial-image{
+
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.quotewrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-content{
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.testimonial-content p {
+  font-family:satisfy, "Book Antiqua", Palatino, serif;
+  font-size: 28px;
+  line-height: 33px;
+  color: #ffffff;
+
+}
+
+.author {
+  color:#ff9833;
+  font-weight: bold;
+}
+
+.author-job {
+  color:#ff9833;
+}
+
+
+.testimonial-hr {
+  width:150px;
+  background-color: #cccccc;
+   height: 1px;
+   border: 0;
+}
+
+.quote-top {
+font-family:satisfy, "Book Antiqua", Palatino, serif;
+position: relative;
+top:0px;
+font-size: 140px;
+height: 50px;
+color: #cccccc;
+margin-right: 10px;
+
+}
+
+.quote-bottom {
+ font-family:satisfy, "Book Antiqua", Palatino, serif;
+position: relative;
+top:0px;
+font-size: 140px;
+color: #cccccc;
+margin-right: 10px;
+
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 70px solid #5c5c5c;
+  margin: auto;
+  margin-bottom:100px;
+}
+
+
+@media all and (max-width: 850px) {
+  .testimonial-hr {
+    width:100px;
+
+  }
+
+  .testimonial-content{
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+
+  .testimonials-container{
+
+  min-height: 1000px;
+
+
+
+}
+
+
+}
+
+
+/* ------------------------------end testimonials --------------------*/
+
+
+
+/* ------------------------------Contact fold and forms --------------------*/
+
+.contacterrors {
+    font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  background-color: rgba(171, 78, 18, 0.9);
+  line-height: 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  min-height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding:10px 10px 10px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+    width: 60%;
+    color: white;
+    font-weight: bold;
+
+}
+
+.centerform{
+
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 800px;
+}
+
+label {
+
+
+    display:inline-block;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 25px;
+
+
+}
+
+input[type="text"],input[type="email"],input[type="password"] {
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  float: right;
+  padding: 5px;
+    margin-top: -25px;
+    display:inline-block;
+
+    width: 65%;
+    max-width: 550px;
+    height: 35px;
+
+    background-color: lightgrey;
+  border:1px solid lightgrey;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+
+
+
+}
+
+.block {
+
+
+}
+
+
+
+textarea {
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  padding: 10px 5px 10px 5px;
+    display:inline-block;
+
+    float: right;
+    margin-top: -25px;
+    width: 65%;
+    max-width: 550px;
+    height: 200px;
+
+    background-color: lightgrey;
+  border:1px solid lightgrey;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+
+
+
+
+}
+
+/*.btn-default{
+   display:inline-block;
+
+
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  float: right;
+
+
+}
+
+.btn-default:hover {
+
+  background-color: #702424;
+  color: white;
+
+
+}*/
+
+
+/* Radial Out */
+.btn-default {
+  color: white;
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  height: 40px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  float: right;
+  background-color: $darkorange;
+  border: 1px solid #8c3b0e;
+  webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  margin-top: 20px;
+
+
+}
+
+.btn-default:hover {
+   color: white;
+  font-size: 17px;
+  font-family:raleway, "Book Antiqua", Palatino, serif;
+  height: 40px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  float: right;
+background-color: $orange;
+border: 1px solid #d87b27;
+  webkit-transition: all 0.6s ease;
+       -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+margin-top: 20px;
+
+}
+
+
+input:focus,
+textarea:focus {
+  border: 1px solid $orange;
+  box-shadow: 0 0 5px rgba(112, 36, 36, 1);
+
+
+-webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+
+
+
+}
+
+
+
+
+@media only screen and (max-width: 1200px)
+ {
+  input[type="text"],input[type="email"],input[type="password"], textarea {
+
+      width: 100%;
+      margin-top: 5px;
+
+  }
+
+  .btn-default{
+
+
+  }
+
+
+}
+
+@media all and (max-width: 1000px) {
+
+  #contact{
+    margin-top: 50px;
+
+
+  }
+
+}
+
+
+
+/* ------------------------------End contact and forms --------------------*/
+
+/* ------------------------------scrolling fixes --------------------*/
+
+#my-services {
+  padding: 100px;
+}
+
+#my-testimonials {
+  padding: 100px;
+}
+
+#about-me {
+  padding: 30px;
+}
+
+
+
+
+@media all and (max-width: 850px) {
+  #my-services {
+    padding: 50px;
+  }
+
+  #my-testimonials {
+    padding: 50px;
+  }
+}
+
+
+/* ------------------------------end scrolling fixes --------------------*/
