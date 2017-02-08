@@ -21,6 +21,16 @@ Route::get('/', 'HomePageController@index');
 
 Route::post('/','HomePageController@postIndex');
 
+Route::get('/login',function(){
+
+	return view('auth.login');
+});
+
+Route::get('/register',function(){
+
+	return view('auth.register');
+});
+
 Route::get('/services/one-on-one/live-blood-analysis/', function(){
 	return view('services.livebloodanalysis');
 });

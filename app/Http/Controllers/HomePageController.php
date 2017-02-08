@@ -9,9 +9,6 @@ use App\Services\Email;
 use App\CaptchaQuestion;
 
 
-
-
-
 class HomePageController extends Controller
 
 {

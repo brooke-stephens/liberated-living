@@ -1,0 +1,73 @@
+// footer.scss
+$orange:#ff9933;
+$darkorange:#ab4e12;
+$footeraccent:#cc8a69;
+
+footer {
+	height: 204px;
+	width: 100%;
+	margin-top: 75px;
+	background-color: red;
+
+	
+	
+	
+
+	.footertop{
+		width: 100%;
+		height: 4px;
+		background-color: $footeraccent;
+		margin-top: 140px;
+
+	}
+
+	.footer {
+		width: 100%;
+		height: 200px;
+		background-color: $darkorange;	
+		padding-top: 50px;	 
+	}
+
+
+	.navigation {
+
+  		justify-content: center;
+
+	}
+
+	@media all and (max-width: 1050px) {
+
+		  .navigation {
+			  display: flex;
+		 	}
+
+	}
+
+	@media all and (max-width: 600px) {
+
+		  .navigation {
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  flex-direction: column; 
+
+	  	}
+
+	}
+
+	li {
+     display: inline-block;
+     // width: 100px;
+     
+
+    }
+
+    a {
+    	font-family:raleway, "Book Antiqua", Palatino, serif;
+    	color: #fff;
+    	text-decoration: none;
+    }
+
+}
+
+

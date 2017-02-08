@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import 'footer';
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1081,12 +1083,13 @@ z-index: 8;
 
 .testimonials-inner-container {
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   max-width: 500px;
   min-height: 650px;
+  margin: 0px auto;
  
 }
 
@@ -1420,6 +1423,10 @@ textarea:focus {
   padding: 30px;
 }
 
+#contact-me {
+  padding: 100px;
+}
+
 
 
 
@@ -1435,3 +1442,22 @@ textarea:focus {
 
 
 /* ------------------------------end scrolling fixes --------------------*/
+
+
+/* ------------------------------end scrolling fixes --------------------*/
+
+.form-group {
+
+  input {
+  
+    float: none;
+    margin-top: 0px;
+    padding-top: 0px;
+
+  }
+
+}
+
+/* ------------------------------end scrolling fixes --------------------*/
+
+
