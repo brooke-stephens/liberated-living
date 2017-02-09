@@ -21,10 +21,12 @@ main {
 .container h2 {
   font-family: sacramento, "Book Antiqua", Palatino, serif;
   font-size: 70px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  font-weight: 100; }
   .container h2 .header-orange {
     color: #ff9933; }
 .container h3 {
+  font-weight: bold;
   margin-bottom: 20px; }
 
 .embed-container {
@@ -43,5 +45,3 @@ main {
 
 .margin-bottom-15 {
   margin-bottom: 15px; }
-
-/*# sourceMappingURL=page.css.map */

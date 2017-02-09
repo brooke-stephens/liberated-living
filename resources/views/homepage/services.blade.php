@@ -30,7 +30,7 @@
 				      	</div>
 				      	<!-- <p>The tongue provides many visible indicators and interconnections with the body. These indicators can reveal your overall health and point to specific areas you need to improve upon.
 				      	</p> -->
-				      	<a href="" class="btn btn-primary">Learn More</a>
+				      	<a href="{{ URL::to('/services/one-on-one/live-blood-analysis/') }}" class="btn btn-primary">Learn More</a>
 						
 			      	</div>
 
@@ -47,7 +47,7 @@
 				      	</div>
 				      	<!-- <p>Taken from a fingertip prick, to 1,000 times or more under a microscope and can reveal certain subtleties missed by your doctor and laboratory blood tests.
 				      	</p> -->
-				      	<a href="{{ URL::to('/services/one-on-one/live-blood-analysis/') }}" class="btn btn-primary">Learn More</a>
+				      	<a href="{{ URL::to('/services/one-on-one/workshops/') }}" class="btn btn-primary">Learn More</a>
 				      	<div class="bt"></div>
 
 			      	</div>
@@ -62,13 +62,13 @@
 
 						<img class="serviceicon" src="{{ URL::to('/images/homepage/wisdomcounseling.svg') }}">
 						<div class="titlewrapper">
-							<h2>Intuitive Counselling</h2>
+							<h2>Intuitive Counseling</h2>
 							<p><em>Soul meet Spirit.</em></p>
 						</div>
 						<!-- <p>Feelings of low self-worth or abandonment? Stressed? Healing and transformation take place when we address both our negative and positive sides. Examine yourself and ego to diagnose pain and symtoms.
 						</p> -->
 		
-						<a href="" class="btn btn-primary">Learn More</a>
+						<a href="{{ URL::to('/services/one-on-one/intuitive-counseling/') }}" class="btn btn-primary">Learn More</a>
 						<div class="bt"></div>
 					</div>
 			      </div>
@@ -83,7 +83,7 @@
 				      </div>
 				      	<!-- <p>Reiki restores energy balance and vitality by relieving the physical and emotional effects of unreleased stress. It accelerated healing, assists the body in cleansing toxins, and leaves one feeling relaxed and at peace.
 				      	</p> -->
-				      	<a href="" class="btn btn-primary">Learn More</a>
+				      	<a href="{{ URL::to('/services/one-on-one/reiki-and-energy/') }}" class="btn btn-primary">Learn More</a>
 			      	</div>
 			      </div>
 		    </div>	<!-- End row -->

@@ -50,10 +50,11 @@ class Email {
     public function sendEmail(Request $request){
 
     	 $data = [
-       	'sitename' 	=> "liberatedliving.ca",
-       	'message'   => $request->message,
-       	'emailto'	=> 'mark2002david@hotmail.com',
+      'sitename' 	=> "liberatedliving.ca",
+      'message'   => $request->message,
+      'emailto'	=> 'mark2002david@hotmail.com',
     	'emailfrom' => $request->email,
+      'clientsubject' => $request->subject,
     	'Namefrom'	=> $request->name,
     	'subject'	=> 'Liberated Living contact form submission',
     	'body' 		=> $request->message,
@@ -61,13 +62,13 @@ class Email {
 
   		// where the email layout file is --- the data being sent to the view 
         
-  		 // Mail::send('email.email_layout', $data, function($message) use ($data) {
+  		 Mail::send('email.email_layout', $data, function($message) use ($data) {
 
-  		 // 	$message->from($data['emailfrom'], $data['Namefrom']);
-  		 // 	$message->to($data['emailto']);
-  		 // 	$message->subject($data['subject']);
+  		 	$message->from($data['emailfrom'], $data['Namefrom']);
+  		 	$message->to($data['emailto']);
+  		 	$message->subject($data['subject']);
 
-  		 // });
+  		 });
 
 
     	 $this->emailSuccess();
@@ -86,6 +87,35 @@ class Email {
     public function displayCaptcha(){
 
     	return CaptchaQuestion::getQuestion();
+
+    }
+
+    public static function getSubject(){
+
+        // if (isset($_SERVER['HTTP_REFERER'])){
+            
+        //   $url = $_SERVER['HTTP_REFERER'];
+        //   $parts = explode("/", $url);
+        //   $subject = $parts[5];
+        //   $subject = ucwords(str_replace('-', ' ',  $subject));
+
+        //      switch ($subject) {
+        //         case 'Reiki And Energy':
+        //             dd('asfasf');
+        //         break;
+        //         case 'Live Blood Analysis':
+        //             dd('asfasf');
+        //         break;
+        //         case 'Reiki And Energy':
+        //             dd('asfasf');
+        //         break;
+        //         case 'Reiki And Energy':
+        //             dd('asfasf');
+        //         break;
+               
+        //     }
+        // }
+
 
     }
 	

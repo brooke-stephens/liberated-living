@@ -1,4 +1,4 @@
-<section id="section-1">
+<section id="home">
 
 	<div id="header">
 

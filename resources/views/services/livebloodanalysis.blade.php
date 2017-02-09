@@ -11,7 +11,7 @@
 		<main class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Live <span class="header-orange">blood analysis</span></h2>
+					<h2>Live <span class="header-orange">blood analysis</span></h2><br>
 					<h3>The cells of the blood are observed on a video monitor by both the practitioner and client.</h3>
 					<br>
 				</div>
@@ -41,8 +41,12 @@
 							<strong>Practitioner: Susan Stephens</strong>
 							<br>$150 for 1.5 hours
 						</p>
-
-						<a href="/#section-5" onclick="$('#section-5').animatescroll();return false;" class="btn btn-primary">Book an appointment</a>
+						<form action="/#contact-me" method="post">
+							<input type="hidden" name="_token" value="{{csrf_token()}}">
+						    <input type="hidden" name="appointmentsubject" value="Live Blood Analysis Appointment">
+						    <input type="submit" class="btn btn-primary" name="appointmentbutton" value="Book an appointment">
+						</form>
+						<!-- <a href="/#contact-me" onclick="$('#contact-me').animatescroll();return false;" class="btn btn-primary">Book an appointment</a> -->
 					</div>
 				</div>
 			</div>

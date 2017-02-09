@@ -18,6 +18,7 @@ class HomePageController extends Controller
     	
     return view('index', [
     	'question' => CaptchaQuestion::getQuestion(),
+      
     	]);
 
     }
@@ -25,8 +26,18 @@ class HomePageController extends Controller
 
   public function postIndex(Request $request){
     
-    $email = new Email();
-    $email->isCaptchaValid($request);
+    if (isset($request->appointmentsubject)){
+
+      return view('index', [
+      'question' => CaptchaQuestion::getQuestion(),  
+      'subject' => $request->appointmentsubject,      
+      ]);
+
+      }else{
+
+      $email = new Email();
+      $email->isCaptchaValid($request);
+    }
 
 
   }

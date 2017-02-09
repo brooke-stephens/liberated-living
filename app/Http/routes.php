@@ -35,7 +35,19 @@ Route::get('/services/one-on-one/live-blood-analysis/', function(){
 	return view('services.livebloodanalysis');
 });
 
+Route::get('/services/one-on-one/workshops/', function(){
+	return view('services.workshops');
+});
 
+Route::get('/services/one-on-one/intuitive-counseling/', function(){
+	return view('services.intuitivecounseling');
+});
+
+Route::get('/services/one-on-one/reiki-and-energy/', function(){
+	return view('services.reikienergy');
+});
+
+Route::post('/#contact-me','HomePageController@index');
 
 
 

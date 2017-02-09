@@ -48,8 +48,7 @@
    			</div>
    		@endif	
    	
-   			
-
+   		
 
  	<div class="row">
 
@@ -61,7 +60,7 @@
 					<form action="/" method="POST">
 
 					<div class="block">
-						<label for="name"><p>Name:</p>
+						<label for="name"><p>Name:</p> 
 						<input type="text" name="name" value="{{ old('name') }}"></label>
 					</div>
 
@@ -74,6 +73,12 @@
 						<input type="text" name="email" value="{{ old('email')}}"></label>
 					</div>
 
+          <div class="block">
+            <label for="subject"><p>Subject:</p>
+            <input type="text" name="subject" 
+            value="@if(isset($subject)){{$subject}}@else{{ old('subject')}}@endif">
+            </label>
+          </div>
 					
 
 					<div class="block">

@@ -5,7 +5,7 @@
 
 
 						  <div id="logowrap">
-							 <a href="/#section-1" onclick="$('#section-1').animatescroll();return false;">
+							 <a href="/#home" onclick="$('#home').animatescroll();return false;">
 							  		<div>
 							  		<h1 id="logoh1text"><span>Liberated Living</span></h1>
 									</div>

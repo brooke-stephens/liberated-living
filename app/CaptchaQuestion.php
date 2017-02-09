@@ -8,9 +8,10 @@ class CaptchaQuestion extends Model
 {
 
 	public static $rules = [
-		'name'=>'required | max:30',
+		'name'=>'required | max:30 | min:2',
     	'email' => 'required | email',
     	'message' => 'required',
+    	'subject' => 'required | max:35 | min:4',
     	// 'questioninput' => 'required | integer'
 
 	];
