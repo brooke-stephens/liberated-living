@@ -18,6 +18,7 @@
 Route::auth();
 
 Route::get('/', 'HomePageController@index');
+Route::get('/home', 'HomePageController@index');
 
 Route::post('/','HomePageController@postIndex');
 
@@ -47,7 +48,35 @@ Route::get('/services/one-on-one/reiki-and-energy/', function(){
 	return view('services.reikienergy');
 });
 
-Route::post('/#contact-me','HomePageController@index');
 
 
+
+
+Route::get('/logout', function()
+    {
+        Auth::logout();
+    	Session::flush();
+        return Redirect::to('/');
+    });
+
+//this checks if they are a regular registered user
+Route::group(['middleware' => ['auth']], function(){  //regular user 
+
+	Route::get('/areyouloggedin', 'UserController@index');
+
+
+});
+
+//this checks if they are a admin user
+Route::group(['middleware' =>['AdminOnly']],function(){ //admin user
+
+	Route::get('/admin', 'UserController@index');
+
+	// this is experimenting with the program product
+	Route::get('/products/buyprogram', 'UserController@product');
+
+		
+	
+
+});
 

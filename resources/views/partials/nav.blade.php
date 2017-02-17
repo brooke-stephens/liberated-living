@@ -35,8 +35,8 @@
 
 						  	<!-- <span class="glyphicon glyphicon-search searchimg" aria-hidden="true"></span> -->
 
-							<img type="button" data-toggle="modal" data-target="#myModal" class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
-
+							<a href="/login"><img type="button" class="loginimg" src="{{ URL::to('/images/homepage/login.png') }}">
+							</a>
 						  </div>
 
 					</div><!-- end flexi -->

@@ -728,6 +728,21 @@ h5 {
   padding-top: 50px;
   background-color: #5c5c5c; }
 
+#testimonialsfold2 {
+  /*padding-top: 100px;*/
+  min-height: 825px;
+  margin-top: 50px;
+  background: url("/images/homepage/testimonialbackground2.jpg") no-repeat;
+  padding-top: 50px; }
+
+#testimonialsfold3 {
+  /*padding-top: 100px;*/
+  min-height: 825px;
+  margin-top: 50px;
+  background: url("/images/homepage/testimonialbackground3.jpg") no-repeat;
+  padding-top: 50px;
+  background-color: #1a3553; }
+
 .testimonials-container {
   position: relative;
   min-height: 825px; }
@@ -973,3 +988,22 @@ textarea:focus {
   padding-top: 0px; }
 
 /* ------------------------------end scrolling fixes --------------------*/
+.left.carousel-control {
+  height: 875px;
+  top: 50px;
+  background-image: none; }
+
+.right.carousel-control {
+  height: 875px;
+  top: 50px;
+  background-image: none; }
+
+.carousel-indicators {
+  bottom: 200px; }
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  font-size: 35px; }
+
+@media all and (max-width: 700px) {
+  .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    top: 350px; } }

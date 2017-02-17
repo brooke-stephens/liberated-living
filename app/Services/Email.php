@@ -90,7 +90,9 @@ class Email {
 
     }
 
-    public static function getSubject(){
+    public static function getSubject(Request $request){
+
+        
 
         // if (isset($_SERVER['HTTP_REFERER'])){
             
