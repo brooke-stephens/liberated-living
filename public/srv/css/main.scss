@@ -315,8 +315,7 @@ color: $orange!important;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 
-
-
+  // background: url('/images/homepage/logo.svg') no-repeat center, linear-gradient(to right, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 }
 
@@ -335,6 +334,7 @@ color: $orange!important;
 
 }
 #loginwrap {
+
   width: 10%;
   min-width: 90px;
   max-width: 125px;
@@ -348,6 +348,8 @@ color: $orange!important;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+
+  display: none;
 }
 
 
@@ -356,6 +358,8 @@ color: $orange!important;
 
   background: url('/images/homepage/logocompact.svg') no-repeat center;
   background-color: rgba(255, 255, 255, 0.1);
+   // background: url('/images/homepage/logocompact.svg') no-repeat center, linear-gradient(to right, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ 
   }
 
   #navcontainer {
@@ -1071,6 +1075,7 @@ z-index: 8;
   min-height: 825px;
   margin-top: 50px;
   background: url('/images/homepage/testimonialbackground.jpg') no-repeat;
+  background-size: cover;
   padding-top: 50px;
   background-color: #5c5c5c;
 }
@@ -1081,7 +1086,9 @@ z-index: 8;
   min-height: 825px;
   margin-top: 50px;
   background: url('/images/homepage/testimonialbackground2.jpg') no-repeat;
+  background-size: cover;
   padding-top: 50px;
+  background-color: #134b5b;
   
 }
 
@@ -1091,8 +1098,9 @@ z-index: 8;
   min-height: 825px;
   margin-top: 50px;
   background: url('/images/homepage/testimonialbackground3.jpg') no-repeat;
+  background-size: cover;
   padding-top: 50px;
-  background-color: #1a3553;
+  background-color: #4e2904;
 }
 
 .testimonials-container{
