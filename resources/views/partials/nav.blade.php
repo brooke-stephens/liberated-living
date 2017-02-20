@@ -24,6 +24,7 @@
 					  	<ul class="navigation" >
 							<li><a href="/#about-me" onclick="$('#about-me').animatescroll();return false;">About</a></li>
 							<li><a href="/#my-services" onclick="$('#my-services').animatescroll();return false;">Services</a></li>
+							<li><a href="{{URL::to('/videos')}}">Videos</a></li>
 							<li><a href="/#my-testimonials" onclick="$('#my-testimonials').animatescroll();return false;">Testimonials</a></li>
 							<li><a href="/#contact-me" onclick="$('#contact-me').animatescroll();return false;">Contact</a></li>
 						</ul>
@@ -50,6 +51,7 @@
 		  	<ul class="navtopslider" >
 				<li><a href="/#about-me" onclick="$('#about-me').animatescroll();return false;">About</a></li>
 				<li><a href="/#my-services" onclick="$('#my-services').animatescroll();return false;">Services</a></li>
+				<li><a href="{{URL::to('/videos')}}">Videos</a></li>
 				<li><a href="/#my-testimonials" onclick="$('#my-testimonials').animatescroll();return false;">Testimonials</a></li>
 				<li><a href="/#contact-me" onclick="$('#contact-me').animatescroll();return false;">Contact</a></li>
 			</ul>

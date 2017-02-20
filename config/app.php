@@ -203,6 +203,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Product' => App\Services\Product::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 

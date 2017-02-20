@@ -1,0 +1,14 @@
+.leftpanel {
+  width: 700px;
+  height: 500px;
+  background-color: red; }
+
+.rightpanel {
+  width: 300px;
+  height: 500px;
+  background-color: green; }
+
+.bottompanel {
+  width: 700px;
+  height: 500px;
+  background-color: blue; }

@@ -8,7 +8,7 @@
 		<div id="moto">
 			<h2>Nutrition, Counseling. Feel Good.</h2>
 			<h1>Shake what your momma gave ya!</h1>		
-			<a class="btn btn-info center-block"  href="#" role="button">Check out our videos!</a>
+			<a class="btn btn-info center-block"  href="{{URL::to('/videos')}}" role="button">Check out our videos!</a>
 		</div>
 
 

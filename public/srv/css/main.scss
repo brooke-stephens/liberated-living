@@ -4,6 +4,7 @@
 */
 
 @import 'footer';
+@import 'videos';
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -1217,11 +1218,45 @@ margin-right: 10px;
 
 
 
-}
+  }
 
 
 }
 
+.left.carousel-control {
+  
+  height: 875px;
+  top: 50px;
+  background-image: none;
+}
+
+.right.carousel-control {
+  
+  height: 875px;
+  top: 50px;
+  background-image: none;
+}
+
+.carousel-inner {
+
+}
+
+.carousel-indicators{
+  bottom: 200px;
+  
+}
+
+.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right{
+
+  font-size: 35px;
+}
+
+@media all and (max-width: 700px) {
+.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right {
+  
+  top: 350px;
+}
+}
 
 /* ------------------------------end testimonials --------------------*/
 
@@ -1488,38 +1523,71 @@ textarea:focus {
 
 /* ------------------------------end scrolling fixes --------------------*/
 
+.videocontainer{
 
-.left.carousel-control {
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+}
+
+.leftpanel {
   
-  height: 875px;
-  top: 50px;
-  background-image: none;
-}
-
-.right.carousel-control {
   
-  height: 875px;
-  top: 50px;
-  background-image: none;
-}
-
-.carousel-inner {
+  // background-color: red;
 
 }
 
-.carousel-indicators{
-  bottom: 200px;
+.rightpanel {
   
-}
-
-.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right{
-
-  font-size: 35px;
-}
-
-@media all and (max-width: 700px) {
-.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right {
+  height: 1000px;
+  background-color: lightgrey;
   
-  top: 350px;
+
 }
+
+.innertopvideo{
+
+  width: 100%;
+  // background-color: yellow;
+
+
 }
+
+.innerbottomdescription {
+
+  width: 100%;
+  height: 150px;
+  // background-color: blue;
+
+
+}
+
+.thumbcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+
+}
+
+.imgthumbcontainer {
+background-color: red;
+}
+
+.thumbdescriptioncontainer{
+
+background-color: green;
+}
+
+.vidthumbnail{
+
+  width: 200px;
+}
+
+.subdescription{
+  font-size: 14px;
+}
+
+
+

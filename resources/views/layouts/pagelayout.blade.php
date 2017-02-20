@@ -4,8 +4,8 @@
 	<title>
 		Liberated Living
 	</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta name="_token" content="{!! csrf_token() !!}"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -42,7 +42,8 @@
 <script type='text/javascript' src="{{ URL::to('srv/js/animatescroll.js') }}"></script>
 <script type='text/javascript' src="{{ URL::to('srv/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('srv/js/sweetalert.min.js') }}"></script>
-
+<script type="text/javascript" src="{{ URL::to('srv/js/youtubeajax.js')}}"></script>
+<script type="text/javascript" src="{{ URL::to('srv/js/youtubeapi.js')}}"></script>
 <!-- submenu slider menu -->
 
 <!-- <script type="text/javascript">
@@ -52,8 +53,13 @@
 } );
 
 </script> -->
-
 <script type="text/javascript">
+	$.ajaxSetup({
+	   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+	});
+</script>
+
+<!-- <script type="text/javascript">
 
     	@if (notify()->ready())
 	    	swal({
@@ -64,7 +70,7 @@
 	    	});
 	    @endif
 
-</script>
+</script> -->
 
 
 

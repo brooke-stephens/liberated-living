@@ -827,6 +827,25 @@ h5 {
 
   .testimonials-container {
     min-height: 1000px; } }
+.left.carousel-control {
+  height: 875px;
+  top: 50px;
+  background-image: none; }
+
+.right.carousel-control {
+  height: 875px;
+  top: 50px;
+  background-image: none; }
+
+.carousel-indicators {
+  bottom: 200px; }
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  font-size: 35px; }
+
+@media all and (max-width: 700px) {
+  .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    top: 350px; } }
 /* ------------------------------end testimonials --------------------*/
 /* ------------------------------Contact fold and forms --------------------*/
 .contacterrors {
@@ -993,22 +1012,37 @@ textarea:focus {
   padding-top: 0px; }
 
 /* ------------------------------end scrolling fixes --------------------*/
-.left.carousel-control {
-  height: 875px;
-  top: 50px;
-  background-image: none; }
+.videocontainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
 
-.right.carousel-control {
-  height: 875px;
-  top: 50px;
-  background-image: none; }
+.rightpanel {
+  height: 1000px;
+  background-color: lightgrey; }
 
-.carousel-indicators {
-  bottom: 200px; }
+.innertopvideo {
+  width: 100%; }
 
-.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
-  font-size: 35px; }
+.innerbottomdescription {
+  width: 100%;
+  height: 150px; }
 
-@media all and (max-width: 700px) {
-  .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
-    top: 350px; } }
+.thumbcontainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+
+.imgthumbcontainer {
+  background-color: red; }
+
+.thumbdescriptioncontainer {
+  background-color: green; }
+
+.vidthumbnail {
+  width: 200px; }
+
+.subdescription {
+  font-size: 14px; }

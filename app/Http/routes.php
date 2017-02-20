@@ -48,6 +48,9 @@ Route::get('/services/one-on-one/reiki-and-energy/', function(){
 	return view('services.reikienergy');
 });
 
+Route::get('/videos','VideoController@index');
+Route::post('/videos','VideoController@postIndex');
+
 
 
 
