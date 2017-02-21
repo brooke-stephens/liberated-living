@@ -13,7 +13,7 @@
 			<div class="row">
 			
 						
-						<div class="col-md-8 leftpanel">
+						<div class="col-md-7 leftpanel">
 
 							<div class="videocontainer">
 
@@ -35,37 +35,34 @@
 
 						</div>
 
-						<div class="col-md-4 rightpanel">
-							<div class="thumbcontainer">
-								<div class="imgthumbcontainer">
+						<div class="col-md-5 rightpanel">
+						<!-- this is the thumbnail image link -- being used in the youtube api js -->		
+							<div class="apiresults">
+							Click a video to play from our playlist.
+							<hr>	
+							<!-- 	<div class="thumbcontainer">
+									<div class="imgthumbcontainer">
+																	
+										<a href="sdfasf" id="youtube" class="bb_t4x-iCoM"><img src="http://img.youtube.com/vi/bb_t4x-iCoM/mqdefault.jpg" alt="" class="vidthumbnail"></a>
+									</div>
 
-									<!-- this is the thumbnail image link -- being used in the youtube api js -->
-									
-									<!-- <a href="sdfasf" id="youtube" class="bb_t4x-iCoM"><img src="http://img.youtube.com/vi/bb_t4x-iCoM/mqdefault.jpg" alt="" class="vidthumbnail"></a> -->
+									<div class="thumbdescriptioncontainer">
+										<span class="descriptiontitle">Beat the Bloat - Digestion Seminar with Susan Stephens</span>
+										<br><span class="subdescription">Susan Stephens</span>
+									</div>
+								</div>  -->
 
 
+							</div>						
 
-								</div>
-								<div class="thumbdescriptioncontainer">
-									<span>Beat the Bloat - Digestion Seminar with Susan Stephens</span>
-									<br><span class="subdescription">Susan Stephens</span>
-									<br><span class="subdescription">Views 1000</span>
-								</div>
-							</div> <!-- end thumbcontainer -->
-
-						</div>	
+						</div>	<!-- end panel -->
 
 
 	
  
-<div id="ajaxresults">
-</div>			
-<div class="apiresults">
-	
-</div>									
-<?php
+			
+								
 
-?>
 				
 
 				
@@ -74,6 +71,7 @@
 			</div> <!-- end row -->
 
 		</main>
+
 
 
 
