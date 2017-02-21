@@ -624,12 +624,13 @@ h5 {
   position: absolute;
   bottom: 150px;
   left: 0;
-  margin-left: 20px; }
+  margin-left: 100px; }
 
 .aboutcontentwrap h1 {
   position: absolute;
   bottom: 450px;
-  left: 0; }
+  left: 0;
+  margin-left: 100px; }
 
 .aboutline {
   bottom: -415px;
@@ -637,14 +638,16 @@ h5 {
 
 @media all and (max-width: 1000px) {
   .portraitimg {
-    width: 85%; }
+    margin-left: 4%; }
 
   .aboutcontentwrap p {
     position: relative; }
 
   .aboutcontentwrap {
     height: auto;
-    margin-bottom: 250px; }
+    margin-bottom: 250px;
+    margin-left: 20px;
+    margin-right: 20px; }
 
   .aboutcontentwrap p {
     text-align: center;
@@ -658,6 +661,7 @@ h5 {
     text-align: center;
     top: 0;
     margin-top: 40px;
+    margin-left: 0px;
     width: 100%;
     height: auto;
     display: inline-block; }
@@ -672,7 +676,8 @@ h5 {
     visibility: hidden; } }
 @media all and (max-width: 750px) {
   .portraitimg {
-    width: 100%; }
+    width: 100%;
+    max-width: 650px; }
 
   #aboutsection {
     height: 750px; }

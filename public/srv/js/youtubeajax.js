@@ -2,15 +2,15 @@ $(document).ready(function(){
 
      // $('#formid').submit(function( event ) {
         //you could trigger the submit button itself
-
      // $('#youtube').click(function( event ) {
+
+       //this applies the click value to the multiple dynamic id elements
        $(document).on('click', '#youtube',function(event) {
-      event.preventDefault();
+       event.preventDefault();
 
       
 // var id = $("#apiresults").val();    
 var id = $(this).attr('class');
-// alert($(this).attr('class'));
 var userinput ='<div class=\"embed-container margin-bottom-15\"><iframe src=\"https://www.youtube.com/embed/'+id+'\" frameborder=\"0\" allowfullscreen></iframe></div>';
 
 

@@ -19,10 +19,10 @@
 
 								<div class="innertopvideo">
 
-									
-										<!-- <div class='embed-container margin-bottom-15'>
+										<!-- this is the default video to be displayed -->
+										<div class='embed-container margin-bottom-15'>
 											<iframe src='https://www.youtube.com/embed/bb_t4x-iCoM' frameborder='0' allowfullscreen></iframe>
-										</div> -->
+										</div>
 									
 								</div>	<!-- end innertop -->
 
@@ -39,9 +39,11 @@
 							<div class="thumbcontainer">
 								<div class="imgthumbcontainer">
 
+									<!-- this is the thumbnail image link -- being used in the youtube api js -->
+									
 									<!-- <a href="sdfasf" id="youtube" class="bb_t4x-iCoM"><img src="http://img.youtube.com/vi/bb_t4x-iCoM/mqdefault.jpg" alt="" class="vidthumbnail"></a> -->
 
-																
+
 
 								</div>
 								<div class="thumbdescriptioncontainer">

@@ -15,7 +15,7 @@
 
 	        <div class="col-md-6 col-centered portraitwrap">
 
-	        	<img class="portraitimg" src="/images/homepage/portraitwhite.jpg">
+	        	<img class="portraitimg" src="/images/homepage/portraitwhite3.jpg">
 
 	        </div>
 

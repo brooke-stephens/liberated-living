@@ -2,10 +2,10 @@ var channelid = 'UC0e_xJ778Coqbt8P7UTg8CQ';
 var vidWidth = 500;
 var vidHeight = 400;
 var vidResults = 10;
-$(document).ready(function(){
- 
-  $.get(
 
+$(document).ready(function(){
+
+  $.get(
       "https://www.googleapis.com/youtube/v3/channels",{
           part:'contentDetails',
           id: channelid,
@@ -21,9 +21,6 @@ $(document).ready(function(){
 
     );
 
-
-
-
 function getVids(pid){
 
    $.get(
@@ -36,7 +33,7 @@ function getVids(pid){
           function(data){
             var output;
             $.each(data.items, function(i,item){
-                // console.log(item)
+                console.log(item)
                 videoTitle = item.snippet.title;
                 vidId = item.snippet.resourceId.videoId;
                 // output = '<li>'+videoTitle+'</li>';
@@ -45,6 +42,7 @@ function getVids(pid){
                 // output = '<img id=\"'+vidId+'\" src=\"http://img.youtube.com/vi/'+vidId+'/mqdefault.jpg\" alt="" class="vidthumbnail">'
                 // output = '<a href=\"sdfasf\" id=\"youtube\" class=\"bb_t4x-iCoM\"><img id=\"'+vidId+'\" src=\"http://img.youtube.com/vi/'+vidId+'/mqdefault.jpg\" alt="" class="vidthumbnail"></a>';
                 output = '<a href=\"sdfasf\" id=\"youtube\" class=\"'+vidId+'\"><img src=\"http://img.youtube.com/vi/'+vidId+'/mqdefault.jpg\" class=\"vidthumbnail\"></a>'
+                
                 //Append to results list
                 $('.imgthumbcontainer').append(output);
 

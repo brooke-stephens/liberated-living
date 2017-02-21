@@ -896,7 +896,7 @@ height: 100%;
     position: absolute;
     bottom: 150px;
     left: 0;
-    margin-left: 20px;
+    margin-left: 100px;
 
 
 }
@@ -906,7 +906,7 @@ height: 100%;
     position: absolute;
     bottom: 450px;
     left: 0;
-
+    margin-left: 100px;
 }
 
 
@@ -921,7 +921,8 @@ height: 100%;
 
 @media all and (max-width: 1000px) {
 .portraitimg {
-    width: 85%;
+    // width: 85%;
+    margin-left: 4%;
   }
 
   .aboutcontentwrap p {
@@ -935,6 +936,8 @@ height: 100%;
 
       height: auto;
       margin-bottom: 250px;
+      margin-left: 20px;
+      margin-right: 20px;
 
     }
 
@@ -947,12 +950,14 @@ height: 100%;
     width: 100%;
     margin-top: 40px;
     margin-left: 0px;
+    
   }
 
   .aboutcontentwrap h1 {
     text-align: center;
     top:0;
     margin-top: 40px;
+    margin-left: 0px;
     width: 100%;
     height: auto;
     display: inline-block;
@@ -979,6 +984,7 @@ height: 100%;
 
   .portraitimg {
     width: 100%;
+    max-width: 650px;
   }
 
   #aboutsection {
