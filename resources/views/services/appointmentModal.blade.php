@@ -11,7 +11,7 @@
       </div>
       <div class="modal-footer">
        	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close without Booking</button>
-         this is the footer
+         
       </div>
     </div>
   </div>
