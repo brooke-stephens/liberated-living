@@ -13,7 +13,7 @@
 
 	    <div class="row row-centered portraitwrapcon">
 
-	        <div class="col-md-6 col-centered portraitwrap">
+	        <div class="col-md-6 portraitwrap">
 
 	        	<img class="portraitimg" src="/images/homepage/portraitwhite3.jpg">
 

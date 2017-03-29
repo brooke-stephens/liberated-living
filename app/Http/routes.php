@@ -83,3 +83,7 @@ Route::group(['middleware' =>['AdminOnly']],function(){ //admin user
 
 });
 
+Route::get('/test', function(){
+	return view('events.events');
+});
+

@@ -8,6 +8,17 @@ jQuery(document).ready(function($) {
 
 $(document).ready(function() { 
 
+	let startingHieght = $(document).scrollTop();
+	
+		if ( startingHieght > 1 ) 				
+		$('#navcontainer').addClass('sticky stickytopstyle'); 
+			else if (startingHieght == 0 )				
+				$('#navcontainer').removeClass('sticky stickytopstyle'); 
+
+	
+
+
+
 	$(window).scroll(function() { 
 
 		var fromTop = $(document).scrollTop(); 	
@@ -18,10 +29,6 @@ $(document).ready(function() {
 
 				else if (fromTop == 0 )				
 					$('#navcontainer').removeClass('sticky stickytopstyle'); 
-
-					
-
-
 
 					
 				// if ( fromTop > $('#navcontainer').height() ) 

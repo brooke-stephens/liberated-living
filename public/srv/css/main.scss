@@ -176,6 +176,8 @@ pre {
   
     font-family:raleway, "Book Antiqua", Palatino, serif;
     background-color: #fff!important;
+    white-space:pre-wrap;
+
 }
 
 /*services buttons*/
@@ -819,7 +821,7 @@ height: 35px;
   /*background-color: #AB4E01;*/
   background-color: rgba(171, 78, 18, .9)!important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  
 }
 
 /*==================================================
@@ -925,16 +927,16 @@ height: 100%;
 
 
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1200px) {
 .portraitimg {
     // width: 85%;
-    margin-left: 4%;
+    
   }
 
   .aboutcontentwrap p {
 
       position: relative;
-
+      
     }
 
      .aboutcontentwrap  {
@@ -944,6 +946,11 @@ height: 100%;
       margin-bottom: 250px;
       margin-left: 20px;
       margin-right: 20px;
+      width: 100%;
+    }
+
+    .portraitwrap {
+      width: 100%;
 
     }
 
