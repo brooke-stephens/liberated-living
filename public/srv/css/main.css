@@ -761,10 +761,10 @@ pre {
 
 .testimonials-container {
   position: relative;
-  min-height: 825px; }
+  min-height: 925px; }
 
 .testimonials-inner-container {
-  max-width: 500px;
+  max-width: 700px;
   min-height: 650px;
   margin: 0px auto; }
 
@@ -785,7 +785,7 @@ pre {
 
 .testimonial-content p {
   font-family: satisfy, "Book Antiqua", Palatino, serif;
-  font-size: 28px;
+  font-size: 23px;
   line-height: 33px;
   color: #ffffff; }
 
