@@ -41,11 +41,23 @@
 							<strong>Practitioner: Susan Stephens</strong>
 							<br>$150 for 1.5 hours
 						</p>
-						<form action="/#contact-me" method="post">
-							<input type="hidden" name="_token" value="{{csrf_token()}}">
-						    <input type="hidden" name="appointmentsubject" value="Live Blood Analysis Appointment">
-						    <input type="submit" class="btn btn-primary" name="appointmentbutton" value="Book an appointment">
-						</form>
+						
+						
+						
+						<table style="margin:0px auto;">
+							<tr>
+								<td style="padding:0 15px 0 15px;"> 
+								<form action="/#contact-me" method="post">
+									<input type="hidden" name="_token" value="{{csrf_token()}}">
+								    <input type="hidden" name="appointmentsubject" value="Live Blood Analysis Appointment">
+								    <input type="submit" class="btn btn-primary" name="appointmentbutton" value="Email Me">
+								</form>
+								</td>
+								<td><button class="btn btn-primary" data-toggle="modal" data-target="#acuityModal" id="appointmentButton">Book Appointment</button>
+								</td>
+							</tr>
+						</table>
+
 						<!-- <a href="/#contact-me" onclick="$('#contact-me').animatescroll();return false;" class="btn btn-primary">Book an appointment</a> -->
 					</div>
 				</div>
@@ -74,9 +86,12 @@
 
 
 
-
 		<div id="footer">
 			@include('partials.footer')
 		</div>
 
+@include('services.appointmentModal')
+
+
 	</div>
+

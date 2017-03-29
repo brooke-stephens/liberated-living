@@ -75,7 +75,7 @@ function getVids(pid){
   var des = $(this).attr('descrition');  
 
 
-  var userinput ='<div class=\"embed-container margin-bottom-15\"><iframe src=\"https://www.youtube.com/embed/'+id+'\" frameborder=\"0\" allowfullscreen></iframe></div>';
+  var userinput ='<div class=\"embed-container margin-bottom-15\"><iframe src=\"https://www.youtube.com/embed/'+id+'\?autoplay=1\" frameborder=\"0\" allowfullscreen></iframe></div>';
   var mainoutputdescription ='<h3>'+title+'</h3><br><p><pre>'+des+'</pre></p>';
 
          $.ajax({

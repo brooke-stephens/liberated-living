@@ -39,11 +39,20 @@
 							<strong>Practitioner: Susan Stephens</strong>
 							<br>$100 for 1.0 hours
 						</p>
-						<form action="/#contact-me" method="post">
-							<input type="hidden" name="_token" value="{{csrf_token()}}">
-						    <input type="hidden" name="appointmentsubject" value="Intuitive Counseling Appointment">
-						    <input type="submit" class="btn btn-primary" name="appointmentbutton" value="Book an appointment">
-						</form>
+					
+						<table style="margin:0px auto;">
+							<tr>
+								<td style="padding:0 15px 0 15px;"> 
+								<form action="/#contact-me" method="post">
+									<input type="hidden" name="_token" value="{{csrf_token()}}">
+								    <input type="hidden" name="appointmentsubject" value="Intuitive Counseling Appointment">
+								    <input type="submit" class="btn btn-primary" name="appointmentbutton" value="Email Me">
+								</form>
+								</td>
+								<td><button class="btn btn-primary" data-toggle="modal" data-target="#acuityModal" id="appointmentButton">Book Appointment</button>
+								</td>
+							</tr>
+						</table>
 						
 					</div>
 				</div>
@@ -109,5 +118,7 @@
 		<div id="footer">
 			@include('partials.footer')
 		</div>
+
+		@include('services.appointmentModal')
 
 	</div>

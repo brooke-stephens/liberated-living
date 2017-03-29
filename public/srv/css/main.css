@@ -577,8 +577,7 @@ pre {
 .stickytopstyle {
   /*background-color: #AB4E01;*/
   background-color: rgba(171, 78, 18, 0.9) !important;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgba(171, 78, 18, 0.9) !important; }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 /*==================================================
  * Drop shadow effect with box-shadow
@@ -1063,3 +1062,6 @@ textarea:focus {
 
 .thumbtitle {
   font-weight: bold; }
+
+#acuity-footer {
+  font-size: 43px; }
