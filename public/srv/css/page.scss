@@ -12,14 +12,15 @@ p {
 }
 
 #navcontainer{
-	background: url('/images/homepage/wispheader.jpg');
-	width: 100%;
-	// height: 100vh;
+	// background: url('/images/homepage/wispheader.jpg');
+	// width: 100%;
+	// // height: 100vh;
 
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size: cover;
+	// -webkit-background-size:cover;
+	// -moz-background-size:cover;
+	// -o-background-size:cover;
+	// background-size: cover;
+	background-color: rgba(171, 78, 18, .9)!important;
 }
 
 main {

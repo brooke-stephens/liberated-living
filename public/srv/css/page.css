@@ -5,12 +5,7 @@ p {
   margin-bottom: 1em; }
 
 #navcontainer {
-  background: url("/images/homepage/wispheader.jpg");
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+  background-color: rgba(171, 78, 18, 0.9) !important; }
 
 main {
   margin-top: 130px; }
