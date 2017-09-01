@@ -16,7 +16,7 @@
 		</div>
 
 		<div id="testimonials">
-			@include('homepage.testimonials')
+			@include('homepage.testimonialsupdate')
 		</div>
 
 		<div id="contact">

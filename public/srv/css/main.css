@@ -576,7 +576,7 @@ pre {
 /*_____________________ Start Navigation fixed top________________________________*/
 .stickytopstyle {
   /*background-color: #AB4E01;*/
-  background-color: rgba(171, 78, 18, 0.9) !important;
+  background-color: rgba(226, 126, 16, 0.9) !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 /*==================================================
@@ -731,6 +731,53 @@ pre {
 .leftservicebox a:hover, .rightservicebox a:hover {
   text-decoration: none; }
 
+/* ------------------------------testimonialsupdate fold --------------------*/
+#testimonialwrapper {
+  background: url("/images/homepage/mysticrocks.jpg") no-repeat;
+  background-size: cover;
+  height: 1080px;
+  width: auto; }
+
+.testi-name {
+  font-size: 44px;
+  color: white;
+  text-shadow: 0px 0px 19px #969696; }
+
+.testi-text-container1 {
+  color: white;
+  background-color: rgba(241, 90, 36, 0.5);
+  padding: 15px 15px 15px 15px; }
+
+.testi-text-container2 {
+  color: white;
+  background-color: rgba(255, 147, 30, 0.5);
+  padding: 15px 15px 15px 15px; }
+
+.testi-text-container3 {
+  color: white;
+  background-color: rgba(63, 169, 245, 0.5);
+  padding: 15px 15px 15px 15px; }
+
+.testi-text-container4 {
+  color: white;
+  background-color: rgba(69, 104, 0, 0.5);
+  padding: 15px 15px 15px 15px; }
+
+#usertestimonial {
+  margin-top: 60px;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px; }
+
+.testi-image {
+  margin: 0 0 13px 0;
+  width: 100px; }
+
+.leaf-seperator {
+  margin: 13px 0 13px 0;
+  width: 150px; }
+
+/* ------------------------------end testimonialsupdate fold --------------------*/
 /* ------------------------------testimonials fold --------------------*/
 #testimonialsfold {
   /*padding-top: 100px;*/
