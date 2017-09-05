@@ -52,7 +52,7 @@ class Email {
     	 $data = [
       'sitename' 	=> "liberatedliving.ca",
       'message'   => $request->message,
-      'emailto'	=> 'mark2002david@hotmail.com',
+      'emailto'	=> 'susan@liberatedliving.ca',
     	'emailfrom' => $request->email,
       'clientsubject' => $request->subject,
     	'Namefrom'	=> $request->name,

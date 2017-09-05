@@ -748,14 +748,14 @@ pre {
 
 .testi-text-container1 {
   color: white;
-  background-color: rgba(241, 90, 36, 0.5);
+  background-color: rgba(241, 90, 36, 0.7);
   padding: 15px 15px 15px 15px;
   min-height: 165px;
   vertical-align: middle; }
 
 .testi-text-container2 {
   color: white;
-  background-color: rgba(255, 147, 30, 0.5);
+  background-color: rgba(255, 147, 30, 0.7);
   padding: 15px 15px 15px 15px;
   min-height: 165px;
   align-items: center; }
