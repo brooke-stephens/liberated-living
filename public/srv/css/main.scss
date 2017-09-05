@@ -1095,6 +1095,14 @@ z-index: 8;
   background-size: cover;
   height: 1080px;
   width: auto;
+  border-top: 1px solid #798986;
+  border-bottom: 1px solid #798986;
+  padding-bottom: 40px;
+}
+
+#usertestimonial {
+
+
 }
 
 // h1 tag
@@ -1109,24 +1117,37 @@ z-index: 8;
   color: white;
   background-color: rgba(241, 90, 36, .5);
   padding: 15px 15px 15px 15px;
+  min-height: 165px;
+ 
+  vertical-align:middle;
+  
 }
 
 .testi-text-container2 {  
   color: white;
   background-color: rgba(255, 147, 30, .5);
   padding: 15px 15px 15px 15px;
+  min-height: 165px;
+  
+  align-items: center;
 }
 
 .testi-text-container3 {  
   color: white;
   background-color: rgba(63, 169, 245, .5);
   padding: 15px 15px 15px 15px;
+min-height: 165px;
+  
+  align-items: center;
 }
 
 .testi-text-container4 {  
   color: white;
   background-color: rgba(69, 104, 0, .5);
   padding: 15px 15px 15px 15px;
+ min-height: 165px;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -1136,7 +1157,7 @@ z-index: 8;
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
-  
+ 
 }
 
 .testi-image {
@@ -1147,6 +1168,19 @@ z-index: 8;
 .leaf-seperator {
   margin: 13px 0 13px 0;
   width: 150px;
+}
+
+@media all and (max-width: 800px) {
+  
+#testimonialwrapper {
+  height: auto;
+  width: auto;
+  }
+
+#usertestimonial {
+   margin-bottom: 0px;
+  }  
+
 }
 
 /* ------------------------------end testimonialsupdate fold --------------------*/
@@ -1163,6 +1197,7 @@ z-index: 8;
   background-size: cover;
   padding-top: 50px;
   background-color: #5c5c5c;
+
 }
 
 #testimonialsfold2 {
@@ -1283,6 +1318,16 @@ margin-right: 10px;
   border-top: 70px solid #5c5c5c;
   margin: auto;
   margin-bottom:100px;
+}
+
+.triangletop {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 70px solid #5c5c5c;
+  margin: auto;
+  
 }
 
 

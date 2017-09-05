@@ -736,7 +736,10 @@ pre {
   background: url("/images/homepage/mysticrocks.jpg") no-repeat;
   background-size: cover;
   height: 1080px;
-  width: auto; }
+  width: auto;
+  border-top: 1px solid #798986;
+  border-bottom: 1px solid #798986;
+  padding-bottom: 40px; }
 
 .testi-name {
   font-size: 44px;
@@ -746,22 +749,31 @@ pre {
 .testi-text-container1 {
   color: white;
   background-color: rgba(241, 90, 36, 0.5);
-  padding: 15px 15px 15px 15px; }
+  padding: 15px 15px 15px 15px;
+  min-height: 165px;
+  vertical-align: middle; }
 
 .testi-text-container2 {
   color: white;
   background-color: rgba(255, 147, 30, 0.5);
-  padding: 15px 15px 15px 15px; }
+  padding: 15px 15px 15px 15px;
+  min-height: 165px;
+  align-items: center; }
 
 .testi-text-container3 {
   color: white;
   background-color: rgba(63, 169, 245, 0.5);
-  padding: 15px 15px 15px 15px; }
+  padding: 15px 15px 15px 15px;
+  min-height: 165px;
+  align-items: center; }
 
 .testi-text-container4 {
   color: white;
   background-color: rgba(69, 104, 0, 0.5);
-  padding: 15px 15px 15px 15px; }
+  padding: 15px 15px 15px 15px;
+  min-height: 165px;
+  display: flex;
+  align-items: center; }
 
 #usertestimonial {
   margin-top: 60px;
@@ -777,6 +789,13 @@ pre {
   margin: 13px 0 13px 0;
   width: 150px; }
 
+@media all and (max-width: 800px) {
+  #testimonialwrapper {
+    height: auto;
+    width: auto; }
+
+  #usertestimonial {
+    margin-bottom: 0px; } }
 /* ------------------------------end testimonialsupdate fold --------------------*/
 /* ------------------------------testimonials fold --------------------*/
 #testimonialsfold {
@@ -874,6 +893,14 @@ pre {
   border-top: 70px solid #5c5c5c;
   margin: auto;
   margin-bottom: 100px; }
+
+.triangletop {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 70px solid #5c5c5c;
+  margin: auto; }
 
 @media all and (max-width: 850px) {
   .testimonial-hr {
