@@ -379,7 +379,7 @@ pre {
 .verticalhorizontalline {
   border-left: 2px #ff9933 solid;
   border-bottom: 2px #ff9933 solid;
-  height: 475px;
+  height: 275px;
   width: 150px;
   border-bottom-left-radius: 50px;
   position: absolute;
@@ -633,7 +633,7 @@ pre {
 
 .aboutcontentwrap h1 {
   position: absolute;
-  bottom: 450px;
+  bottom: 700px;
   left: 0;
   margin-left: 100px; }
 
@@ -748,28 +748,28 @@ pre {
 
 .testi-text-container1 {
   color: white;
-  background-color: rgba(241, 90, 36, 0.7);
+  background-color: rgba(241, 90, 36, 0.6);
   padding: 15px 15px 15px 15px;
   min-height: 165px;
   vertical-align: middle; }
 
 .testi-text-container2 {
   color: white;
-  background-color: rgba(255, 147, 30, 0.7);
+  background-color: rgba(255, 147, 30, 0.6);
   padding: 15px 15px 15px 15px;
   min-height: 165px;
   align-items: center; }
 
 .testi-text-container3 {
   color: white;
-  background-color: rgba(63, 169, 245, 0.5);
+  background-color: rgba(63, 169, 245, 0.6);
   padding: 15px 15px 15px 15px;
   min-height: 165px;
   align-items: center; }
 
 .testi-text-container4 {
   color: white;
-  background-color: rgba(69, 104, 0, 0.5);
+  background-color: rgba(69, 104, 0, 0.6);
   padding: 15px 15px 15px 15px;
   min-height: 165px;
   display: flex;

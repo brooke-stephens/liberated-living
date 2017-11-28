@@ -29,7 +29,6 @@
 					<li>Health History Analysis</li>
 					<li>Live Blood Analysis</li>
 					<li>Stomach Acid, pH &amp; Blood Sugar Testing</li>
-					<li>Tongue Diagnosis</li>
 					<li>Muscle Testing</li>
 					<li>Dietary, Lifestyle &amp; Supplement Suggestions</li>
 					</ul>
