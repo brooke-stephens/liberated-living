@@ -7,7 +7,10 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "codecourse/notify": "^1.1"
+        "codecourse/notify": "^1.1",
+        "stripe/stripe-php": "3.*",
+        "intervention/image": "dev-master"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

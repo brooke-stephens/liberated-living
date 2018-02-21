@@ -87,3 +87,147 @@ Route::get('/test', function(){
 	return view('events.events');
 });
 
+
+
+
+/*
+|--------------------------------------------------------------------------
+| shopping Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+
+Route::get('/shop', [
+	'uses'=>'productController@getIndex',
+	'as' => 'product.index'
+
+]);
+
+
+
+
+
+
+Route::group([
+	'prefix' => 'user'], function(){
+
+
+		Route::group(['middleware' => 'auth'], function(){  
+
+			route::get('areyouloggedin',function(){
+
+				echo "You are an authenticated user";
+
+			});
+
+			Route::get('profile', [
+				'uses'=>'userController@getProfile',
+				'as' => 'user.profile'
+
+			]);
+
+			route::get('logout', [
+				'as' => 'user.logout',
+				'uses'=>'userController@getLogout',
+			]);
+
+		});
+
+		Route::group(['middleware' => 'guest'], function(){  
+
+			Route::get('signup', [
+				'uses'=>'userController@userSignup',
+				'as' => 'user.signup'
+			    
+			]);
+
+			Route::post('signup', [
+				'uses'=>'userController@postSignup',
+				'as' => 'user.signup'
+			  
+			]);
+
+			Route::get('signin', [
+				'uses'=>'userController@userSignin',
+				'as' => 'user.signin'
+			    
+			]);
+
+			Route::post('signin', [
+				'uses'=>'userController@postSignin',
+				'as' => 'user.signin'
+			  
+			]);
+
+
+
+		});
+
+			
+
+	});  
+// end prefix
+
+Route::get('/add-to-cart/{id}', [
+		'uses' => 'productController@getAddToCart',
+		'as' =>'product.addToCart'
+
+]);
+
+Route::get('/reduce/{id}', [
+		'uses' => 'productController@getReduceByOne',
+		'as' =>'product.subtractFromCart'
+
+]);
+
+Route::get('/delete/{id}', [
+		'uses' => 'productController@getRemoveItem',
+		'as' =>'product.removeFromCart'
+
+]);
+
+Route::get('/shopping-cart/', [
+		'uses' => 'productController@getShoppingCart',
+		'as' =>'product.getShoppingCart'
+
+]);
+
+Route::get('/checkout',[
+	'uses'=> 'productController@getCheckout',
+	'as' =>'checkout',
+	'middleware' => 'auth'
+]);
+
+Route::post('/checkout',[
+	'uses'=> 'productController@postCheckout',
+	'as' =>'checkout',
+	'middleware' => 'auth'
+]);
+
+
+
+// -------------------------- ADMIN
+
+Route::get('/admin',[
+	'uses'=> 'adminController@getIndex',
+	'as' =>'admin.index',
+	
+]);
+
+Route::get('/admin_add_product',[
+	'uses'=> 'adminController@getAddProduct',
+	'as' =>'admin.add.product',
+	
+]);
+
+Route::post('/admin_add_product',[
+	'uses'=> 'productController@postAddProductInventory',
+	'as' =>'admin.add.product',
+	
+]);
+
+
+
+

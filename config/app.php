@@ -156,6 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -204,6 +205,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Product' => App\Services\Product::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

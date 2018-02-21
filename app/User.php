@@ -6,13 +6,16 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
+    
     protected $fillable = [
-        'firstname','lastname', 'email', 'password',
+        'email', 'password',
     ];
 
     /**
@@ -25,8 +28,8 @@ class User extends Authenticatable
     ];
 
 
-    public function Permission(){
 
-        return $this->hasOne('App\Permission');
-    }
+     public function orders(){
+        return $this->hasMany('App\Order');
+     }
 }
