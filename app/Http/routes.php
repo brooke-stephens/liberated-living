@@ -211,23 +211,46 @@ Route::post('/checkout',[
 // -------------------------- ADMIN
 
 Route::get('/admin',[
-	'uses'=> 'adminController@getIndex',
-	'as' =>'admin.index',
-	
-]);
+			'uses'=> 'adminController@getIndex',
+			'as' =>'admin.index',
+			
+		]);
 
-Route::get('/admin_add_product',[
-	'uses'=> 'adminController@getAddProduct',
-	'as' =>'admin.add.product',
-	
-]);
+Route::group([
+	'prefix' => 'admin'], function(){
 
-Route::post('/admin_add_product',[
-	'uses'=> 'productController@postAddProductInventory',
-	'as' =>'admin.add.product',
-	
-]);
+		Route::get('/admin_add_product',[
+			'uses'=> 'adminController@getAddProduct',
+			'as' =>'admin.add.product',
+			
+		]);
+
+		Route::post('/admin_add_product',[
+			'uses'=> 'productController@postAddProductInventory',
+			'as' =>'admin.add.product',
+			
+		]);
+
+		Route::get('/admin_view_products',[
+			'uses'=> 'adminController@getViewProducts',
+			'as' =>'admin.view.products',
+			
+		]);
+
+		Route::get('/admin_single_product/{id}',[
+			'uses'=> 'adminController@getSingleProduct',
+			'as' =>'admin.single.products',
+			
+		]);
 
 
+
+	});  
+
+// Route::get('storage/{filename}', function ($filename)
+// {
+//     return Image::make(storage_path('public/' . $filename))->response();
+// });
+// end prefix
 
 

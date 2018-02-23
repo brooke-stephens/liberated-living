@@ -60,7 +60,7 @@
             <li><a href="#ProductDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Products </a>
               <ul id="ProductDropdown" class="collapse list-unstyled ">
                 <li><a href="{{ Route('admin.add.product') }}">Add Product</a></li>
-                <li><a href="#">View Products</a></li>
+                <li><a href="{{ Route('admin.view.products') }}">View Products</a></li>
                 
               </ul>
             </li>

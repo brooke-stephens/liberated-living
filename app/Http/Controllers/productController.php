@@ -23,11 +23,7 @@ class productController extends Controller
 {
     public function getIndex() {
                     // Test database connection
-            try {
-                DB::connection()->getPdo();
-            } catch (\Exception $e) {
-                die("Could not connect to the database.  Please check your configuration.");
-            }
+          
     	$products = Product::all();
     	return view('shopviews.index', [
     		'products' => $products,	
@@ -146,8 +142,7 @@ class productController extends Controller
     }
 
 
-    public function postAddProductInventory(Request $request){
-       
+    public function postAddProductInventory(Request $request){      
 
         $this->validate($request,[
             'name' => 'required|min:4',
@@ -171,15 +166,19 @@ class productController extends Controller
         if(Input::hasfile('primaryimage')){
             $file = request()->file('primaryimage');
             $resize = Image::make($file)->fit(300)->encode('jpg');
+            $thumbnail = Image::make($file)->fit(50)->encode('jpg');
             // calculate md5 hash of encoded image
             $hash = md5($resize->__toString());
             // use hash as a name
-            $publicpath = "srv/productimages/{$hash}.jpg";
+            $publicpath = "srv/productthumbnails/{$hash}.jpg";
             $storagepath = "public/productimages/{$hash}.jpg";
+
             // save it locally to ~/srv/productimages/{$hash}.jpg
-            // $resize->save(public_path($path));
-            //save the file to the storage directory
-            Storage::put($storagepath, $resize->__toString());
+            $thumbnail->save(public_path($publicpath));
+            Storage::put($storagepath, $resize);
+            //save the file to the storage directory            
+            // Storage::put($storagepath, $resize->__toString());
+
         }    
 
         //Keep in mind that file extension may be different, check uploaded file
@@ -246,8 +245,7 @@ class productController extends Controller
         }
 
 
-        
-       
+
 
 
 
