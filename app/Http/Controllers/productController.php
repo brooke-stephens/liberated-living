@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Input;
 use Image;
 use Storage;
 use DB;
-
+use Redirect;
 
 class productController extends Controller
 {
@@ -152,7 +152,7 @@ class productController extends Controller
             'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
             'alternativeimages' => 'upload_count',
             'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
-            'price' => 'required|numeric|min:1',
+            'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
             'quantity' => 'required|numeric|min:1',
 
         ]);
@@ -168,7 +168,9 @@ class productController extends Controller
             $resize = Image::make($file)->fit(300)->encode('jpg');
             $thumbnail = Image::make($file)->fit(50)->encode('jpg');
             // calculate md5 hash of encoded image
-            $hash = md5($resize->__toString());
+            // $hash = md5($resize->__toString());
+            $hash = md5($resize. time());
+            
             // use hash as a name
             $publicpath = "srv/productthumbnails/{$hash}.jpg";
             $storagepath = "public/productimages/{$hash}.jpg";
@@ -183,11 +185,6 @@ class productController extends Controller
 
         //Keep in mind that file extension may be different, check uploaded file
         // $safeName = uniqid(date('Y-m-d_H-i-s')).'.jpg';
-       
-        
-
-    
-
         // dd($request->get('description'));
 
         // $new_product = new Product([
@@ -223,9 +220,10 @@ class productController extends Controller
                // $image = $request->file('images');
                 $resize = Image::make($image)->fit(300)->encode('jpg');
                 // calculate md5 hash of encoded image
-                $hash = md5($resize->__toString());
+                // $hash = md5($resize->__toString());
+                $hash = md5($resize. time());
                 // use hash as a name
-                $publicpath = "srv/productimages/{$hash}.jpg";
+                // $publicpath = "srv/productimages/{$hash}.jpg";
                 $storagepath = "public/productimages/{$hash}.jpg";
                 // save it locally to ~/srv/productimages/{$hash}.jpg
                 // $resize->save(public_path($path));
@@ -244,13 +242,47 @@ class productController extends Controller
             }
         }
 
-
-
-
-
-
-        
+        notify()->flash("Product Created.", "success");
+        return redirect()->route('admin.add.product');
+      
     }
+
+     public function postUpdateProduct(Request $request, $id){
+
+
+
+         $this->validate($request,[
+            'name' => 'required|min:4',
+            'description' => 'required|min:4',
+            'sku' => 'required|min:4',
+            'category' => 'required|min:3',
+            // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+            // 'alternativeimages' => 'upload_count',
+            // 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
+            'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
+            'quantity' => 'required|numeric|min:1',
+
+        ]);
+
+        $updated_product = Product::find($id);
+        $updated_product->title = $request->name;
+        $updated_product->description = $request->description;
+        $updated_product->sku = $request->sku;
+        $updated_product->category = $request->category;
+        $updated_product->price = $request->price;
+        $updated_product->quantity = $request->quantity;
+        $updated_product->save();
+
+    
+
+      //return redirect('/');
+      //return Redirect::to('/')
+      notify()->flash("Product Updated.", "success"); 
+      Redirect::to("/admin/admin_single_product/$id")->send(); //the other redirect werent redirecting
+
+        // return redirect()->route('admin.single.product',[$id]);
+
+    }    
 
 
 }

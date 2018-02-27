@@ -12,17 +12,21 @@
           <header> 
             <!-- <h1 class="h3 display">Forms            </h1> -->
           </header>
-<img src="<?php echo asset('storage/public/productimages/8344fa4e08eb8500c3d9840aded5d9f7.jpg'); ?>" width="300" alt="">
-<img src="<?php echo asset('storage/public/productimages/464b49b8fae20dd45f5d53b883e380fe.jpg'); ?>" width="300" alt="">
-<img src="{{ URL::to('/srv/productthumbnails/test3.jpg') }}">
+
+
+
+
 
       
           <div class="row">
+
             
             <div class="col-lg-12">
+
               <div class="card">
                 <div class="card-header">
-                  <h4>Your Products</h4>
+                  <h4>Your Products (Ordered by {{$columnname}})</h4>
+                  <br>{!! $products->render(new \Illuminate\Pagination\BootstrapFourPresenter($products)) !!}
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -30,10 +34,10 @@
                       <thead>
                         <tr>
                           <th>Image</th>
-                          <th>Product Name</th>
-                          <th>Category</th>
-                          <th>SKU</th>
-                          <th>Price</th>
+                          <th><a href="{{ route('admin.view.products',['columnname'=>'title','sortmethod' => $sortmethod]) }}">Product Name</a></th>
+                          <th><a href="{{ route('admin.view.products',['columnname'=>'category','sortmethod' => $sortmethod]) }}">Category</a></th>
+                          <th><a href="{{ route('admin.view.products',['columnname'=>'sku','sortmethod' => $sortmethod]) }}">SKU</a></th>
+                          <th><a href="{{ route('admin.view.products',['columnname'=>'price','sortmethod' => $sortmethod]) }}">Price</a></th>
                           <th>On Sale</th>
                           <th>Update</th>
                           <th>Delete</th>
@@ -69,7 +73,7 @@
                                 <a href="{{URL::to('admin/admin_single_product/'.$product->id.'')}}"  class="btn btn-success btn-sm">Edit/View</a>
                             </th>
                             <th>
-                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                             <button type="button" id="{{ $product->id }}" class="btn btn-danger btn-sm delete">Delete</button>
                            </th>
                           </tr>
                         @endforeach
@@ -84,9 +88,16 @@
             </div>
           </div>
 
-		
-		
+
+{!! $products->render(new \Illuminate\Pagination\BootstrapFourPresenter($products)) !!}
+
+
+
+<div id="ajaxresults">
+</div>
+
 </div>
 <section>
 <br><br>
 @endsection
+

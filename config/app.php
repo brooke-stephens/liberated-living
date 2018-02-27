@@ -205,7 +205,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Product' => App\Services\Product::class,
         'Input' => Illuminate\Support\Facades\Input::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Notify' => Codecourse\Notify\Facades\Notify::class,
 
     ],
 

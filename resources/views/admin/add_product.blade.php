@@ -13,7 +13,7 @@
             <!-- <h1 class="h3 display">Forms            </h1> -->
           </header>
 
-             @if (count($errors))
+        @if (count($errors))
 		        <div class="alert alert-danger">            
 		            @foreach($errors->all() as $error)
 		                {{ $error }}

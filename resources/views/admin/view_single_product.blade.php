@@ -12,17 +12,16 @@
           <header>          
           </header>
 
-        <img src="<?php echo asset('storage/public/productimages/test3.jpg'); ?>" width="300" alt="">
 
           <div class="row">
            
             
-            <div class="col-lg-6">
+            <div class="col-lg-9">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>{{$product->title}}</h4>
                 </div>
-                <form action="{{ Route('admin.add.product') }}" method="POST" id="update_product" name="update_product" enctype="multipart/form-data">
+                <form action="{{ Route('admin.single.product',[$product->id]) }}" method="POST" id="update_product" name="update_product" enctype="multipart/form-data">
                 <div class="card-body">
                   <p>Enter the product information below.</p>
                    <div class="form-group">
@@ -87,17 +86,18 @@
           </div>
            
          
-         <div class="col-lg-6">            
+         <div class="col-lg-3">            
               <div class="card-deck">  
 
                <div class="card">
 
                   @foreach ($primaryImage as $pimage)
-                    <img src="<?php echo asset('storage/public/productimages/'.$pimage->name.''); ?>" width="300" alt="">                   
+                     
+                    <img src="http://liberatedliving.dev/storage/{{$pimage->name}}" class="w-100" alt="">                
                   @endforeach               
                   <div class="card-body">
                     <h5 class="card-title">Primary Image</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                   <!--  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                     <a href="#" class="btn btn-danger">Delete Image</a>
                   </div>
                 </div>
@@ -108,11 +108,12 @@
 
             @foreach ($associatedImages as $aimage)
                <div class="card">                             
-                    <img src="<?php echo asset('storage/public/productimages/'.$aimage->name.''); ?>" width="300" alt="">                 
+                    <img src="http://liberatedliving.dev/storage/{{$aimage->name}}" class="w-100" alt="">               
                              
                   <div class="card-body">
                     <h5 class="card-title">Alternate Image</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <!--   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <a href="#" class="btn btn-success">Make Primary</a>
                     <a href="#" class="btn btn-danger">Delete Image</a>
                   </div>
                 </div>
@@ -127,3 +128,5 @@
 <section>
 <br><br>
 @endsection
+
+

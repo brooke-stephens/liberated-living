@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->text('sku');
             $table->text('category');
-            $table->integer('price');
+            $table->float('price');
             $table->integer('quantity');
             // $table->string('imagePath');    
             $table->timestamps();

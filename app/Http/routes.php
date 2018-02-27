@@ -223,7 +223,7 @@ Route::group([
 			'uses'=> 'adminController@getAddProduct',
 			'as' =>'admin.add.product',
 			
-		]);
+		]);		
 
 		Route::post('/admin_add_product',[
 			'uses'=> 'productController@postAddProductInventory',
@@ -231,7 +231,8 @@ Route::group([
 			
 		]);
 
-		Route::get('/admin_view_products',[
+		
+		Route::get('/admin_view_products/{columnname}/{sortmethod}',[
 			'uses'=> 'adminController@getViewProducts',
 			'as' =>'admin.view.products',
 			
@@ -239,18 +240,26 @@ Route::group([
 
 		Route::get('/admin_single_product/{id}',[
 			'uses'=> 'adminController@getSingleProduct',
-			'as' =>'admin.single.products',
+			'as' =>'admin.single.product',
 			
 		]);
 
+		Route::post('/admin_single_product/{id}',[
+			'uses'=> 'productController@postUpdateProduct',
+			'as' =>'admin.single.product',
+			
+		]);
+
+		Route::post('/admin_delete_product/', [
+			'uses'=> 'adminController@adminDeleteProduct',
+			'as' =>'admin.delete.product',	
+		]);
 
 
 	});  
 
-// Route::get('storage/{filename}', function ($filename)
-// {
-//     return Image::make(storage_path('public/' . $filename))->response();
-// });
-// end prefix
-
-
+// this route will display the storage images 
+Route::get('storage/{filename}', function ($filename)
+{
+    return Image::make(storage_path('app/public/productimages/' . $filename))->response();
+});

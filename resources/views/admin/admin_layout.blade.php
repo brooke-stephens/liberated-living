@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <meta name="_token" content="{!! csrf_token() !!}"/>
     <!-- <meta name="csrf-token" content="{{ csrf_token() }}" /> -->
     <!-- Bootstrap CSS-->
     <!-- Font Awesome CSS-->
@@ -60,7 +61,7 @@
             <li><a href="#ProductDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Products </a>
               <ul id="ProductDropdown" class="collapse list-unstyled ">
                 <li><a href="{{ Route('admin.add.product') }}">Add Product</a></li>
-                <li><a href="{{ Route('admin.view.products') }}">View Products</a></li>
+                <li><a href="{{ route('admin.view.products',['columnname'=>'name','sortmethod' => 'desc']) }}">View Products</a></li>
                 
               </ul>
             </li>
@@ -163,7 +164,82 @@
     <!-- Upload image preview -->
     <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/imageuploader.js') }}"></script>  
 
-    
+
+
+<!-- <script type="text/javascript" src="{{  URL::asset('srv/js/sweetalert.min.js') }}"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+      
+      @if (notify()->ready())
+        swal({
+
+          title: "{!! notify()->message() !!}", 
+          type: "{{ notify()->type() }}",
+          icon: "success"
+        });
+      @endif
+
+</script>
+
+<script>
+$(document.body).on('click', '.delete' ,function(){
+var id = this.id;
+swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+
+      }
+    ).then(
+      function (isConfirm) {
+        if (isConfirm) {        
+        
+            $.ajax({
+            type: "POST",
+            url : "{{route('admin.delete.product')}}",
+            //url : $(self).attr('data-url'),
+            //data: "hi",
+            data: {'productId':id,
+                  },
+            // dataType: "json",
+              success: function(data) {
+                 $("#ajaxresults").html(data);
+                  swal("Your product file has been deleted!", {
+                        icon: "success",
+                      }).then(function (reload) {
+                   
+                         location.reload(); // then reload the page.(3)
+                  });
+
+
+              },
+              error: function(data){
+                  alert("fail");
+                  // console.log(data);
+              }
+            });
+
+        }
+      },
+      function() {
+        swal("Your file is safe!");
+      }
+    );
+
+
+
+});
+
+</script>
+
+<script type="text/javascript">
+  $.ajaxSetup({
+     headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+  });
+</script>
 
   </body>
 </html>
