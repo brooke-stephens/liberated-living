@@ -1,6 +1,6 @@
 var multiplevariants = $('#multiplevariants');
 var unneededelements = $('.elementstohide');
-var openVariantmodal = $('button#openVariantmodal');
+var openVariantmodal = $('#openVariantmodal');
 var addVarianButton = $('button.addVariant');
 var addedVariants = $('div.addedVariants');
 
@@ -22,7 +22,7 @@ $(document).on('change', '#multiplevariants', function() {
 });
 
 
-openVariantmodal.click(function() {
+openVariantmodal.click(function(event) {
 	event.preventDefault();
 });
 
@@ -40,6 +40,8 @@ addVarianButton.click(function(e) {
 						 "<td><input type=\"text\" placeholder=\"Quantity\" name=\"vquantity[]\" class=\"form-control\" value=\""+vquantity+"\"></td>"+
 						 "<td><input type=\"text\" placeholder=\"SKU\" name=\"vsku[]\" class=\"form-control\" value=\""+vsku+"\"></td>"+
 						 "<td><button type=\"button\" class=\"btn btn-danger\">Delete</button></td>";
+
+	var test = ('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>');					 
 	$counter++;					 
 						
 					 		

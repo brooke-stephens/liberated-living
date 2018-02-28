@@ -165,8 +165,8 @@ class productController extends Controller
 
     public function postAddProductInventory(Request $request){      
 
-          dd($_POST);
-            
+          dd($request->all());
+
 
         $this->validate($request,[
             'name' => 'required|min:4',

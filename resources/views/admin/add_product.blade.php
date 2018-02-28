@@ -21,14 +21,21 @@
 
 		        </div>
 		    @endif
+        
+      <form action="{{ Route('admin.add.product') }}" method="POST" id="upload" name="add_product" enctype="multipart/form-data">
 
-          <div class="row">
-            <div class="col-lg-6">
+      <div class="row">           
+
+
+          <div class="col-lg-6">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>Add Product</h4>
                 </div>
-                <form action="{{ Route('admin.add.product') }}" method="POST" id="upload" name="add_product" enctype="multipart/form-data">
+                
+
+
+
                 <div class="card-body">
                   <p>Enter the product information below.</p>
                     <div class="form-group">                     
@@ -56,29 +63,26 @@
                       <input type="text" placeholder="Category" name="category" class="form-control" value="{{ old('category') }}">
                     </div>
 
-					<div class="form-group">       
+					         <div class="form-group">       
                       <label>Primary Product Images</label>
-            			<ul>
-							<li>
-								Select one file
-								<input type="file" class="form-control" id="primaryimage" name="primaryimage"/>
-							</li>
-						</ul>
-
-						
+                			<ul>
+          							<li>
+          								Select one file
+          								<input type="file" class="form-control" id="primaryimage" name="primaryimage"/>
+          							</li>
+    						      </ul>						
                     </div>
 
 
                     <div class="form-group">       
                       <label>Alternative Product Images</label>            
-                            <ul>
-                  					
+                            <ul>                  					
                   						<li>
                   							Select muiltple files
                   							<input type="file" class="form-control" id="alternativeimages" name="alternativeimages[]" multiple="multiple"/>
                   						</li>
-                  					</ul>                  				
-                   </div>
+                  					</ul>                 				
+                     </div>
 
 
                     <div class="elementstohide">
@@ -96,21 +100,19 @@
                       </div>                    
                     </div> <!-- end elements to hide -->
 
-                    <div class="form-group">
-                       
-                        <!-- <input type="submit" value="Add Variant" class="btn btn-info">          -->
+                    <div class="form-group">                       
+                        <!-- <input type="submit" value="Add Variant" data-toggle="modal" id="openVariantmodal" class="btn btn-info" data-target=".bd-example-modal-lg">          -->
+                         <button class="btn btn-info" id="openVariantmodal" data-toggle="modal" data-target=".addVariantModal">Add Variant</button>
                         <input type="submit" value="Add Product" class="btn btn-primary">
-                    </div>
 
-                  
+                    </div>         
+                  </div>
 
-                    
-                   
-                  
+              </div> <!-- end card -->
+          </div><!-- end col 6 -->
 
-                </div>
-              </div>
-            </div>
+
+            
 
 <!--    this is the Variant area below   -->
                
@@ -140,16 +142,6 @@
                                       <td>10</td>
                                       <td>Delete</td>           
                                     </tr>
-                                    <!-- <tr id="productvariant">
-                                      <th scope="row">1</th>
-                                      <td><input type="text" placeholder="Ex. 50g, 1000ml" name="vsize" class="form-control" value="{{ old('size') }}"></td>
-                                      <td><input type="text" placeholder="Price" name="vprice" class="form-control" value="{{ old('vprice') }}"></td>
-                                      <td><input type="text" placeholder="Ex. 50g, 1000ml" name="vsize" class="form-control" value="{{ old('size') }}"></td>
-                                      <td><input type="text" placeholder="Quantity" name="vquantity" class="form-control" value="{{ old('vquantity') }}"></td></td>
-                                      <td><input type="submit" value="Delete" class="btn btn-danger"></td>
-                                    </tr> -->
-                                   
-                                  
                                   </tbody>
                                 </table>
                               </div>            
@@ -157,14 +149,17 @@
                         </div>          
                     </div>  <!-- cardeck -->
                   </div><!--  end col 6 -->
-             
+
+ <!--    end this is the Variant area below   -->            
 
 {{ csrf_field() }}                  
 </form>
 
- <button class="btn btn-info" id="openVariantmodal" data-toggle="modal" data-target=".bd-example-modal-lg">Add Variant</button>
-        </div>
+
+
+
     </div>
+</div>
 
 
 
@@ -182,7 +177,7 @@
 <!-- Large modal -->
 
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade addVariantModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -208,8 +203,6 @@
           <label>Add SKU (Each product must have a unique SKU)</label>
           <input type="text" placeholder="SKU" name="vsku" id="vsku" class="form-control" value="">
         </div>
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -217,7 +210,6 @@
       </div>
     </div>
   </div>
-
 </div>		
 		
 
