@@ -15,7 +15,17 @@
 							<span class="badge badge-primary">
 								{{ $product['qty'] }}
 							</span>
-							<strong>{{ $product['item']['title'] }}</strong>
+							<strong>
+									<?php 
+										if (!isset($product['item']['product_id'])){
+											$id =  $product['item']['id'];
+										} else {
+											$id =  $product['item']['product_id'];
+										}				
+									 	echo App\Product::find($id)->title 
+									 	?>
+										{{ $product['item']['size'] }}</strong>	
+							
 							<span class="label label-success">
 								{{ $product['price'] }}
 							</span>
@@ -24,8 +34,8 @@
 							</button>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="{{ route('product.subtractFromCart',['id'=>$product['item']['id']] )}}">Reduce</a>
-									<a href="{{ route('product.removeFromCart',['id'=>$product['item']['id']] )}}">Delete</a>
+									<a href="{{ route('product.subtractFromCart',['id'=>$product['item']['sku']] )}}">Reduce</a>
+									<a href="{{ route('product.removeFromCart',['id'=>$product['item']['sku']] )}}">Delete</a>
 								</li>
 							</ul>
 						</li>

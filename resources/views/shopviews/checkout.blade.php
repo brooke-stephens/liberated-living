@@ -18,18 +18,61 @@
            SHIPPING 
              <div class='form-row'>
               <div class='col-xs-12 form-group required'>
-                <label class='control-label'>Name</label>
-                <input class='form-control' size='4' type='text' id="name" name="name" required>
+                <label class='control-label'>First Name</label>
+                <input class='form-control' value="{{ old('firstname') }}" size='4' type='text' id="firstname" name="firstname" required>
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Last Name</label>
+                <input class='form-control' value="{{ old('lastname') }}" size='4' type='text' id="lastname" name="lastname" required>
               </div>
             </div>
              <div class='form-row'>
               <div class='col-xs-12 form-group required'>
-                <label class='control-label'>Address</label>
-                <input class='form-control' size='4' type='text' id="address" name="address" required>
+                <label class='control-label'>Address Line 1</label>
+                <input class='form-control' value="{{ old('addresslineone') }}" size='4' type='text' id="addresslineone" name="addresslineone" required>
+              </div>
+            </div>
+             <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Address Line 2</label>
+                <input class='form-control' value="{{ old('addresslinetwo') }}" size='4' type='text' id="addresslinetwo" name="addresslinetwo">
+              </div>
+            </div>
+             <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>City</label>
+                <input class='form-control' value="{{ old('city') }}" size='4' type='text' id="city" name="city" required>
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Province</label>
+                <input class='form-control' value="{{ old('province') }}" size='4' type='text' id="province" name="province" required>
+            </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Postal Code</label>
+                <input class='form-control' value="{{ old('postalcode') }}" size='4' type='text' id="postalcode" name="postalcode" required>
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Phone Number</label>
+                <input class='form-control' value="{{ old('phonenumber') }}" size='4' type='text' id="phonenumber" name="phonenumber" required>
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Save Shipping Info</label>
+                 <label class="checkbox-inline"><input type="checkbox" value=""></label>
               </div>
             </div>
 
-            CARD INFO
+
+            CARD INFO -------------------
             <div class='form-row'>
               <div class='col-xs-12 form-group required'>
                 <label class='control-label'>Name on Card</label>

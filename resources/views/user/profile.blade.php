@@ -16,7 +16,17 @@
 	   	  @foreach($order->cart->items as $item)
 		    <li class="list-group-item">
 				<span class="badge badge-warning">$ {{ $item['price'] }}</span>
-				{{ $item['item']['title'] }} | {{ $item['qty'] }} Units
+				{{ $item['item']['title'] }} | {{ $item['qty'] }} 
+				<?php 
+					if (!isset($item['item']['product_id'])){
+						$id =  $item['item']['id'];
+					} else {
+						$id =  $item['item']['product_id'];
+					}							
+				   echo App\Product::find($id)->title 			   
+				?>
+				{{ $item['item']['size'] }}	
+										
 		    </li>
 	       @endforeach 
 		</ul>

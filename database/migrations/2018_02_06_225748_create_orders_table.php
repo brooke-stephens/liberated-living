@@ -16,9 +16,17 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->text('cart');
-            $table->text('address');
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->text('addresslineone');
+            $table->text('addresslinetwo');
+            $table->string('city');
+            $table->string('province');
+            $table->string('postalcode');
+            $table->string('country')->default('Canada');
+            $table->string('phonenumber');
             $table->string('payment_id');
+            $table->string('saved');
             $table->timestamps();
         });
     }

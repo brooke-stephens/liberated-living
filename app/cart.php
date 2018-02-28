@@ -22,6 +22,7 @@ class cart {
 		}
 
 		public function add($item, $id){
+			
 
 			$storedItem = [
 				'qty'	=> 0,

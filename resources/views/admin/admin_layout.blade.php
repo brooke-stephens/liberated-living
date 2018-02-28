@@ -19,7 +19,7 @@
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- jQuery Circle-->
-    <link rel="stylesheet" href="{{ URL::to ('srv/css/admincss/grasp_mobile_progress_circle-1.0.0.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ URL::to ('srv/css/admincss/grasp_mobile_progress_circle-1.0.0.min.css') }}"> -->
     <!-- Custom Scrollbar-->
     <link rel="stylesheet" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
     <!-- theme stylesheet-->
@@ -132,37 +132,37 @@
         </div>
       </footer>
     </div>
+
+
+    
     <!-- Javascript files-->
-
+  <script   src="http://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
    
+     <!-- Main File-->
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/front.js') }}"></script>
     
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
 
-        <!-- <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script> -->
-    <script type="text/javascript" src="{{URL::to('srv/js/admin/js/grasp_mobile_progress_circle-1.0.0.min.js')}}"></script>
+    <!-- <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{URL::to('srv/js/admin/js/grasp_mobile_progress_circle-1.0.0.min.js')}}"></script> -->
+    <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
+    <!-- <script src="vendor/jquery.cookie/jquery.cookie.js"> </script> -->
+    <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+    <!-- <script src="vendor/jquery-validation/jquery.validate.min.js"></script> -->
+    <!-- <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>  -->
 
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-   
-    
- 
 
-  <script   src="http://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   
-  <!-- Main File-->
-    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/front.js') }}"></script>
+ 
 
    <!-- <script src="js/charts-home.js"></script> -->
-    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/charts-home.js') }}"></script>  
+    <!-- <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/charts-home.js') }}"></script>   -->
 
-    <!-- Upload image preview -->
-    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/imageuploader.js') }}"></script>  
+    <!-- add products -->
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script>  
 
 
 

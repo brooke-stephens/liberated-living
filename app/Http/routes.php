@@ -170,7 +170,7 @@ Route::group([
 	});  
 // end prefix
 
-Route::get('/add-to-cart/{id}', [
+Route::post('/add-to-cart/', [
 		'uses' => 'productController@getAddToCart',
 		'as' =>'product.addToCart'
 

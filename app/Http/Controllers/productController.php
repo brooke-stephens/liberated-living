@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
 use App\ProductImage;
+use App\ProductVariant;
 use App\Cart;
 use Session;
 use Auth;
@@ -23,23 +24,35 @@ class productController extends Controller
 {
     public function getIndex() {
                     // Test database connection
-          
+         
     	$products = Product::all();
+        $productvariants = ProductVariant::all();
+       
     	return view('shopviews.index', [
-    		'products' => $products,	
+    		'products' => $products,
+            'productvariants' => $productvariants,	
     	]);
     }
 
-    public function getAddToCart(Request $request, $id){
+    public function getAddToCart(Request $request){
+        
+        $id = $request->subproduct;
+    	// $product=Product::find($id);
+        $product=ProductVariant::find($id);
 
-    	$product=Product::find($id);
+        if (!isset($request->subproduct)){
+            $id = $request->id;
+            $product=Product::find($id);
+        }
+
     	$oldCart = Session::has('cart') ? Session::get('cart') : null;
     	
     	$cart = new Cart($oldCart);
-    	$cart->add($product, $product->id );
+    	$cart->add($product, $product->sku );
 
     	$request->session()->put('cart',$cart);
     	// dd ($request->session()->get('cart'));
+
     	return redirect()->route('product.index');
     }
 
@@ -79,11 +92,13 @@ class productController extends Controller
     		]);
     	} else {
     		// you could use the oldCart variable directly but this way would be better for future functiobnality to create a new object
+            $allproducts = Product::all();
     		$oldCart = Session::get('cart');
-    		$cart = new Cart($oldCart);    		
+    		$cart = new Cart($oldCart);    	
     		return view('shopviews.shopping-cart',[
     			'products' => $cart->items,
     			'totalPrice' => $cart->totalPrice,
+                'allProducts' => $allproducts
     		]);	
     	}
     }
@@ -126,8 +141,14 @@ class productController extends Controller
             $order = new Order();
             // $order->cart  -- cart relates to the tablename in the database
             $order->cart = serialize($cart); 
-            $order->name = $request->name; 
-            $order->address = $request->address; 
+            $order->firstname = $request->firstname; 
+            $order->lastname = $request->lastname;
+            $order->addresslineone = $request->addresslineone; 
+            $order->addresslinetwo = $request->addresslinetwo; 
+            $order->city = $request->city;
+            $order->province = $request->province; 
+            $order->postalcode = $request->postalcode; 
+            $order->phonenumber = $request->phonenumber;  
             $order->payment_id = $charge->id; 
 
             Auth::user()->orders()->save($order);
@@ -144,6 +165,9 @@ class productController extends Controller
 
     public function postAddProductInventory(Request $request){      
 
+          dd($_POST);
+            
+
         $this->validate($request,[
             'name' => 'required|min:4',
             'description' => 'required|min:4',
@@ -152,8 +176,9 @@ class productController extends Controller
             'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
             'alternativeimages' => 'upload_count',
             'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
-            'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
-            'quantity' => 'required|numeric|min:1',
+            // 'size' => 'required|min:1',
+            // 'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
+            // 'quantity' => 'required|numeric|min:1',
 
         ]);
 
