@@ -115,7 +115,7 @@
             
 
 <!--    this is the Variant area below   -->
-               
+              
                   <div class="col-lg-6 addedVariants">            
                       <div class="card-deck">
                        <div class="card">                           
@@ -149,7 +149,7 @@
                         </div>          
                     </div>  <!-- cardeck -->
                   </div><!--  end col 6 -->
-
+          
  <!--    end this is the Variant area below   -->            
 
 {{ csrf_field() }}                  
@@ -176,7 +176,7 @@
 
 <!-- Large modal -->
 
-
+ <form id="test" name="test" >
 <div class="modal fade addVariantModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -206,12 +206,16 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary addVariant">Add</button>
+        <!-- <button type="button" class="btn btn-primary addVariant">Add</button> -->
+        <input type="submit" class="btn btn-primary addVariant" value="submit">
       </div>
     </div>
   </div>
 </div>		
-		
+	</form>	
+
+
+
 
 <section>
 <br><br>

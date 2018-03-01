@@ -147,6 +147,7 @@
     <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
     <!-- <script src="vendor/jquery.cookie/jquery.cookie.js"> </script> -->
     <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <!-- <script src="vendor/jquery-validation/jquery.validate.min.js"></script> -->
     <!-- <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>  -->
 
