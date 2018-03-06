@@ -69,13 +69,48 @@ class adminController extends Controller
     	
     }
 
-    public function getSingleProduct($id){
+    public function getProduct($id){
+        return Product::find($id);
+    }
 
-    	$product = Product::find($id);
-        $productVariants = ProductVariant::where('product_id', $id)->get();
-    	// $images = ProductImage::find($id);
-    	$primaryImages = ProductImage::where('product_id', $id)->where('isprimaryimage', '1')->get();
-    	$AssociatedImages = ProductImage::where('product_id', $id)->where('isprimaryimage', '0')->get();
+    public function getProductVariants($id){
+        return ProductVariant::where('product_id', $id)->get();
+    }
+
+    public function getPrimaryImage($id){
+        return ProductImage::where('product_id', $id)->where('isprimaryimage', '1')->get();
+    }
+
+    public function getAssociatedImages($id){
+        return ProductImage::where('product_id', $id)->where('isprimaryimage', '0')->get();
+    }
+
+    public function DeletePrimaryImage($id){
+         $primaryimagename = ProductImage::where('product_id', $id)->where('isprimaryimage', 1)->first();
+         if ($primaryimagename){
+            $name = "srv/productthumbnails/$primaryimagename->name";
+            unlink($name);
+         }  
+    }
+
+    public function DeleteAllAssociatedImages($id){
+        $allimages = ProductImage::where('product_id', $id)->get();
+        if ($allimages){
+            foreach ($allimages as $image){
+                // Storage::delete($image->name);
+                $storagepath = "public/productimages/$image->name";
+                Storage::delete($storagepath, $image->name);
+            }
+        }
+    }
+
+    public function getSingleProduct($id){
+       
+
+        $product = $this->getProduct($id);
+        $productVariants = $this->getProductVariants($id);
+    	$primaryImages = $this->getPrimaryImage($id);
+    	$AssociatedImages = $this->getAssociatedImages($id);
 
 
 
@@ -107,30 +142,21 @@ class adminController extends Controller
 
 
         // dd($request->productId);
-        $image = ProductImage::where('product_id', 13)->first();
+        // $image = ProductImage::where('product_id', 13)->first();
         // dd($product->title);
 
         $id = $request->productId;
-        $primaryimagename = ProductImage::where('product_id', $id)->where('isprimaryimage', 1)->first();
-        $allimages = ProductImage::where('product_id', $id)->get();
+        $this->DeletePrimaryImage($id);        
+        $this->DeleteAllAssociatedImages($id);  
 
         Product::destroy($id);        
         // $imagesToDelete = ProductImage::where('product_id', $id)->get();
         DB::table('product_images')->where('product_id', $id)->delete(); 
         // dd($alternativeimagenames);
 
-        if ($primaryimagename){
-            $name = "srv/productthumbnails/$primaryimagename->name";
-            unlink($name);
-        }       
+            
 
-        if ($allimages){
-            foreach ($allimages as $image){
-                // Storage::delete($image->name);
-                $storagepath = "public/productimages/$image->name";
-                Storage::delete($storagepath, $image->name);
-            }
-        }
+       
 
     }
 

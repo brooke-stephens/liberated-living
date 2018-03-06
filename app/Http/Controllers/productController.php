@@ -163,6 +163,10 @@ class productController extends Controller
          return redirect()->route('product.index')->with('success', 'Successfully Purchased');
     }
 
+    public function getProduct($id){
+        return Product::find($id);
+    }
+
 
     public function postAddProductInventory(Request $request){      
 
@@ -320,7 +324,8 @@ class productController extends Controller
      }
 
      public function postUpdateProduct(Request $request, $id){
-         
+
+               
         $this->checkValidation($request);    
 
         if(!$request->multiplevariants){
