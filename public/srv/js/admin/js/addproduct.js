@@ -3,11 +3,11 @@ $(function() {
     return /^-?(\d{1,3})(\.\d{1,2})?$/.test(value); 
 	}, 'Please enter a valid price. ');
 	$.validator.addMethod('size', function (value) { 
-    return /^-?(\d{1,3})[a-z]{2,}?$/.test(value); 
+    return /^-?(\d{1,8})[a-z]{1,}?$/.test(value); 
 	}, 'Please enter a valid size. ');
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
-  $("form[name='test']").validate({
+  $("form[name='modalform']").validate({
     // Specify validation rules
     // ^-?(\d{1,3})(\.\d{1,2})?$
     rules: {
@@ -20,10 +20,16 @@ $(function() {
       
       },
       vprice: {
-      price: true
+     	 price: true
       },
-      vquantity: "required",
-      vsku: "required",
+      vquantity: {
+     	 required: true,
+     	 digits: true,
+      },
+      vsku: {
+      	required: true,
+      	minlength: 4,
+      },    
      
     },
     // Specify validation error messages
@@ -46,8 +52,18 @@ var addedVariants = $('div.addedVariants');
 openVariantmodal.hide();
 // addedVariants.hide();
 
+$(document).ready(function(){ 
+	checkIfMultipleVariants();	
+});
+
 $(document).on('change', '#multiplevariants', function() {
-							
+	checkIfMultipleVariants();			
+});
+
+
+
+
+function checkIfMultipleVariants(){
 	if(multiplevariants.prop('checked') == true){
 		unneededelements.fadeOut();
 		openVariantmodal.fadeIn();
@@ -57,8 +73,7 @@ $(document).on('change', '#multiplevariants', function() {
 		openVariantmodal.fadeOut();
 		addedVariants.fadeOut();
 	}
-});
-
+}
 
 openVariantmodal.click(function(event) {
 	event.preventDefault();
@@ -70,7 +85,7 @@ addVarianButton.click(function(event) {
 
 	
 
-	if ($('#test').valid()){
+	if ($('#modalform').valid()){
 		var vsize = $("input#vsize").val();
 		var vprice = $("input#vprice").val();
 		var vquantity = $("input#vquantity").val();
@@ -84,16 +99,19 @@ addVarianButton.click(function(event) {
 							 "<td><input type=\"text\" placeholder=\"Price\" name=\"vprice[]\" class=\"form-control\" value=\""+vprice+"\"></td>"+
 							 "<td><input type=\"text\" placeholder=\"Quantity\" name=\"vquantity[]\" class=\"form-control\" value=\""+vquantity+"\"></td>"+
 							 "<td><input type=\"text\" placeholder=\"SKU\" name=\"vsku[]\" class=\"form-control\" value=\""+vsku+"\"></td>"+
-							 "<td><button type=\"button\" class=\"btn btn-danger\">Delete</button></td>";
+							 "<td><button type=\"button\" class=\"btn btn-danger deleteButton\">Delete</button></td></tr>";
 			 
 		// addedVariants.fadeIn();					 
 		$('#appendvarianthere').append(variantinput);
-	}	 
-						
-					 		
-	
-	
+		
+	}	 			
 
+});
+
+$('.deleteButton').on('click', function() {
+		
+		let addedVariant = $(this).closest('tr');
+		addedVariant.remove();
 });
 
 

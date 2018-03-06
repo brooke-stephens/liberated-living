@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Product;
+use App\ProductVariant;
 use App\ProductImage;
 use Image;
 use Storage;
@@ -71,9 +72,18 @@ class adminController extends Controller
     public function getSingleProduct($id){
 
     	$product = Product::find($id);
+        $productVariants = ProductVariant::where('product_id', $id)->get();
     	// $images = ProductImage::find($id);
     	$primaryImages = ProductImage::where('product_id', $id)->where('isprimaryimage', '1')->get();
     	$AssociatedImages = ProductImage::where('product_id', $id)->where('isprimaryimage', '0')->get();
+
+
+
+        if (!$productVariants->isEmpty()) { 
+           $multipleVariants = 'checked';
+        } else {
+           $multipleVariants = "";
+        }
 
     	// foreach ($AssociatedImages as  $image) {
     	// 	echo $image->name;
@@ -83,9 +93,10 @@ class adminController extends Controller
     	
     	// dd($images->name->where('isprimaryimage', '1'));
 
-
     	return view('admin.view_single_product',[
     		'product' => $product,
+            'productVariants' => $productVariants,
+            'multipleVariants' => $multipleVariants,
     		'primaryImage' => $primaryImages,
     		'associatedImages' => $AssociatedImages
     	]);

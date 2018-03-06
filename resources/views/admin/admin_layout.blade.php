@@ -164,6 +164,7 @@
 
     <!-- add products -->
     <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script>  
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/flashnotifcations.js') }}"></script> 
 
 
 
@@ -207,7 +208,7 @@ swal({
                   },
             // dataType: "json",
               success: function(data) {
-                 $("#ajaxresults").html(data);
+                 // $("#ajaxresults").html(data);
                   swal("Your product file has been deleted!", {
                         icon: "success",
                       }).then(function (reload) {
@@ -218,7 +219,7 @@ swal({
 
               },
               error: function(data){
-                  alert("fail");
+                  alert("There was an error deleting the product. Please notify the administrator.");
                   // console.log(data);
               }
             });

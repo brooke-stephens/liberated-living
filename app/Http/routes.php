@@ -83,10 +83,6 @@ Route::group(['middleware' =>['AdminOnly']],function(){ //admin user
 
 });
 
-Route::get('/test', function(){
-	return view('events.events');
-});
-
 
 
 
@@ -208,6 +204,7 @@ Route::post('/checkout',[
 
 
 
+
 // -------------------------- ADMIN
 
 Route::get('/admin',[
@@ -253,6 +250,11 @@ Route::group([
 		Route::post('/admin_delete_product/', [
 			'uses'=> 'adminController@adminDeleteProduct',
 			'as' =>'admin.delete.product',	
+		]);
+
+		Route::get('/test',[
+			'uses'=> 'productController@test',
+			'as' =>'test',	
 		]);
 
 

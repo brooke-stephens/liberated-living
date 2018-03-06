@@ -19,6 +19,7 @@ use Image;
 use Storage;
 use DB;
 use Redirect;
+use XeroPHP\Application\PrivateApplication;
 
 class productController extends Controller
 {
@@ -165,22 +166,36 @@ class productController extends Controller
 
     public function postAddProductInventory(Request $request){      
 
-          dd($request->all());
+        // dd($request->all());
 
-
-        $this->validate($request,[
-            'name' => 'required|min:4',
-            'description' => 'required|min:4',
-            'sku' => 'required|min:4',
-            'category' => 'required|min:3',
-            'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
-            'alternativeimages' => 'upload_count',
-            'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
-            // 'size' => 'required|min:1',
-            // 'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
-            // 'quantity' => 'required|numeric|min:1',
-
-        ]);
+        if($request->multiplevariants){            
+            $this->validate($request,[ 
+                'name' => 'required|min:4',
+                'description' => 'required|min:4',
+                'sku' => 'required|min:4',
+                'category' => 'required|min:3',
+                'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+                'alternativeimages' => 'upload_count',
+                'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',           
+                'vsize.*' => 'required|min:1',
+                'vprice.*' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
+                'vquantity.*' => 'required|numeric|min:1',
+                'vsku.*' => 'required|min:4',                          
+                 ]);             
+        } else {
+            $this->validate($request,[
+                'name' => 'required|min:4',
+                'description' => 'required|min:4',
+                'sku' => 'required|min:4',
+                'category' => 'required|min:3',
+                'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+                'alternativeimages' => 'upload_count',
+                'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
+                'size' => 'required|min:1',
+                'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
+                'quantity' => 'required|numeric|min:1',
+            ]);
+        }
 
         // $safeName = uniqid(date('Y-m-d_H-i-s')).'.jpg';
         // $primaryimage = $request->primaryimage;
@@ -208,21 +223,6 @@ class productController extends Controller
 
         }    
 
-        //Keep in mind that file extension may be different, check uploaded file
-        // $safeName = uniqid(date('Y-m-d_H-i-s')).'.jpg';
-        // dd($request->get('description'));
-
-        // $new_product = new Product([
-        //     'title' => $request->name,
-        //     'description' => $request->get('description'),
-        //     'sku' => $request->sku,
-        //     'category' => $request->category,
-        //     'imagePath' => $request->image,
-        //     'price' => $request->price,
-        //     'quantity' => $request->quantity,
-        // ]);
-
-
         $new_product = new Product;
         $new_product->title = $request->name;
         $new_product->description = $request->description;
@@ -230,14 +230,30 @@ class productController extends Controller
         $new_product->category = $request->category;
         $new_product->price = $request->price;
         $new_product->quantity = $request->quantity;
+        $new_product->size = $request->size;
         $new_product->save();
+       
+        if($request->vsku){
+            $length = count($request->vsku);
+            for ($i = 0; $i < $length; $i++) {
+                $new_productVariant = new productVariant;
+                $new_productVariant->sku = $request->vsku[$i];           
+                $new_productVariant->size = $request->vsize[$i];
+                $new_productVariant->quantity = $request->vquantity[$i];
+                $new_productVariant->price = $request->vprice[$i];
+                $new_productVariant->product_id = $new_product->id;
+                $new_productVariant->save();
+            }
+        }
+        // DB::table('product_variants')->insert('price', Input::get('vprice'));
 
-
+         
         $new_productImage = new ProductImage;
         $new_productImage->product_id = $new_product->id;
         $new_productImage->name = "{$hash}.jpg";
         $new_productImage->isprimaryimage = 1;
         $new_productImage->save();
+
 
         if(Input::hasfile('alternativeimages')){
             $images = Input::file('alternativeimages');
@@ -272,31 +288,82 @@ class productController extends Controller
       
     }
 
+     public function checkValidation($request){
+        if($request->multiplevariants){            
+            $this->validate($request,[ 
+                'name' => 'required|min:4',
+                'description' => 'required|min:4',
+                'sku' => 'required|min:4',
+                'category' => 'required|min:3',
+                // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+                // 'alternativeimages' => 'upload_count',
+                // 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',           
+                'vsize.*' => 'required|min:1',
+                'vprice.*' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
+                'vquantity.*' => 'required|numeric|min:1',
+                'vsku.*' => 'required|min:4',                          
+                 ]);             
+        } else {
+            $this->validate($request,[
+                'name' => 'required|min:4',
+                'description' => 'required|min:4',
+                'sku' => 'required|min:4',
+                'category' => 'required|min:3',
+                // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+                // 'alternativeimages' => 'upload_count',
+                // 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
+                'size' => 'required|min:1',
+                'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
+                'quantity' => 'required|numeric|min:1',
+            ]);
+        }
+     }
+
      public function postUpdateProduct(Request $request, $id){
+         
+        $this->checkValidation($request);    
+
+        if(!$request->multiplevariants){
+            $updated_product = Product::find($id);
+            $updated_product->title = $request->name;
+            $updated_product->description = $request->description;
+            $updated_product->sku = $request->sku;
+            $updated_product->category = $request->category;
+
+            $updated_product->size = $request->size;
+            $updated_product->price = $request->price;
+            $updated_product->quantity = $request->quantity;
+            $updated_product->save();
+        } else {
+
+            $updated_product = Product::find($id);
+            $updated_product->title = $request->name;
+            $updated_product->description = $request->description;
+            $updated_product->sku = $request->sku;
+            $updated_product->category = $request->category;
+            $updated_product->size = "";
+            $updated_product->price = "";
+            $updated_product->quantity = "";
+            $updated_product->save();
+
+            DB::table('product_variants')->where('product_id', $id)->delete();   
+
+            if($request->vsku){
+            $length = count($request->vsku);
+                for ($i = 0; $i < $length; $i++) {
+                    $new_productVariant = new productVariant;
+                    $new_productVariant->sku = $request->vsku[$i];           
+                    $new_productVariant->size = $request->vsize[$i];
+                    $new_productVariant->quantity = $request->vquantity[$i];
+                    $new_productVariant->price = $request->vprice[$i];
+                    $new_productVariant->product_id = $updated_product->id;
+                    $new_productVariant->save();
+                }
+            }
+        }   
 
 
-
-         $this->validate($request,[
-            'name' => 'required|min:4',
-            'description' => 'required|min:4',
-            'sku' => 'required|min:4',
-            'category' => 'required|min:3',
-            // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
-            // 'alternativeimages' => 'upload_count',
-            // 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
-            'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
-            'quantity' => 'required|numeric|min:1',
-
-        ]);
-
-        $updated_product = Product::find($id);
-        $updated_product->title = $request->name;
-        $updated_product->description = $request->description;
-        $updated_product->sku = $request->sku;
-        $updated_product->category = $request->category;
-        $updated_product->price = $request->price;
-        $updated_product->quantity = $request->quantity;
-        $updated_product->save();
+       
 
     
 
@@ -308,6 +375,93 @@ class productController extends Controller
         // return redirect()->route('admin.single.product',[$id]);
 
     }    
+
+    public function test(){
+
+        
+        $privatekeypath = 'file:///'.base_path('vendor/drawmyattention/xerolaravel/Certificates/privatekey.pem');
+        $publickeypath  = 'file:///'.base_path('vendor/drawmyattention/xerolaravel/Certificates/publickey.cer');  
+
+        $config = [
+
+            'xero' => [
+                // API versions can be overridden if necessary for some reason.
+                'core_version'     => '2.0',
+                'payroll_version'  => '1.0',
+                'file_version'     => '1.0'
+            ],
+
+            'oauth' => [
+                'callback'    => 'oob',
+
+                'consumer_key'      => 'NOOPO541NLB1WS0QVCSELNRSPTK65L',
+                'consumer_secret'   => 'DIV2V3LEJGFSFN1XCWQMEBSFKJEWME',
+
+                //If you have issues passing the Authorization header, you can set it to append to the query string
+                //'signature_location'    => \XeroPHP\Remote\OAuth\Client::SIGN_LOCATION_QUERY
+
+
+                //For certs on disk or a string - allows anything that is valid with openssl_pkey_get_(private|public)
+                   //      'rsa_private_key'  => 'file://certs/private.pem',
+                          // 'rsa_public_key'   => 'file://certs/public.pem'
+
+                // 'rsa_private_key'  => 'file:///vagrant/sites/liberated-living/vendor/drawmyattention/xerolaravel/Certificates/privatekey.pem',
+                // 'rsa_public_key'   => 'file:///vagrant/sites/liberated-living/vendor/drawmyattention/xerolaravel/Certificates/publickey.cer',
+                'rsa_private_key'  => $privatekeypath,
+                'rsa_public_key'   => $publickeypath,
+
+
+            ],
+
+            //These are raw curl options.  I didn't see the need to obfuscate these through methods
+            'curl' => [
+                CURLOPT_USERAGENT   => 'testapp',
+
+                //Only for partner apps - unfortunately need to be files on disk only.
+                //CURLOPT_CAINFO          => 'certs/ca-bundle.crt',
+
+                //CURLOPT_SSLCERT         => 'certs/entrust-cert-RQ3.pem',
+                //CURLOPT_SSLKEYPASSWD    => '1234',
+                //CURLOPT_SSLKEY          => 'certs/entrust-private-RQ3.pem'
+
+            ]
+        ];
+
+
+
+
+        $xero = new \XeroPHP\Application\PrivateApplication($config);
+
+        $contacts = $xero->load('Accounting\\Item')->execute();
+        $master = $xero->loadByGUID('Accounting\\Item', 'dfb6d3db-113c-4526-9614-a491e6b4b69b');
+        // echo $master->name;
+
+        // $master->name = 'New Name';
+        // $xero->save($master);
+
+        // $master->SalesDetails->UnitPrice = 10;
+        // $xero->save($master);
+        
+        //QuantityOnHand
+
+
+    //  $master->setStatus(Invoice::INVOICE_STATUS_DRAFT);
+    // $xero->save($master);
+
+            foreach ($contacts as $contact) {
+              // dd($contact);
+              // echo $contact->name.' '. $contact->SalesDetails->UnitPrice.'<br>';
+
+                // $contact->setQuantityOnHand(1);
+                // $xero->save($contact);
+
+                echo $contact->getItemID();
+                echo "<br>";
+            }
+
+
+        
+    }
 
 
 }

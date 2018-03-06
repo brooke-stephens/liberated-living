@@ -128,8 +128,8 @@
                                       <th>#</th>
                                       <th>Size</th>
                                       <th>Price</th>
-                                      <th>SKU</th>
                                       <th>Quantity</th>
+                                      <th>SKU</th>
                                       <th>Delete</th>
                                     </tr>
                                   </thead>
@@ -138,8 +138,8 @@
                                      <th scope="row">Ex.</th>
                                       <td>500ml</td>
                                       <td>$20</td>
-                                      <td>SKU#</td>
                                       <td>10</td>
+                                      <td>SKU#</td>
                                       <td>Delete</td>           
                                     </tr>
                                   </tbody>
@@ -176,7 +176,7 @@
 
 <!-- Large modal -->
 
- <form id="test" name="test" >
+ <form id="modalform" name="modalform" >
 <div class="modal fade addVariantModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -213,7 +213,7 @@
   </div>
 </div>		
 	</form>	
-
+<!-- end Large modal -->
 
 
 

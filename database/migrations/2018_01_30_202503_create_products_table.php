@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->string('size');
             $table->float('price');
+            $table->string('xeroid');
             $table->integer('quantity');
             // $table->string('imagePath');    
             $table->timestamps();
