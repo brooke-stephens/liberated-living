@@ -79,8 +79,9 @@ return [
     'timezone'             => 'The :attribute must be a valid zone.',
     'unique'               => 'The :attribute has already been taken.',
     'url'                  => 'The :attribute format is invalid.',
-    "upload_count" => "Only 4 Alternative Images allowed",
-    "primaryimageexist" => "Primary Image already exists",
+    "primary_count"        => "Primary Image already exists",
+    "upload_count"         => "Only 4 Alternative Images allowed",
+    
 
     /*
     |--------------------------------------------------------------------------

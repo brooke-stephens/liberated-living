@@ -15,7 +15,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         Validator::extend('upload_count', function($attribute, $value, $parameters, $number)
+   
+          Validator::extendImplicit('primary_count', function ($attribute, $value, $parameters, $number) {
+                                        
+             
+                $number = $number->getCustomMessages()['needs_primary']; 
+                 if (Input::hasfile('primaryimage')){
+                    return $number;
+                 }  else {
+                    return true;
+                 }    
+                   
+                
+               
+
+            });
+
+        Validator::extend('upload_count', function($attribute, $value, $parameters, $number)
             {   
                 // $test =$number->customMessages->images_allowed;
                 if($number->getCustomMessages()){
@@ -26,14 +42,18 @@ class AppServiceProvider extends ServiceProvider
                           
 
                 $files = Input::file('alternativeimages');
-                //  if ($number == 0 ){
-                //     return true;
-                // }    
-                return ((count($files)-1) < $number) ? true : false;
+
+                // If no input than allow the update function to go through  
+                if (!Input::hasfile('alternativeimages')){
+                    return true;
+                 }  
+
+                 return ((count($files)-1) < $number) ? true : false;
 
             });
 
-         
+
+
     }
 
     /**

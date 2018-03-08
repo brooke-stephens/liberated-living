@@ -190,7 +190,9 @@ class productController extends Controller
             Storage::put($storagepath, $resize);
             //save the file to the storage directory            
             // Storage::put($storagepath, $resize->__toString()); 
-        }         
+        } else {
+            return false;
+        }        
     }
 
     public function saveAssociatedImage(Request $request,$id){
@@ -262,11 +264,6 @@ class productController extends Controller
         }
 
       
-        // $resizedimage = Image::make($file)->resize(200,200);
-        // $resizedimage->save($path.'bar.jpg');
-
-        $this->savePrimaryImage($request);         
-
         $new_product = new Product;
         $new_product->title = $request->name;
         $new_product->description = $request->description;
@@ -289,9 +286,12 @@ class productController extends Controller
                 $new_productVariant->save();
             }
         }
-        // DB::table('product_variants')->insert('price', Input::get('vprice'));
 
-         
+
+        // $resizedimage = Image::make($file)->resize(200,200);
+        // $resizedimage->save($path.'bar.jpg');
+
+        $this->savePrimaryImage($request);   
         $new_productImage = new ProductImage;
         $new_productImage->product_id = $new_product->id;
         $new_productImage->name = "{$this->hash}.jpg";
@@ -306,15 +306,17 @@ class productController extends Controller
       
     }
 
-     public function checkValidation($request, $id){
+     public function checkValidation(Request $request, $id){
         //error messages are stored in validation
         //this custom rule is in the app service providor
 
          //checkifthere is a primaryimage in the database
         $isprimaryimage = ProductImage::where('product_id', $id)->where('isprimaryimage', 1)->get();
 
-        if ($isprimaryimage->isEmpty()){
-
+        if (!$isprimaryimage->isEmpty()){
+            $needsPrimary = false;  
+        } else {
+            $needsPrimary = true;  
         }
         //checkhowmany associated images there are and send the limit to the validation
         $isassociatedimage = ProductImage::where('product_id', $id)->where('isprimaryimage', 0)->get();
@@ -326,10 +328,14 @@ class productController extends Controller
             $numberImageAllowed = 4;
         }
 
+ 
         $number = [
             'images_allowed' => $numberImageAllowed,
+            'needs_primary' => $needsPrimary,
             
         ];
+
+
 
         if($request->multiplevariants){            
             $this->validate($request,[
@@ -337,21 +343,21 @@ class productController extends Controller
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4',
                 'category' => 'required|min:3',
-                // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+                'primaryimage' => 'primary_count|mimes:jpeg,bmp,png|max:5000', 
                 'alternativeimages' => 'upload_count',
                 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',           
                 'vsize.*' => 'required|min:1',
                 'vprice.*' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
                 'vquantity.*' => 'required|numeric|min:1',
                 'vsku.*' => 'required|min:4',                          
-                 ]);             
+                 ],$number);             
         } else {
             $this->validate($request,[
                 'name' => 'required|min:4',
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4',
                 'category' => 'required|min:3',
-                // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
+                'primaryimage' => 'primary_count|mimes:jpeg,bmp,png|max:5000',           
                 'alternativeimages' => 'upload_count',
                 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
                 'size' => 'required|min:1',
@@ -363,13 +369,21 @@ class productController extends Controller
 
      public function postUpdateProduct(Request $request, $id){
 
-
+            // dd($request->all());
         // $this->checkValidation($request);
 
        // DB::table('product_images')->where('product_id', $id)->delete(); 
 
         $this->checkValidation($request, $id);
         $this->saveAssociatedImage($request, $id);
+        if(Input::hasfile('primaryimage')){
+            $this->savePrimaryImage($request);   
+            $new_productImage = new ProductImage;
+            $new_productImage->product_id = $id;
+            $new_productImage->name = "{$this->hash}.jpg";
+            $new_productImage->isprimaryimage = 1;
+            $new_productImage->save();
+        }
 
         if(!$request->multiplevariants){
             
@@ -419,10 +433,10 @@ class productController extends Controller
 
       //return redirect('/');
       //return Redirect::to('/')
+      // return redirect()->route('admin.single.product',[$id]);
       notify()->flash("Product Updated.", "success"); 
-      Redirect::to("/admin/admin_single_product/$id")->send(); //the other redirect werent redirecting
-
-        // return redirect()->route('admin.single.product',[$id]);
+      Redirect::to("/admin/admin_single_product/$id")->send(); //the other redirect werent 
+        
 
     }    
 
