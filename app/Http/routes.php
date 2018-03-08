@@ -252,6 +252,11 @@ Route::group([
 			'as' =>'admin.delete.product',	
 		]);
 
+		Route::post('/admin_delete_single_associated_image', [
+			'uses'=> 'adminController@adminDeleteSingleAssociatedImage',
+			'as' =>'delete.single.associated.image',	
+		]);
+
 		Route::get('/test',[
 			'uses'=> 'productController@test',
 			'as' =>'test',	

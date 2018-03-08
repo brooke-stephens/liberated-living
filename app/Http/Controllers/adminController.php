@@ -85,7 +85,27 @@ class adminController extends Controller
         return ProductImage::where('product_id', $id)->where('isprimaryimage', '0')->get();
     }
 
-    public function DeletePrimaryImage($id){
+    public function adminDeleteProduct(Request $request){
+
+
+        // dd($request->productId);
+        // $image = ProductImage::where('product_id', 13)->first();
+        // dd($product->title);
+
+        $id = $request->productId;
+        $this->DeleteThumbnailImage($id);        
+        $this->DeleteAllImages($id);  
+
+        Product::destroy($id);        
+        // $imagesToDelete = ProductImage::where('product_id', $id)->get();
+        DB::table('product_images')->where('product_id', $id)->delete(); 
+        // dd($alternativeimagenames);      
+
+       
+
+    }
+
+    public function DeleteThumbnailImage($id){
          $primaryimagename = ProductImage::where('product_id', $id)->where('isprimaryimage', 1)->first();
          if ($primaryimagename){
             $name = "srv/productthumbnails/$primaryimagename->name";
@@ -93,8 +113,8 @@ class adminController extends Controller
          }  
     }
 
-    public function DeleteAllAssociatedImages($id){
-        $allimages = ProductImage::where('product_id', $id)->get();
+    public function DeleteAllImages($product_id){
+        $allimages = ProductImage::where('product_id', $product_id)->get();
         if ($allimages){
             foreach ($allimages as $image){
                 // Storage::delete($image->name);
@@ -102,6 +122,28 @@ class adminController extends Controller
                 Storage::delete($storagepath, $image->name);
             }
         }
+    }
+
+    public function DeleteSingleImage($id){
+         $singleImage = ProductImage::where('id', $id)->first();
+        
+         if ($singleImage){
+             $storagepath = "public/productimages/$singleImage->name";
+             Storage::delete($storagepath, $singleImage->name);
+          } 
+
+          if ($singleImage->isprimaryimage == 1) {
+             $name = "srv/productthumbnails/$singleImage->name";
+             unlink($name);
+          } 
+    }
+
+    public function adminDeleteSingleAssociatedImage(Request $request){
+
+      $associatedimage_id = $request->image_id;
+      $this->DeleteSingleImage($associatedimage_id);
+      ProductImage::destroy( $associatedimage_id );
+
     }
 
     public function getSingleProduct($id){
@@ -131,34 +173,14 @@ class adminController extends Controller
     	return view('admin.view_single_product',[
     		'product' => $product,
             'productVariants' => $productVariants,
-            'multipleVariants' => $multipleVariants,
+            'multipleVariantscheckbox' => $multipleVariants,
     		'primaryImage' => $primaryImages,
     		'associatedImages' => $AssociatedImages
     	]);
 
     }
 
-    public function adminDeleteProduct(Request $request){
 
-
-        // dd($request->productId);
-        // $image = ProductImage::where('product_id', 13)->first();
-        // dd($product->title);
-
-        $id = $request->productId;
-        $this->DeletePrimaryImage($id);        
-        $this->DeleteAllAssociatedImages($id);  
-
-        Product::destroy($id);        
-        // $imagesToDelete = ProductImage::where('product_id', $id)->get();
-        DB::table('product_images')->where('product_id', $id)->delete(); 
-        // dd($alternativeimagenames);
-
-            
-
-       
-
-    }
 
 
 

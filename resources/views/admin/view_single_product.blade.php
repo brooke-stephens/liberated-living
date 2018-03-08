@@ -37,7 +37,7 @@
                    <div class="form-group">                     
                       <div class="checkbox checkbox-primary">
 
-                          <input id="multiplevariants" name="multiplevariants" type="checkbox" {{$multipleVariants}}>
+                          <input id="multiplevariants" name="multiplevariants" type="checkbox" {{$multipleVariantscheckbox}}>
                           <label for="multiplevariants">
                               Will this product have multiple product variants?
                           </label>
@@ -112,7 +112,7 @@
           </div>
 
 
-
+ 
         
            
          
@@ -121,17 +121,30 @@
 
                <div class="card">
 
+                @if ($primaryImage->count() == 0)
+
+                   <img src="{{ URL::asset ('images/adminimg/defaultimage.jpg') }}" class="w-100">            
+                             
+                  <div class="card-body">
+                    <h5 class="card-title">No Primary Image</h5>
+                   
+                  </div>
+                </div>
+              
+                   
+                @endif 
+
                   @foreach ($primaryImage as $pimage)
                      
                     <img src="http://liberatedliving.dev/storage/{{$pimage->name}}" class="w-100" alt="">                
-                  @endforeach               
+                             
                   <div class="card-body">
                     <h5 class="card-title">Primary Image</h5>
                    <!--  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    <a href="#" class="btn btn-danger">Delete Image</a>
+                     <button type="button" id="{{ $pimage->id }}" class="btn btn-danger  deleteassociatedimage">Delete Image</button>
                   </div>
                 </div>
-  
+                @endforeach  
                   
 
               </div>  <!-- cardeck -->
@@ -144,7 +157,9 @@
                     <h5 class="card-title">Alternate Image</h5>
                   <!--   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                     <a href="#" class="btn btn-success">Make Primary</a>
-                    <a href="#" class="btn btn-danger">Delete Image</a>
+                   
+                     <button type="button" id="{{ $aimage->id }}" class="btn btn-danger  deleteassociatedimage">Delete Image</button>
+
                   </div>
                 </div>
             @endforeach         

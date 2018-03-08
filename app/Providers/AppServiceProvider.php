@@ -15,11 +15,25 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         Validator::extend('upload_count', function($attribute, $value, $parameters)
+         Validator::extend('upload_count', function($attribute, $value, $parameters, $number)
             {   
+                // $test =$number->customMessages->images_allowed;
+                if($number->getCustomMessages()){
+                    $number = $number->getCustomMessages()['images_allowed'];
+                } else {
+                    $number = 4;
+                }       
+                          
+
                 $files = Input::file('alternativeimages');
-                return (count($files) < 5) ? true : false;
+                //  if ($number == 0 ){
+                //     return true;
+                // }    
+                return ((count($files)-1) < $number) ? true : false;
+
             });
+
+         
     }
 
     /**

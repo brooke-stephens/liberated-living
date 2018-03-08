@@ -23,6 +23,9 @@ use XeroPHP\Application\PrivateApplication;
 
 class productController extends Controller
 {
+
+    public $hash;
+
     public function getIndex() {
                     // Test database connection
          
@@ -167,6 +170,63 @@ class productController extends Controller
         return Product::find($id);
     }
 
+    public function savePrimaryImage(Request $request){
+
+        if(Input::hasfile('primaryimage')){       
+
+            $file = request()->file('primaryimage');
+            $resize = Image::make($file)->fit(300)->encode('jpg');
+            $thumbnail = Image::make($file)->fit(50)->encode('jpg');
+            // calculate md5 hash of encoded image
+            // $hash = md5($resize->__toString());
+            $this->hash = md5($resize. time());
+            
+            // use hash as a name
+            $publicpath = "srv/productthumbnails/{$this->hash}.jpg";
+            $storagepath = "public/productimages/{$this->hash}.jpg";
+
+            // save it locally to ~/srv/productimages/{$hash}.jpg
+            $thumbnail->save(public_path($publicpath));
+            Storage::put($storagepath, $resize);
+            //save the file to the storage directory            
+            // Storage::put($storagepath, $resize->__toString()); 
+        }         
+    }
+
+    public function saveAssociatedImage(Request $request,$id){
+
+        if(Input::hasfile('alternativeimages')){
+            $images = Input::file('alternativeimages');
+            foreach ($images as $image) {
+               // $image = $request->file('images');
+                $resize = Image::make($image)->fit(300)->encode('jpg');
+                // calculate md5 hash of encoded image
+                // $hash = md5($resize->__toString());
+                $hash = md5($resize. time());
+                // use hash as a name
+                // $publicpath = "srv/productimages/{$hash}.jpg";
+                $storagepath = "public/productimages/{$hash}.jpg";
+                // save it locally to ~/srv/productimages/{$hash}.jpg
+                // $resize->save(public_path($path));
+                //save the file to the storage directory
+                Storage::put($storagepath, $resize->__toString());
+
+
+                $new_productImage = new ProductImage;
+                $image->name = "{$hash}.jpg";
+                $new_productImage->product_id = $id;
+                $new_productImage->name = $image->name;
+                $new_productImage->isprimaryimage = 0;
+               // $image->move('srv/productimages/',$image->name);
+               // $imagePathArray[] = $image->path;
+                $new_productImage->save();
+            }
+        }
+
+    }
+
+
+
 
     public function postAddProductInventory(Request $request){      
 
@@ -201,31 +261,11 @@ class productController extends Controller
             ]);
         }
 
-        // $safeName = uniqid(date('Y-m-d_H-i-s')).'.jpg';
-        // $primaryimage = $request->primaryimage;
-       
+      
         // $resizedimage = Image::make($file)->resize(200,200);
         // $resizedimage->save($path.'bar.jpg');
 
-        if(Input::hasfile('primaryimage')){
-            $file = request()->file('primaryimage');
-            $resize = Image::make($file)->fit(300)->encode('jpg');
-            $thumbnail = Image::make($file)->fit(50)->encode('jpg');
-            // calculate md5 hash of encoded image
-            // $hash = md5($resize->__toString());
-            $hash = md5($resize. time());
-            
-            // use hash as a name
-            $publicpath = "srv/productthumbnails/{$hash}.jpg";
-            $storagepath = "public/productimages/{$hash}.jpg";
-
-            // save it locally to ~/srv/productimages/{$hash}.jpg
-            $thumbnail->save(public_path($publicpath));
-            Storage::put($storagepath, $resize);
-            //save the file to the storage directory            
-            // Storage::put($storagepath, $resize->__toString());
-
-        }    
+        $this->savePrimaryImage($request);         
 
         $new_product = new Product;
         $new_product->title = $request->name;
@@ -254,54 +294,52 @@ class productController extends Controller
          
         $new_productImage = new ProductImage;
         $new_productImage->product_id = $new_product->id;
-        $new_productImage->name = "{$hash}.jpg";
+        $new_productImage->name = "{$this->hash}.jpg";
         $new_productImage->isprimaryimage = 1;
         $new_productImage->save();
 
 
-        if(Input::hasfile('alternativeimages')){
-            $images = Input::file('alternativeimages');
-            foreach ($images as $image) {
-               // $image = $request->file('images');
-                $resize = Image::make($image)->fit(300)->encode('jpg');
-                // calculate md5 hash of encoded image
-                // $hash = md5($resize->__toString());
-                $hash = md5($resize. time());
-                // use hash as a name
-                // $publicpath = "srv/productimages/{$hash}.jpg";
-                $storagepath = "public/productimages/{$hash}.jpg";
-                // save it locally to ~/srv/productimages/{$hash}.jpg
-                // $resize->save(public_path($path));
-                //save the file to the storage directory
-                Storage::put($storagepath, $resize->__toString());
-
-
-                $new_productImage = new ProductImage;
-                $image->name = "{$hash}.jpg";
-                $new_productImage->product_id = $new_product->id;
-                $new_productImage->name = $image->name;
-                $new_productImage->isprimaryimage = 0;
-               // $image->move('srv/productimages/',$image->name);
-               // $imagePathArray[] = $image->path;
-                $new_productImage->save();
-            }
-        }
+        $this->saveAssociatedImage($request, $new_product->id);
 
         notify()->flash("Product Created.", "success");
         return redirect()->route('admin.add.product');
       
     }
 
-     public function checkValidation($request){
+     public function checkValidation($request, $id){
+        //error messages are stored in validation
+        //this custom rule is in the app service providor
+
+         //checkifthere is a primaryimage in the database
+        $isprimaryimage = ProductImage::where('product_id', $id)->where('isprimaryimage', 1)->get();
+
+        if ($isprimaryimage->isEmpty()){
+
+        }
+        //checkhowmany associated images there are and send the limit to the validation
+        $isassociatedimage = ProductImage::where('product_id', $id)->where('isprimaryimage', 0)->get();
+
+
+        if (!$isassociatedimage->isEmpty()){
+            $numberImageAllowed = 4 - $isassociatedimage->count();            
+        } else {
+            $numberImageAllowed = 4;
+        }
+
+        $number = [
+            'images_allowed' => $numberImageAllowed,
+            
+        ];
+
         if($request->multiplevariants){            
-            $this->validate($request,[ 
+            $this->validate($request,[
                 'name' => 'required|min:4',
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4',
                 'category' => 'required|min:3',
                 // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
-                // 'alternativeimages' => 'upload_count',
-                // 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',           
+                'alternativeimages' => 'upload_count',
+                'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',           
                 'vsize.*' => 'required|min:1',
                 'vprice.*' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
                 'vquantity.*' => 'required|numeric|min:1',
@@ -314,21 +352,28 @@ class productController extends Controller
                 'sku' => 'required|min:4',
                 'category' => 'required|min:3',
                 // 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
-                // 'alternativeimages' => 'upload_count',
-                // 'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
+                'alternativeimages' => 'upload_count',
+                'alternativeimages.*' => 'mimes:jpeg,bmp,png|max:5000',
                 'size' => 'required|min:1',
                 'price' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
                 'quantity' => 'required|numeric|min:1',
-            ]);
+            ],$number);
         }
      }
 
      public function postUpdateProduct(Request $request, $id){
 
-               
-        $this->checkValidation($request);    
+
+        // $this->checkValidation($request);
+
+       // DB::table('product_images')->where('product_id', $id)->delete(); 
+
+        $this->checkValidation($request, $id);
+        $this->saveAssociatedImage($request, $id);
 
         if(!$request->multiplevariants){
+            
+            DB::table('product_variants')->where('product_id', $id)->delete(); 
             $updated_product = Product::find($id);
             $updated_product->title = $request->name;
             $updated_product->description = $request->description;

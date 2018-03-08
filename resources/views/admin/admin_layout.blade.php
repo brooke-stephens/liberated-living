@@ -164,7 +164,7 @@
 
     <!-- add products -->
     <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script>  
-    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/flashnotifcations.js') }}"></script> 
+ 
 
 
 
@@ -183,7 +183,7 @@
       @endif
 
 </script>
-
+<script type="text/javascript" src="{{ URL::to('srv/js/admin/js/flashnotifcations.js') }}"></script>
 <script>
 $(document.body).on('click', '.delete' ,function(){
 var id = this.id;
@@ -235,6 +235,61 @@ swal({
 
 });
 
+</script>
+
+
+<script>
+  
+$(document.body).on('click', '.deleteassociatedimage' ,function(){
+var id = this.id;
+
+swal({
+        title: "Are you sure?",
+        text: "Do you really want to delete this image?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+
+      }
+    ).then(
+      function (isConfirm) {
+        if (isConfirm) {        
+        
+            $.ajax({
+            type: "POST",
+            url : "{{route('delete.single.associated.image')}}",
+            //url : $(self).attr('data-url'),
+            //data: "hi",
+            data: {'image_id':id,
+                  },
+            // dataType: "json",
+              success: function(data) {
+                 $("#ajaxresults").html(data);
+                  swal("Your image has been deleted!", {
+                        icon: "success",
+                      }).then(function (reload) {
+                   
+                         location.reload(); // then reload the page.(3)
+                  });
+
+
+              },
+              error: function(data){
+                  alert("There was an error deleting the product. Please notify the administrator.");
+                  // console.log(data);
+              }
+            });
+
+        }
+      },
+      function() {
+        swal("Your file is safe!");
+      }
+    );
+
+
+
+});
 </script>
 
 <script type="text/javascript">
