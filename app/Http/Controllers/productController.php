@@ -323,9 +323,9 @@ class productController extends Controller
 
 
         if (!$isassociatedimage->isEmpty()){
-            $numberImageAllowed = 4 - $isassociatedimage->count();            
+            $numberImageAllowed = 3 - $isassociatedimage->count();            
         } else {
-            $numberImageAllowed = 4;
+            $numberImageAllowed = 3;
         }
 
  

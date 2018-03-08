@@ -99,9 +99,57 @@
 
                     </div> 
 
+                              <!--    this is the Variant area below   -->
+              
+                  <div class="col-lg-12 addedVariants">            
+                      
+                                            
+                          <div class="card-body">
+                            <h5 class="card-title">Product Variants</h5>
+                                 <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Size</th>
+                                      <th>Price</th>
+                                      <th>Quantity</th>
+                                      <th>SKU</th>
+                                      <th>Delete</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="appendvarianthere">
+                                     <tr>
+                                     <th scope="row">Ex.</th>
+                                      <td>500ml</td>
+                                      <td>$20</td>
+                                      <td>10</td>
+                                      <td>SKU#</td>
+                                      <td>Delete</td>           
+                                    </tr>
+                                    @foreach($productVariants as $variant)
+                                    <tr class="productvariant">
+                                     <th scope="row">1</th>
+                                    <td><input type="text" placeholder="Size" name="vsize[]" class="form-control" value="{{$variant->size}}"></td>
+                                     <td><input type="text" placeholder="Price" name="vprice[]" class="form-control" value="{{$variant->price}}"></td>
+                                     <td><input type="text" placeholder="Quantity" name="vquantity[]" class="form-control" value="{{$variant->quantity}}"></td>
+                                     <td><input type="text" placeholder="SKU" name="vsku[]" class="form-control" value="{{$variant->sku}}"></td>
+                                     <td><button type="button" class="btn btn-danger deleteButton">Delete</button></td></tr>
+                                    @endforeach
+                                  </tbody>
+                                </table>
+                              </div>            
+                          </div>
+                        
+                  </div><!--  end col 6 -->
+          
+ <!--    end this is the Variant area below   -->   
+
           
 
                 </div>
+
+
               </div>
 
 
@@ -168,8 +216,8 @@
 
           <!--    this is the Variant area below   -->
               
-                  <div class="col-lg-9 addedVariants">            
-                      <div class="card-deck">
+<!--                   <div class="col-lg-9 addedVariants">            
+                      
                        <div class="card">                           
                           <div class="card-body">
                             <h5 class="card-title">Product Variants</h5>
@@ -208,8 +256,8 @@
                               </div>            
                           </div>
                         </div>          
-                    </div>  <!-- cardeck -->
-                  </div><!--  end col 6 -->
+                   
+                  </div><!--  end col 6 --> -->
           
  <!--    end this is the Variant area below   -->   
 {{ csrf_field() }}                  

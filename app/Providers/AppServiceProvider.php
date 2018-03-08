@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
                 if($number->getCustomMessages()){
                     $number = $number->getCustomMessages()['images_allowed'];
                 } else {
-                    $number = 4;
+                    $number = 3;
                 }       
                           
 

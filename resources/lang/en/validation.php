@@ -80,7 +80,7 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'url'                  => 'The :attribute format is invalid.',
     "primary_count"        => "Primary Image already exists",
-    "upload_count"         => "Only 4 Alternative Images allowed",
+    "upload_count"         => "Only 3 Alternative Images allowed",
     
 
     /*
