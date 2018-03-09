@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Product;
 use App\ProductVariant;
 use App\ProductImage;
+use App\Category;
 use Image;
 use Storage;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +21,10 @@ class adminController extends Controller
     }
 
     public function getAddProduct(){
-    	return view('admin.add_product');
+        $categories = Category::all();
+    	return view('admin.add_product',[
+            'categories' => $categories,
+        ]);
     }
 
     public function getViewProducts($columnname, $sortmethod){
@@ -153,6 +157,8 @@ class adminController extends Controller
         $productVariants = $this->getProductVariants($id);
     	$primaryImages = $this->getPrimaryImage($id);
     	$AssociatedImages = $this->getAssociatedImages($id);
+        $categories = Category::all();
+
 
 
 
@@ -175,7 +181,8 @@ class adminController extends Controller
             'productVariants' => $productVariants,
             'multipleVariantscheckbox' => $multipleVariants,
     		'primaryImage' => $primaryImages,
-    		'associatedImages' => $AssociatedImages
+    		'associatedImages' => $AssociatedImages,
+            'categories' => $categories,
     	]);
 
     }

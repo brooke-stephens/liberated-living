@@ -233,6 +233,7 @@ class productController extends Controller
     public function postAddProductInventory(Request $request){      
 
         // dd($request->all());
+        //|unique:product_variants
 
         if($request->multiplevariants){            
             $this->validate($request,[ 
@@ -252,7 +253,7 @@ class productController extends Controller
             $this->validate($request,[
                 'name' => 'required|min:4',
                 'description' => 'required|min:4',
-                'sku' => 'required|min:4',
+                'sku' => 'required|min:4|unique:products',
                 'category' => 'required|min:3',
                 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
                 'alternativeimages' => 'upload_count',

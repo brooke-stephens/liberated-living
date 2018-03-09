@@ -12,5 +12,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('categories')->insert([
+            ['name' => 'Medication'],
+            ['name' => 'Vitamins'],
+        ]);
+
+        DB::table('roles')->insert([
+            ['name' => 'User'],
+            ['name' => 'Admin'],
+        ]);
+
     }
 }
+

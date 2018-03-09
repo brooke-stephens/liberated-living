@@ -45,19 +45,20 @@
                     </div>
                    <div class="form-group">
                       <label>Name</label>
-                      <input type="text" placeholder="Product Name" name="name" class="form-control" value="{{$product->title}}">
+                      <input type="text" placeholder="Product Name" name="name" id="name" class="form-control" value="{{$product->title}}">
                     </div>
                     <div class="form-group">       
                       <label>Description</label>
                       <input type="text" placeholder="Product Description" name="description" class="form-control" value="{{$product->description}}">
                     </div>
-                     <div class="form-group">       
-                      <label>SKU</label>
-                      <input type="text" placeholder="sku" name="sku" class="form-control" value="{{$product->sku}}">
-                    </div>
                     <div class="form-group">       
                       <label>Product Category</label>
-                      <input type="text" placeholder="Category" name="category" class="form-control" value="{{$product->category}}">
+                       <select name="category" id="category" class="form-control">
+                            <option value="" disabled hidden>Choose here</option>  
+                        @foreach ($categories as $category)                             
+                            <option value="{{$category->name}}" {{ ($product->category == $category->name ? 'selected' : '') }}>{{$category->name}}</option>
+                        @endforeach                     
+                      </select> 
                     </div>
 
                     <div class="form-group">       
@@ -81,7 +82,7 @@
                       <div class="elementstohide">
                        <div class="form-group">       
                         <label>Size</label>
-                        <input type="text" placeholder="Ex. 50g, 1000ml" name="size" class="form-control" value="{{$product->size}}">
+                        <input type="text" placeholder="Ex. 50g, 1000ml" name="size" id="size" class="form-control" value="{{$product->size}}">
                       </div>
                       <div class="form-group">       
                         <label>Price</label>
@@ -92,6 +93,14 @@
                         <input type="text" placeholder="Quantity" name="quantity" class="form-control" value="{{$product->quantity}}">
                       </div>                    
                     </div> <!-- end elements to hide -->
+
+                     
+                     <label>SKU</label>
+                    <div class="form-group input-group">                       
+                      <input type="text" placeholder="sku" name="sku" id="skuinput" class="form-control" value="{{$product->sku}}">
+                      <button class="btn btn-default" id="skugenerate">Generate</button>
+                    </div>
+
                    <div class="form-group">                       
                         <!-- <input type="submit" value="Add Variant" data-toggle="modal" id="openVariantmodal" class="btn btn-info" data-target=".bd-example-modal-lg">          -->
                          <button class="btn btn-info" id="openVariantmodal" data-toggle="modal" data-target=".addVariantModal">Add Variant</button>
@@ -294,10 +303,14 @@
           <label>Add Quantity</label>
           <input type="text" placeholder="Quantity" name="vquantity" id="vquantity" class="form-control" value="">
         </div>
-         <div class="form-group">
-          <label>Add SKU (Each product must have a unique SKU)</label>
-          <input type="text" placeholder="SKU" name="vsku" id="vsku" class="form-control" value="">
-        </div>
+
+          <label>SKU</label>
+          <div class="form-group input-group">                       
+            <input type="text" placeholder="sku" name="vsku" id="vsku" class="form-control" value="">
+            <button class="btn btn-default" id="vskugenerate">Generate</button>
+         </div>
+          <label for="vsku" class="error" generated="true"></label>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -313,6 +326,14 @@
 <section>
 <br><br>
 @endsection
+
+@section('pagescript')
+    <!-- add sku generator -->
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/skugenerator.js') }}"></script> 
+        <!-- add products -->
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script> 
+
+@stop
 
 
 

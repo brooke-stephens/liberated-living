@@ -156,17 +156,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
   
- 
-
-   <!-- <script src="js/charts-home.js"></script> -->
-    <!-- <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/charts-home.js') }}"></script>   -->
-
-    <!-- add products -->
-    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script>  
- 
-
-
 
 <!-- <script type="text/javascript" src="{{  URL::asset('srv/js/sweetalert.min.js') }}"></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -183,7 +175,10 @@
       @endif
 
 </script>
-<script type="text/javascript" src="{{ URL::to('srv/js/admin/js/flashnotifcations.js') }}"></script>
+
+
+<!-- <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/test.js') }}"></script>  -->
+
 <script>
 $(document.body).on('click', '.delete' ,function(){
 var id = this.id;
@@ -291,6 +286,8 @@ swal({
 
 });
 </script>
+
+@yield('pagescript')
 
 <script type="text/javascript">
   $.ajaxSetup({

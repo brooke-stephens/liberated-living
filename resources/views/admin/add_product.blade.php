@@ -48,19 +48,22 @@
                     </div>
                    <div class="form-group">
                       <label>Name</label>
-                      <input type="text" placeholder="Product Name" name="name" class="form-control" value="{{ old('name') }}">
+                      <input type="text" placeholder="Product Name" name="name" id="name" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">       
                       <label>Description</label>
                       <input type="text" placeholder="Product Description" name="description" class="form-control" value="{{ old('description') }}">
-                    </div>
-                     <div class="form-group">       
-                      <label>SKU</label>
-                      <input type="text" placeholder="sku" name="sku" class="form-control" value="{{ old('sku') }}">
-                    </div>
+                    </div>                     
                     <div class="form-group">       
                       <label>Product Category</label>
-                      <input type="text" placeholder="Category" name="category" class="form-control" value="{{ old('category') }}">
+                      <!-- <input type="text" placeholder="Category" name="category" class="form-control" value="{{ old('category') }}"> -->
+                      <select name="category" id="category" class="form-control">
+                            <option value="" disabled hidden>Choose here</option>  
+                        @foreach ($categories as $category)                             
+                            <option value="{{$category->name}}" {{ (old('category') == $category->name ? 'selected' : '') }}>{{$category->name}}</option>
+                        @endforeach                     
+                      </select> 
+
                     </div>
 
 					         <div class="form-group">       
@@ -88,7 +91,7 @@
                     <div class="elementstohide">
                        <div class="form-group">       
                         <label>Size</label>
-                        <input type="text" placeholder="Ex. 50g, 1000ml" name="size" class="form-control" value="{{ old('size') }}">
+                        <input type="text" placeholder="Ex. 50g, 1000ml" name="size" id="size" class="form-control" value="{{ old('size') }}">
                       </div>
                       <div class="form-group">       
                         <label>Price</label>
@@ -96,9 +99,16 @@
                       </div>
                       <div class="form-group">       
                         <label>Quantity</label>
-                        <input type="text" placeholder="Quantity" name="quantity" class="form-control" value="{{ old('quantity') }}">
+                        <input type="text" placeholder="Quantity" name="quantity"  class="form-control" value="{{ old('quantity') }}">
                       </div>                    
                     </div> <!-- end elements to hide -->
+
+                    <label>SKU</label>
+                    <div class="form-group input-group">                       
+                      <input type="text" placeholder="sku" name="sku" id="skuinput" class="form-control" value="{{ old('sku') }}">
+                      <button class="btn btn-default" id="skugenerate">Generate</button>
+                    </div>
+
 
                     <div class="form-group">                       
                         <!-- <input type="submit" value="Add Variant" data-toggle="modal" id="openVariantmodal" class="btn btn-info" data-target=".bd-example-modal-lg">          -->
@@ -199,10 +209,14 @@
           <label>Add Quantity</label>
           <input type="text" placeholder="Quantity" name="vquantity" id="vquantity" class="form-control" value="">
         </div>
-         <div class="form-group">
-          <label>Add SKU (Each product must have a unique SKU)</label>
-          <input type="text" placeholder="SKU" name="vsku" id="vsku" class="form-control" value="">
-        </div>
+
+        <label>SKU</label>
+          <div class="form-group input-group">                       
+            <input type="text" placeholder="sku" name="vsku" id="vsku" class="form-control" value="">
+            <button class="btn btn-default" id="vskugenerate">Generate</button>
+          </div>
+          <label for="vsku" class="error" generated="true"></label>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -218,5 +232,12 @@
 
 
 <section>
-<br><br>
+
 @endsection
+
+@section('pagescript')
+    <!-- add sku generator -->
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/skugenerator.js') }}"></script> 
+        <!-- add products -->
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script> 
+@stop

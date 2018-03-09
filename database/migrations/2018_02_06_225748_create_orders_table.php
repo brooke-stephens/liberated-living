@@ -27,6 +27,8 @@ class CreateOrdersTable extends Migration
             $table->string('phonenumber');
             $table->string('payment_id');
             $table->string('saved');
+            $table->string('ispaymentcompleted');
+            $table->string('orderstatus');
             $table->timestamps();
         });
     }
