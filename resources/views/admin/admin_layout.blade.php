@@ -48,7 +48,7 @@
             <h2 class="h5">Administration</h2><span>Admin Panel</span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
-          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>L</strong><strong class="text-primary">L</strong></a></div>
         </div>
         <!-- Sidebar Navigation Menus-->
         <div class="main-menu">
@@ -189,7 +189,7 @@ $(document.body).on('click', '.delete' ,function(){
 var id = this.id;
 swal({
         title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this file!",
+        text: "Associated product variants will be deleted as well. Continue?",
         icon: "warning",
         buttons: true,
         dangerMode: true,

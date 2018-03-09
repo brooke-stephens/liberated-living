@@ -183,8 +183,8 @@
                 @endif 
 
                   @foreach ($primaryImage as $pimage)
-                     
-                    <img src="http://liberatedliving.dev/storage/{{$pimage->name}}" class="w-100" alt="">                
+                    
+                    <img src="{{ url('storage/'.$pimage->name) }}" class="w-100" alt="">                
                              
                   <div class="card-body">
                     <h5 class="card-title">Primary Image</h5>
@@ -199,7 +199,7 @@
 
             @foreach ($associatedImages as $aimage)
                <div class="card">                             
-                    <img src="http://liberatedliving.dev/storage/{{$aimage->name}}" class="w-100" alt="">               
+                    <img src="{{ url('storage/'.$aimage->name) }}" class="w-100" alt="">               
                              
                   <div class="card-body">
                     <h5 class="card-title">Alternate Image</h5>
@@ -257,7 +257,7 @@
                           </div>
                         </div>          
                    
-                  </div><!--  end col 6 --> -->
+                  </div><!--  end col 6 --> 
           
  <!--    end this is the Variant area below   -->   
 {{ csrf_field() }}                  
