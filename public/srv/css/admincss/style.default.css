@@ -80,7 +80,7 @@ table {
 }
 
 .badge.badge-primary {
-  background: #33b35a;
+  background: #4169e1;
 }
 
 .page {
@@ -1386,7 +1386,7 @@ button {
 
 .forms p {
   font-size: 0.8rem;
-  color: #868e96;
+  color: black;
 }
 
 .forms small {
@@ -1413,9 +1413,10 @@ button {
   }
   .forms input.form-control:-ms-input-placeholder {
     font-size: 0.85em;
+    
   }
   .forms p {
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
   .forms label {
     font-size: 0.9rem;

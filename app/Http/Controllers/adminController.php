@@ -41,7 +41,7 @@ class adminController extends Controller
         $sortmethod == "asc";
 
         //Default listing
-        $products = Product::paginate(15);  
+        $products = Product::paginate(25);  
 
         if ($sortmethod == "asc"){
             $sortmethod = "desc";

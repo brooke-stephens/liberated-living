@@ -257,6 +257,20 @@ Route::group([
 			'as' =>'delete.single.associated.image',	
 		]);
 
+		Route::get('/admin_view_orders/',[
+			'uses'=> 'OrdersController@index',
+			'as' =>'admin.view.orders',
+			
+		]);
+
+		Route::get('/admin_single_order/{id}',[
+			'uses'=> 'OrdersController@getSingleOrder',
+			'as' =>'admin.view.order',
+			
+		]);
+
+
+
 		Route::get('/test',[
 			'uses'=> 'productController@test',
 			'as' =>'test',	

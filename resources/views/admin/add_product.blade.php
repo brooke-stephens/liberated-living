@@ -52,7 +52,8 @@
                     </div>
                     <div class="form-group">       
                       <label>Description</label>
-                      <input type="text" placeholder="Product Description" name="description" class="form-control" value="{{ old('description') }}">
+                      <!-- <input type="text" placeholder="Product Description" name="description" class="form-control" value="{{ old('description') }}"> -->
+                      <textarea placeholder="Product Description" name="description" id="textareawsyi" class="form-control" value="{{ old('description') }}"></textarea>
                     </div>                     
                     <div class="form-group">       
                       <label>Product Category</label>
@@ -239,5 +240,32 @@
     <!-- add sku generator -->
     <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/skugenerator.js') }}"></script> 
         <!-- add products -->
-    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script> 
+    <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.9.4/trumbowyg.min.js"></script>
+
+
+    <script>
+      $.trumbowyg.svgPath = "{{ URL::asset('/images/adminimg/icons.svg') }}";
+
+      $('#textareawsyi').trumbowyg({
+           btns: [
+              ['viewHTML'],
+              ['undo', 'redo'], // Only supported in Blink browsers
+              ['formatting'],
+              ['strong', 'em'],
+              // ['superscript', 'subscript'],
+              // ['link'],
+              // ['insertImage'],
+              ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+              ['unorderedList', 'orderedList'],
+              ['horizontalRule'],
+              // ['removeformat'],
+              ['fullscreen']
+          ],
+          autogrow: true,
+
+      });
+
+    </script>
 @stop

@@ -170,6 +170,12 @@ class productController extends Controller
         return Product::find($id);
     }
 
+     public function getProductVariantBySku($sku){
+        $id = ProductVariant::where('sku', $sku)->first();
+        return $id->id;
+
+    }
+
     public function savePrimaryImage(Request $request){
 
         if(Input::hasfile('primaryimage')){       
@@ -234,6 +240,7 @@ class productController extends Controller
 
         // dd($request->all());
         //|unique:product_variants
+        // $this->getProductVariantBySku($request->vsku['0'])
 
         if($request->multiplevariants){            
             $this->validate($request,[ 
@@ -247,13 +254,13 @@ class productController extends Controller
                 'vsize.*' => 'required|min:1',
                 'vprice.*' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
                 'vquantity.*' => 'required|numeric|min:1',
-                'vsku.*' => 'required|min:4',                          
+                'vsku.*' => 'required|min:4|unique:product_variants,sku|unique:products,sku',                          
                  ]);             
         } else {
             $this->validate($request,[
                 'name' => 'required|min:4',
                 'description' => 'required|min:4',
-                'sku' => 'required|min:4|unique:products',
+                'sku' => 'required|min:4|unique:products|unique:product_variants,sku',
                 'category' => 'required|min:3',
                 'primaryimage' => 'required|mimes:jpeg,bmp,png|max:5000',
                 'alternativeimages' => 'upload_count',
@@ -308,6 +315,10 @@ class productController extends Controller
     }
 
      public function checkValidation(Request $request, $id){
+
+
+        // dd($this->getProductVariantBySku($request->vsku['0']));
+
         //error messages are stored in validation
         //this custom rule is in the app service providor
 
@@ -336,9 +347,9 @@ class productController extends Controller
             
         ];
 
+// |unique:product_variants,sku,
+        if($request->multiplevariants){
 
-
-        if($request->multiplevariants){            
             $this->validate($request,[
                 'name' => 'required|min:4',
                 'description' => 'required|min:4',
@@ -350,13 +361,13 @@ class productController extends Controller
                 'vsize.*' => 'required|min:1',
                 'vprice.*' => 'required|numeric|min:1|regex:/^\d*(\.\d{1,2})?$/',
                 'vquantity.*' => 'required|numeric|min:1',
-                'vsku.*' => 'required|min:4',                          
+                'vsku.*' => 'required|min:4',                        
                  ],$number);             
         } else {
             $this->validate($request,[
                 'name' => 'required|min:4',
                 'description' => 'required|min:4',
-                'sku' => 'required|min:4',
+                'sku' => 'required|min:4|unique:products,sku,'.$id,
                 'category' => 'required|min:3',
                 'primaryimage' => 'primary_count|mimes:jpeg,bmp,png|max:5000',           
                 'alternativeimages' => 'upload_count',

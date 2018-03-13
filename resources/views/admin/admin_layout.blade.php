@@ -29,12 +29,15 @@
 
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{ URL::to ('srv/css/admincss/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.9.4/ui/trumbowyg.min.css">
+
     <!-- Favicon-->
     <!-- <link rel="shortcut icon" href="img/favicon.ico"> -->
     <link rel="shortcut icon" href="{{ URL::to ('images/adminimg/favicon.ico') }}">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
   </head>
 
   <body>
@@ -67,7 +70,7 @@
             </li>
             <li><a href="#OrderDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Orders </a>
               <ul id="OrderDropdown" class="collapse list-unstyled ">
-                <li><a href="#">View Orders</a></li>
+                <li><a href="{{ Route('admin.view.orders') }}">View Orders</a></li>
                 <li><a href="#">Edit Order</a></li>
                 
               </ul>
@@ -157,7 +160,7 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-
+  
   
 
 <!-- <script type="text/javascript" src="{{  URL::asset('srv/js/sweetalert.min.js') }}"></script> -->

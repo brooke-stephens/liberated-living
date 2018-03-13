@@ -26,7 +26,7 @@
               <div class="card">
                 <div class="card-header">
                   <h4>Your Products (Ordered by {{$columnname}})</h4>
-                  <br>{!! $products->render(new \Illuminate\Pagination\BootstrapFourPresenter($products)) !!}
+                  {!! $products->render(new \Illuminate\Pagination\BootstrapFourPresenter($products)) !!}
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -93,11 +93,8 @@
 
 
 
-<div id="ajaxresults">
-</div>
-
 </div>
 <section>
-<br><br>
+
 @endsection
 

@@ -17,6 +17,16 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Vitamins'],
         ]);
 
+        DB::table('statuses')->insert([
+            ['name' => 'Order Pending'],
+            ['name' => 'Processing'], 
+            ['name' => 'Completed/Shipped'],
+            ['name' => 'Cancelled'],
+            ['name' => 'Error'],
+            ['name' => 'On Hold'],
+            ['name' => 'Refunded'],
+        ]);
+
         DB::table('roles')->insert([
             ['name' => 'User'],
             ['name' => 'Admin'],

@@ -1,5 +1,5 @@
-$('#skugenerate').on('click', function(e){
-	event.preventDefault(e);
+$('#skugenerate').on('click', function(event){
+	event.preventDefault();
 	var multiplevariants = $('#multiplevariants');
 	// if ($(multiplevariants).is(':checked')) {
 	// 	alert('asdf');
