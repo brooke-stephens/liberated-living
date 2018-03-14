@@ -43,7 +43,7 @@
 				</ul>
 			</div>
 			<div class="col-sm-6 col-sm-offset-3">
-				<strong>Total: {{ $totalPrice }}</strong>
+				<strong>Sub-Total: {{ $subTotal }}</strong>
 			</div>
 			<hr>
 			<div class="col-sm-6 col-sm-offset-3">

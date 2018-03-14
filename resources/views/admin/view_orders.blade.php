@@ -75,10 +75,10 @@
                           ?>
                           <th><span class="badge badge-{{$badge}}" style="font-size: 13px;">{{ $order->Status->name }}</span></th>
                           <th>{{ $order->id }}</th>
-                          <th>{{ count($order->cart->items) }}</th>
+                          <th>{{ $order->cart->totalQty }}</th>
                           <th>{{ $order->User->email ? $order->User->email : $order->firstname }}</th>
-                          <th>{{ $order->cart->totalPrice }}</th>
-                          <th>{{ $order->created_at->format('d/m/Y') }}</th>
+                          <th>{{ $order->cart->subTotal }}</th>
+                          <th>{{ $order->created_at->format('F j, Y') }}</th>
                           <th><a href="{{URL::to('admin/admin_single_order/'.$order->id.'')}}"  class="btn btn-info btn-sm">Edit/View</a></th>
                         </tr>
                         @endforeach

@@ -17,14 +17,6 @@
 		    <li class="list-group-item">
 				<span class="badge badge-warning">$ {{ $item['price'] }}</span>
 				{{ $item['item']['title'] }} | {{ $item['qty'] }} 
-				<?php 
-					if (!isset($item['item']['product_id'])){
-						$id =  $item['item']['id'];
-					} else {
-						$id =  $item['item']['product_id'];
-					}							
-				   echo App\Product::find($id)->title 			   
-				?>
 				{{ $item['item']['size'] }}	
 										
 		    </li>
@@ -32,7 +24,7 @@
 		</ul>
 	  </div>
 	  <div class="panel-footer">
-		<strong>Total Price: $ {{ $order->cart->totalPrice }}</strong>
+		<strong>Subtotal: $ {{ $order->cart->subTotal }}</strong>
 	  </div>
 	</div>
 	@endforeach 

@@ -71,7 +71,6 @@
             <li><a href="#OrderDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Orders </a>
               <ul id="OrderDropdown" class="collapse list-unstyled ">
                 <li><a href="{{ Route('admin.view.orders') }}">View Orders</a></li>
-                <li><a href="#">Edit Order</a></li>
                 
               </ul>
             </li>

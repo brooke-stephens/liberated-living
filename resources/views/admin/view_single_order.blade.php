@@ -9,15 +9,15 @@
   <div class="container-fluid">
 	<div class="row">
 
-
-	<!-- Card 1 -->
+	
+<!-- Card 1 -->
 			<div class="col-lg-4">
 			<div class="card">
 			<div class="card-header"><h4>Order #{{$order->id}}</h4></div>
 			<div class="card-body">
 			 <h5 class="card-title">General Order Details</h5>
 				<p class="card-text">User Name:<br> {{ $order->firstname.' '.$order->lastname }}</p>
-			    <p class="card-text">Order Date:<br> {{ $order->created_at->format('d/m/Y') }}</p>
+			    <p class="card-text">Order Date:<br> {{ $order->created_at->format('D, F j, Y') }}</p>
 			    <p class="card-text">User Email:<br> {{ $order->User->email }}</p>
 		
 				<label>Order Status:</label>
@@ -46,7 +46,7 @@
 			<br>
 			<p class="card-text">Email:<br>{{ $order->User->email }}</p>
 			<br>
-			<p class="card-text">Phone:<br>{{ $order->phone }}</p>
+			<p class="card-text">Phone:<br>{{ $order->phonenumber }}</p>
 			</div>
 			</div>
 			</div>
@@ -88,8 +88,7 @@
                        
 
             
-@foreach($ordersdetails->cart->items as $item)
-						
+						@foreach($ordersdetails->cart->items as $item)						
                          <tr>
                          <?php 
 								if (!isset($item['item']['product_id'])){
@@ -108,19 +107,49 @@
                                   
                                 @endif
                               @endforeach
+                              <!-- {{ ($item['item']['title']) ? $item['item']['title'] : App\Product::find($id)->title }} -->
                           </th>                        	
-						  <th>{{ ($item['item']['title']) ? App\Product::find($id)->title : App\Product::find($id)->title }}{{ ' '. $item['item']['size'] }}</a></th>
+						  <th>{{ ($item['item']['title']) }}{{ ' '. $item['item']['size'] }}</a></th>
                           <th>{{$item['item']['sku']}}</th>
                           <th>{{$item['item']['price']}}</th>
                           <th>{{$item['qty']}}</th>
                           <th>{{$item['price']}}</th>
                         </tr>
                        @endforeach
-                      
+							
+
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th>Shipping:</th>
+                          <th>20.00</th>
+                        </tr>
+
+                      	 <tr style="background-color: white;">
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th>Tax:</th>
+                          <th>7.99</th>
+                        </tr>
+
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th>Order Subtotal:</th>
+                          <th>{{ $ordersdetails->cart->subTotal }} </th>
+                        </tr>
 
                      
                       </tbody>
                     </table>
+
+
 			
 			</div>
 			</div>

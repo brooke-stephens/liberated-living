@@ -39,12 +39,13 @@ class productController extends Controller
     }
 
     public function getAddToCart(Request $request){
-        
-        $id = $request->subproduct;
-    	// $product=Product::find($id);
-        $product=ProductVariant::find($id);
 
-        if (!isset($request->subproduct)){
+        if (isset($request->subproduct)){
+            $id = $request->subproduct;
+            // $product=Product::find($id);
+            $product=ProductVariant::find($id);
+            $product->title = $product->Product->title;
+        } else {
             $id = $request->id;
             $product=Product::find($id);
         }
@@ -101,7 +102,7 @@ class productController extends Controller
     		$cart = new Cart($oldCart);    	
     		return view('shopviews.shopping-cart',[
     			'products' => $cart->items,
-    			'totalPrice' => $cart->totalPrice,
+    			'subTotal' => $cart->subTotal,
                 'allProducts' => $allproducts
     		]);	
     	}
@@ -116,7 +117,7 @@ class productController extends Controller
     	} 
     		$oldCart = Session::get('cart');
     		$cart = new Cart($oldCart);
-    		$total = $cart->totalPrice;
+    		$total = $cart->subTotal;
     		return view('shopviews.checkout',[
     				'total' => $total 
     		]);
@@ -124,6 +125,7 @@ class productController extends Controller
     }
 
     public function postCheckout(Request $request){
+        //the tax needs to be applid here
 
       	if (!Session::has('cart')) {
             return redirect()->route('shopviews.shopping-cart');
@@ -136,7 +138,7 @@ class productController extends Controller
         try {
 
             $charge = Charge::create(array(
-              "amount" => $cart->totalPrice * 100,
+              "amount" => $cart->subTotal * 100,
               "currency" => "cad",
               "source" => $request->input('stripeToken'), 
               "description" => "Test Charge"
