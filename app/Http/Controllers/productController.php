@@ -25,6 +25,7 @@ class productController extends Controller
 {
 
     public $hash;
+    static $cleanedInput;
 
     public function getIndex() {
                     // Test database connection
@@ -235,7 +236,15 @@ class productController extends Controller
 
     }
 
+    public static function cleanInput($request) {
+// <script>alert('sadfsadf');</script>
 
+        self::$cleanedInput = preg_replace('/&gt|&lt;/', '', $request); 
+        return( self::$cleanedInput);
+        
+
+    }
+    
 
 
     public function postAddProductInventory(Request $request){      
@@ -243,6 +252,8 @@ class productController extends Controller
         // dd($request->all());
         //|unique:product_variants
         // $this->getProductVariantBySku($request->vsku['0'])
+
+      self::cleanInput($request->description);      
 
         if($request->multiplevariants){            
             $this->validate($request,[ 
@@ -348,7 +359,10 @@ class productController extends Controller
             'needs_primary' => $needsPrimary,
             
         ];
+        self::cleanInput($request->description);  
 
+        $request->description =  self::$cleanedInput;
+// dd(self::$cleanedInput);
 // |unique:product_variants,sku,
         if($request->multiplevariants){
 
