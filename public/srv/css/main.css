@@ -131,6 +131,9 @@ body {
 a {
   font-size: 17px; }
 
+.navigation a {
+  font-size: 14px; }
+
 p {
   line-height: 23px;
   font-size: 17px; }
@@ -245,6 +248,31 @@ pre {
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   /*background-color: rgba(255, 255, 255, 0.1);*/ }
+
+#navcontainer .badge-warning {
+  background-color: orange; }
+#navcontainer .dropdown-menu {
+  position: absolute;
+  margin-top: 50px;
+  left: -75px; }
+#navcontainer .fa-shopping-cart {
+  line-height: 100px; }
+#navcontainer .dropdown-menu a {
+  line-height: normal;
+  color: black; }
+#navcontainer .navbar a {
+  text-decoration: none; }
+#navcontainer .nav-link {
+  text-decoration: none; }
+#navcontainer .nav-link {
+  padding-top: 0px;
+  padding-bottom: 0px; }
+#navcontainer .navbar {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
 
 #logowrap {
   flex: 1;
@@ -420,8 +448,8 @@ pre {
 
 .navigation a {
   /*display: block;*/
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 11px;
+  padding-right: 11px;
   color: white;
   list-style: none !important; }
 
@@ -442,7 +470,7 @@ pre {
 .glyphicon-align-justify {
   display: none; }
 
-@media all and (max-width: 1050px) {
+@media all and (max-width: 1075px) {
   .glyphicon-align-justify {
     display: block;
     font-size: 30px;
@@ -562,10 +590,10 @@ pre {
     top: 55px; }
 
   .cbp-spmenu-top {
-    top: -230px; }
+    top: -315px; }
 
   .cbp-spmenu-horizontal {
-    height: 230px; }
+    height: 315px; }
 
   .cbp-spmenu-horizontal a {
     border-left: none; }
@@ -1096,7 +1124,7 @@ textarea:focus {
   margin-top: 0px;
   padding-top: 0px; }
 
-/* ------------------------------end scrolling fixes --------------------*/
+/* ------------------------------videos --------------------*/
 .videocontainer {
   display: -webkit-flex;
   display: flex;
@@ -1139,3 +1167,62 @@ textarea:focus {
 
 #acuity-footer {
   font-size: 43px; }
+
+/* ------------------------------checkout --------------------*/
+.leftpanel {
+  display: flex;
+  width: 100%;
+  display: inline-block; }
+  .leftpanel .card {
+    background-color: transparent;
+    border: 0px solid; }
+  .leftpanel .accordion {
+    background-color: #F3FFFF; }
+  .leftpanel label {
+    font-weight: 100;
+    font-size: .8em;
+    font-family: raleway, "Book Antiqua", Palatino, serif;
+    margin-bottom: 3px; }
+  .leftpanel input[type='text'] {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 3px; }
+  .leftpanel button {
+    float: right;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    margin-top: 25px; }
+  .leftpanel #submitbutton {
+    position: relative;
+    bottom: 200px; }
+  .leftpanel .headercontainer {
+    background-color: #F2F9F9;
+    border-top: 1px solid #B7B7B7;
+    padding: 0 15px 0 15px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center; }
+  .leftpanel .header {
+    width: 100%;
+    color: black; }
+  .leftpanel .content {
+    width: 100%;
+    margin: 20px 20px 20px 20px;
+    height: 400px;
+    overflow: hidden; }
+  .leftpanel .hide {
+    display: none; }
+
+.rightpanel {
+  background-color: grey; }
+
+.fa-circle {
+  color: orange; }
+
+.fa-inverse {
+  font-weight: 100;
+  font-family: raleway, "Book Antiqua", Palatino, serif; }
+
+/* ------------------------------end checkout --------------------*/

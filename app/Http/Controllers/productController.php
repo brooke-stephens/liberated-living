@@ -125,8 +125,16 @@ class productController extends Controller
     	
     }
 
+    public function postReviewCheckout(Request $request){
+
+        return $request;
+
+    }
+
     public function postCheckout(Request $request){
         //the tax needs to be applid here
+
+        
 
       	if (!Session::has('cart')) {
             return redirect()->route('shopviews.shopping-cart');
@@ -137,7 +145,7 @@ class productController extends Controller
 
         Stripe::setApiKey('sk_test_uV4yUZgUOsfz7qMNvpXjZExh');
         try {
-
+            dd($request->firstname);
             $charge = Charge::create(array(
               "amount" => $cart->subTotal * 100,
               "currency" => "cad",
@@ -239,7 +247,17 @@ class productController extends Controller
     public static function cleanInput($request) {
 // <script>alert('sadfsadf');</script>
 
-        self::$cleanedInput = preg_replace('/&gt|&lt;/', '', $request); 
+        // self::$cleanedInput = preg_replace('/&gt|&lt;|<script|script>/', '', $request); 
+        self::$cleanedInput = str_ireplace( "&lt;", "" , $request );
+        self::$cleanedInput = str_ireplace( "&gt", "" , self::$cleanedInput );
+        self::$cleanedInput = str_ireplace( "<script>", "" , self::$cleanedInput );
+        self::$cleanedInput = str_ireplace( "</script>", "" , self::$cleanedInput );
+        self::$cleanedInput = str_ireplace( "<iframe>", "" , self::$cleanedInput );
+        self::$cleanedInput = str_ireplace( "</iframe>", "" , self::$cleanedInput );
+        self::$cleanedInput = str_ireplace( "</a>", "" , self::$cleanedInput );
+        self::$cleanedInput = str_ireplace( "<a", "" , self::$cleanedInput );
+
+        // dd(self::$cleanedInput);
         return( self::$cleanedInput);
         
 
@@ -253,7 +271,8 @@ class productController extends Controller
         //|unique:product_variants
         // $this->getProductVariantBySku($request->vsku['0'])
 
-      self::cleanInput($request->description);      
+        self::cleanInput($request->description);
+        $request->description =  self::$cleanedInput;   
 
         if($request->multiplevariants){            
             $this->validate($request,[ 
@@ -359,9 +378,7 @@ class productController extends Controller
             'needs_primary' => $needsPrimary,
             
         ];
-        self::cleanInput($request->description);  
-
-        $request->description =  self::$cleanedInput;
+        
 // dd(self::$cleanedInput);
 // |unique:product_variants,sku,
         if($request->multiplevariants){
@@ -404,6 +421,10 @@ class productController extends Controller
 
         $this->checkValidation($request, $id);
         $this->saveAssociatedImage($request, $id);
+
+        self::cleanInput($request->description);
+        $request->description =  self::$cleanedInput;
+        
         if(Input::hasfile('primaryimage')){
             $this->savePrimaryImage($request);   
             $new_productImage = new ProductImage;

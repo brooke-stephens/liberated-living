@@ -11,7 +11,7 @@
 
 	
 <!-- Card 1 -->
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 			<div class="card">
 			<div class="card-header"><h4>Order #{{$order->id}}</h4></div>
 			<div class="card-body">
@@ -21,20 +21,24 @@
 			    <p class="card-text">User Email:<br> {{ $order->User->email }}</p>
 		
 				<label>Order Status:</label>
+				<form action="{{ ROUTE('admin.view.order',[$order->id]) }}" method="POST">
 			     <div class="form-group">   
-					     <select class="custom-select">
+					     <select name="orderstatus" class="custom-select">
 
 					    	@foreach ($statuses as $status)
 					    	<option value="{{ $status->id }}" {{ $status->id == $order->Status->id ? "selected" : '' }} >{{ $status->name }}</option>	
 					    	@endforeach				    	
 					    </select>
+					    <input type="submit" value="Update Order" class="btn btn-primary">
+				{{ csrf_field() }}    
+				</form>
 				</div>
 			</div>
 			</div>
 			</div>
 
 			<!-- Card 2 -->
-			<div class="col-lg-4 nobreaklinep">
+			<div class="col-lg-3 nobreaklinep">
 			<div class="card">
 			<div class="card-body">
 			<h4 class="card-title">Billing Details</h4>
@@ -52,7 +56,7 @@
 			</div>
 
 			<!-- Card 3 -->
-			<div class="col-lg-4 nobreaklinep">
+			<div class="col-lg-3 nobreaklinep">
 			<div class="card">
 			<div class="card-body">
 			<h4 class="card-title">Shipping Details</h4>

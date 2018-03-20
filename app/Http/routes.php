@@ -202,6 +202,12 @@ Route::post('/checkout',[
 	'middleware' => 'auth'
 ]);
 
+Route::post('/reviewcheckout',[
+	'uses'=> 'productController@postReviewCheckout',
+	'as' =>'precheckout',
+	'middleware' => 'auth'
+]);
+
 
 
 
@@ -265,6 +271,12 @@ Route::group([
 
 		Route::get('/admin_single_order/{id}',[
 			'uses'=> 'OrdersController@getSingleOrder',
+			'as' =>'admin.view.order',
+			
+		]);
+
+		Route::post('/admin_single_order/{id}',[
+			'uses'=> 'OrdersController@postSingleOrder',
 			'as' =>'admin.view.order',
 			
 		]);

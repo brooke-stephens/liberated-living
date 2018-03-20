@@ -70,4 +70,25 @@ class OrdersController extends Controller
     		'images' => $images,
     	]);
     }
+
+    public function postSingleOrder(Request $request, $id){
+
+
+  		$images = ProductImage::where('isprimaryimage', '1')->get();
+    	$order = Order::find($id);	
+    	$order->status_id = $request->orderstatus;
+    	$order->save();
+    	$ordersdetails = Order::find($id);
+    	$statuses = Status::all();
+
+		$ordersdetails->cart = unserialize($order->cart);
+      		
+
+    	return view('admin.view_single_order',[
+    		'order' => $order,
+    		'statuses' => $statuses,
+    		'ordersdetails' => $ordersdetails,
+    		'images' => $images,
+    	]);
+    }
 }
