@@ -318,6 +318,10 @@ color: $orange!important;
     line-height: 100px;
   }
 
+  .fa-user {
+    line-height: 100px;
+  }
+
   .dropdown-menu a{
     line-height: normal;
     color: black;
@@ -1799,9 +1803,9 @@ margin:0px 5px 0px 5px;
 /* ------------------------------checkout --------------------*/
 .leftpanel {
   // background-color: red;
-  display: flex;
-  width: 100%;
-  display: inline-block;
+  // display: flex;
+  // width: 100%;
+  // display: inline-block;
 
 
   .card {
@@ -1828,7 +1832,7 @@ margin:0px 5px 0px 5px;
 
   }
   #ajaxresults{
-    
+
     opacity: 0;
   }
 

@@ -46,13 +46,13 @@ var shipmethod = $("input[name='shipmethod']:checked").val();
 
 panels.first().show();
 
-$('body').on('click', 'a.firststep', function() {
+$('body').on('click', 'a.firststep', function(event) {
+	event.preventDefault();
 	var $this = $(this);
 	saveHtml = $(".content").html();	
-	event.preventDefault();
 	fname = $('#firstname').val();
 	lname = $('#lastname').val();
-	$this.parent().prev().find('.header').css('text-decoration', 'line-through');
+	$('.headerone').css('text-decoration', 'line-through');
     $this.parent().next().find('.header').css('text-decoration', 'none');
     
     // alert($this.parent().next().attr('class'));
@@ -105,7 +105,8 @@ $('.editstepone').on('click', function() {
 	
 });
 
-$('body').on('click', 'a.secondstep', function() {
+$('body').on('click', 'a.secondstep', function(event) {
+	event.preventDefault();
 	var $this = $(this);
 	shipmethodHtml = $(".shipmethod").html();
 	$('.shipmethod').animate({'opacity': 0,'height': '50px','font-size': '12px'}, 400, function(){

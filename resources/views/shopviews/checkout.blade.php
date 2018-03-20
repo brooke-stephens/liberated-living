@@ -30,7 +30,7 @@
   <dl class="accordion">
  <!-- <div class="header"><div class="testf">Step 1: Billing/Shipping Address</div> <div class="test"><a class="edit" href="">Edit</a></div></div> -->
     <div class="headercontainer">
-    <div class="header">
+    <div class="header headerone">
          <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-inverse fa-stack-1x">1</i>
@@ -150,9 +150,10 @@
     </dd>    
     </dl>
 
-  </div>
+  </div> <!-- end col -->
 
     <div class='col-md-3 rightpanel' >
+
     </div>
   
 

@@ -257,6 +257,8 @@ pre {
   left: -75px; }
 #navcontainer .fa-shopping-cart {
   line-height: 100px; }
+#navcontainer .fa-user {
+  line-height: 100px; }
 #navcontainer .dropdown-menu a {
   line-height: normal;
   color: black; }
@@ -1169,53 +1171,49 @@ textarea:focus {
   font-size: 43px; }
 
 /* ------------------------------checkout --------------------*/
-.leftpanel {
-  display: flex;
+.leftpanel .card {
+  background-color: transparent;
+  border: 0px solid; }
+.leftpanel .accordion {
+  background-color: #F3FFFF; }
+.leftpanel label {
+  font-weight: 100;
+  font-size: .8em;
+  font-family: raleway, "Book Antiqua", Palatino, serif;
+  margin-bottom: 3px; }
+.leftpanel input[type='text'] {
   width: 100%;
-  display: inline-block; }
-  .leftpanel .card {
-    background-color: transparent;
-    border: 0px solid; }
-  .leftpanel .accordion {
-    background-color: #F3FFFF; }
-  .leftpanel label {
-    font-weight: 100;
-    font-size: .8em;
-    font-family: raleway, "Book Antiqua", Palatino, serif;
-    margin-bottom: 3px; }
-  .leftpanel input[type='text'] {
-    width: 100%;
-    background-color: white;
-    border: 1px solid #cccccc;
-    border-radius: 3px; }
-  .leftpanel #ajaxresults {
-    opacity: 0; }
-  .leftpanel button {
-    float: right;
-    margin-right: 100px;
-    margin-bottom: 50px;
-    margin-top: 25px; }
-  .leftpanel #submitbutton {
-    position: relative;
-    bottom: 200px; }
-  .leftpanel .headercontainer {
-    background-color: #F2F9F9;
-    border-top: 1px solid #B7B7B7;
-    padding: 0 15px 0 15px;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center; }
-  .leftpanel .header {
-    width: 100%;
-    color: black; }
-  .leftpanel .content {
-    width: 100%;
-    margin: 20px 20px 20px 20px;
-    height: 400px;
-    overflow: hidden; }
-  .leftpanel .hide {
-    display: none; }
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 3px; }
+.leftpanel #ajaxresults {
+  opacity: 0; }
+.leftpanel button {
+  float: right;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  margin-top: 25px; }
+.leftpanel #submitbutton {
+  position: relative;
+  bottom: 200px; }
+.leftpanel .headercontainer {
+  background-color: #F2F9F9;
+  border-top: 1px solid #B7B7B7;
+  padding: 0 15px 0 15px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center; }
+.leftpanel .header {
+  width: 100%;
+  color: black; }
+.leftpanel .content {
+  width: 100%;
+  margin: 20px 20px 20px 20px;
+  height: 400px;
+  overflow: hidden; }
+.leftpanel .hide {
+  display: none; }
 
 .rightpanel {
   background-color: grey; }

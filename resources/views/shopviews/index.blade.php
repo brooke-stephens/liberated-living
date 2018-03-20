@@ -33,7 +33,7 @@
 	      		 
 	         		
 	         	
-	        <p>{{ $product->description }} </p>
+	        <p> <?php echo $product->description; ?> </p>
 	        <p>
 			<div class="clearfix">
 			
