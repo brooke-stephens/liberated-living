@@ -1188,6 +1188,8 @@ textarea:focus {
     background-color: white;
     border: 1px solid #cccccc;
     border-radius: 3px; }
+  .leftpanel #ajaxresults {
+    opacity: 0; }
   .leftpanel button {
     float: right;
     margin-right: 100px;

@@ -54,6 +54,7 @@ $('body').on('click', 'a.firststep', function() {
 	lname = $('#lastname').val();
 	$this.parent().prev().find('.header').css('text-decoration', 'line-through');
     $this.parent().next().find('.header').css('text-decoration', 'none');
+    
     // alert($this.parent().next().attr('class'));
 	myData = { 	fname: fname,
 				lname: lname };
@@ -64,9 +65,13 @@ $('body').on('click', 'a.firststep', function() {
               success: function(data) {
               	data = myData.fname +' '+myData.lname;
                 // $("#ajaxresults").html(myData.fname); 
-                $('.shipping').animate({'opacity': 0,'height': '125px','font-size': '12px'}, 400, function(){
-			        $(this).html(data).animate({'opacity': 1}, 400);    
-			    });
+                $('.shipping').animate({'height': '125px','font-size': '12px'}, 400, function(){
+			        // $("#ajaxresults").show();
+			        $(".inputContent").fadeOut();
+			        $("#ajaxresults").html(data).animate({'opacity': 1}, 400);			        
+			        // $(".shipping").animate({'height': '125px','height': '125px','font-size': '12px'}, 400);
+			    }); 
+
 			    $('.shipmethod').animate({'opacity': 1,'height': '400px'}, 400, function(){
 					    
 				});

@@ -20,7 +20,7 @@
   <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
     <div class='form-row'>
          <div class='col-md-12 error form-group hide'>                
-            <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hide' : ''  }}"> 
+            <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hidden' : ''  }}"> 
                  {{ Session::get('error') }} 
             </div> 
           </div>
@@ -39,8 +39,8 @@
     </div>
     <a class="editstepone" href="">Edit</a></div>     
     <dd class="content shipping">
-        <div id="ajaxresults"></div>
-
+        <div id="ajaxresults">fasfsafd</div>
+        <div class="inputContent">
             <div class='form-row'>
               <div class='col-xs-5 form-group '>
                 <label class='control-label'>First Name</label>
@@ -87,7 +87,7 @@
 
 
     <a class="firststep" href=""><button type="button" class="btn btn-success">Proceed to Shipping</button></a>
-    
+    </div>
     </dd>
 
    <div class="headercontainer"> 
@@ -143,8 +143,11 @@
                 <input class='form-control card-expiry-year' value="2019"  placeholder='YYYY' size='4' type='text' id="card-expiry-year" >
               </div>
             </div>
-          </dd>   
-    <button class='btn btn-success pay-submit hide' id="submitbutton" type='submit'>Purchase Order</button>
+             
+              
+                <button class='btn btn-success pay-submit' type='submit'>Purchase Order</button>                          
+           
+    </dd>    
     </dl>
 
   </div>
