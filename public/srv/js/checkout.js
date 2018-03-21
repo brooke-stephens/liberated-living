@@ -36,6 +36,10 @@ Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
 
 
 var panels = $('.content').hide();
+var lightgrey = "#d3d3d3";
+var contentcolor ="";
+var activeheadercolour = '#f2f9f9';
+var activecontentcolour = '#F3FFFF'
 // var headers = $('.header').css('text-decoration', 'line-through');
 var submitbutton = $('#submitbutton');
 var saveHtml;
@@ -52,7 +56,25 @@ $('body').on('click', 'a.firststep', function(event) {
 	saveHtml = $(".content").html();	
 	fname = $('#firstname').val();
 	lname = $('#lastname').val();
-	$('.headerone').css('text-decoration', 'line-through');
+
+	$('.headercontainerone').css({'background-color': 'white'});
+	$('.headerone').css({'opacity': '0.2',
+						 'background-color': 'white',
+						 'text-decoration': 'line-through'
+						});
+	$('.shipping').css({'background-color': 'white',
+						'color': lightgrey
+						});
+	$('.headercontainertwo').css({'background-color': activeheadercolour});
+	$('.headertwo').css({'text-decoration': 'none',
+						 'opacity': '1',
+						 'background-color': activeheadercolour
+						});
+	$('.shipmethod').css({'opacity': '0',
+						'color': 'black',
+						'background-color': activecontentcolour
+						});
+	
     $this.parent().next().find('.header').css('text-decoration', 'none');
     
     // alert($this.parent().next().attr('class'));
@@ -97,7 +119,17 @@ $('.editstepone').on('click', function() {
         $('#firstname').val(fname); 
         $('#lastname').val(lname);   
     });
-	// headers.css('text-decoration', 'line-through');
+	
+	$('.headercontainerone').css({'background-color': activeheadercolour});
+	$('.headerone').css({'text-decoration': 'none',
+						 'opacity': '1',
+						 'background-color': activeheadercolour
+						});
+	$('.shipping').css({'opacity': '0',
+						'color': 'black',
+						'background-color': activecontentcolour
+						});
+
     submitbutton.addClass('hide');
 	$this.parent().next().slideDown();
 	$this.prev().css('text-decoration', 'none');
@@ -115,6 +147,15 @@ $('body').on('click', 'a.secondstep', function(event) {
 	$('.paymentmethod').slideDown();
 	$this.parent().prev().find('.header').css('text-decoration', 'line-through');
 	submitbutton.removeClass('hide');
+
+	$('.headercontainertwo').css({'background-color': 'white'});
+	$('.headertwo').css({'opacity': '0.2',
+						 'background-color': 'white',
+						 'text-decoration': 'line-through'
+						});
+	$('.shipmethod').css({'background-color': 'white',
+						'color': lightgrey
+						});
 });
 
 $('.editsteptwo').on('click', function() {
@@ -129,6 +170,16 @@ $('.editsteptwo').on('click', function() {
 	$this.parent().next().slideDown();
 	$this.prev().css('text-decoration', 'none');
 	$this.parent().prev().prev().find('.header').css('text-decoration', 'line-through');
+	
+	$('.headercontainertwo').css({'background-color': activeheadercolour});
+	$('.headertwo').css({'text-decoration': 'none',
+						 'opacity': '1',
+						 'background-color': activeheadercolour
+						});
+	$('.shipmethod').css({'opacity': '0',
+						'color': 'black',
+						'background-color': activecontentcolour
+						});
 	return false;
 	
 });

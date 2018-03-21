@@ -15,7 +15,8 @@
 
 	        <div class="col-md-6 portraitwrap">
 
-	        	<img class="portraitimg" src="/images/homepage/portraitwhite3.jpg">
+	        	<!-- <img class="portraitimg" src="/images/homepage/portraitwhite3.jpg"> -->
+	        	<img class="portraitimg" src="{{ URL::to('/images/homepage/portraitwhite3.jpg') }}">
 
 	        </div>
 
