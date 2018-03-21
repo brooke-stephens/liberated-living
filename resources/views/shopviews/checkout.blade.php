@@ -39,7 +39,7 @@
     </div>
     <a class="editstepone" href="">Edit</a></div>     
     <dd class="content shipping">
-        <div id="ajaxresults">fasfsafd</div>
+        <div id="ajaxresults"></div>
         <div class="inputContent">
             <div class='form-row'>
               <div class='col-xs-5 form-group '>
@@ -104,7 +104,7 @@
      <input type="radio" name="shipmethod" id="shipmethod" value="Expediated Shipping"> Expediated Shipping<br>
      <input type="radio" name="shipmethod" id="shipmethod" value="Ground Shipping"> Ground Shipping<br>
      
-   <a class="secondstep" href=""><button type="button" class="btn btn-success">Shipping Method</button></a>
+   <a class="secondstep" href="#asdf"><button type="button" class="btn btn-success">Shipping Method</button></a>
    </dd>
 
     <div class="headercontainer">
