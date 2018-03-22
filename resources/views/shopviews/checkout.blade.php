@@ -6,16 +6,21 @@
       @include('partials.nav')
     </div>
 
+
+
 <div id="container">
 
 <main class="container">
 
-
+<!--     <form action="" id="testform">
+      <input type="text" id="firstname" name="firstname">
+      <input type="submit" value="sub">
+    </form> -->
 
 <h1>Checkout</h1>
 <h2>total: {{ $total }}</h2>
 
-<form action="{{ route('checkout') }}" method="post" id="checkout-form">
+<form action="{{ route('checkout') }}" method="post" id="checkout-form" name="checkout-form">
 <div class="row">
   <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
     <div class='form-row'>
@@ -122,7 +127,7 @@
             <div class='form-row'>
               <div class='col-xs-5 form-group'>
                 <label class='control-label'>Name on Card</label>
-                <input class='form-control' type='text' id="card-name" value="asdf"  >
+                <input class='form-control' type='text' id="card-name" name="cardname" value="asdf"  >
               </div>
               <div class='col-xs-5 form-group card '>
                 <label class='control-label'>Card Number</label>
@@ -146,6 +151,7 @@
              
               
                 <button class='btn btn-success pay-submit' type='submit'>Purchase Order</button>                          
+
            
     </dd>    
     </dl>
@@ -249,6 +255,8 @@
 <script src="https://js.stripe.com/v3/"></script>
 <!-- <script src="{{ URL::to('srv/js/checkout.js') }}"></script> -->
 <script type="text/javascript" src="{{URL::to('srv/js/checkout.js')}}"></script>
+
+
 @endsection
 
 

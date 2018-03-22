@@ -48,6 +48,7 @@
 <script type="text/javascript" src="{{ URL::to('srv/js/sweetalert.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('srv/js/youtubeajax.js')}}"></script>
 <script type="text/javascript" src="{{ URL::to('srv/js/youtubeapi.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <!-- submenu slider menu -->
 
 <!-- <script type="text/javascript">

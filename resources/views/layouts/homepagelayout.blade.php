@@ -47,6 +47,7 @@
 <script type='text/javascript' src="{{ URL::to('srv/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('srv/js/sweetalert.min.js') }}"></script>
 
+
 <!-- submenu slider menu -->
 
 <!-- <script type="text/javascript">

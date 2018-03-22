@@ -1,38 +1,87 @@
-Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
-	var $form = $('#checkout-form');
+$(function() {
+	// $.validator.addMethod('price', function (value) { 
+ //    return /^-?(\d{1,3})(\.\d{1,2})?$/.test(value); 
+	// }, 'Please enter a valid price. ');
+	// $.validator.addMethod('size', function (value) { 
+ //    return /^-?(\d{1,8})[a-z]{1,}?$/.test(value); 
+	// }, 'Please enter a valid size. ');
+	
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("form[name='checkout-form']").validate({
+    // Specify validation rules
+    // ^-?(\d{1,3})(\.\d{1,2})?$
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      firstname: {
+      	required: true,   
+      },
+      lastname: {
+     	 required: true, 
+      },
+      cardname: {
+     	 required: true, 
+      },
+      
+      // vquantity: {
+     	//  required: true,
+     	//  digits: true,
+      // },
+      // vsku: {
+      // 	required: true,
+      // 	minlength: 4,
+      // },    
+     
+    },
+    // Specify validation error messages
+   
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+
+
+
+// Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
+// 	var $form = $('#checkout-form');
 	
 
-	$form.submit(function(event) {
+// 	$form.submit(function(event) {
 
-		$('#charge-error').addClass('hidden');
-		$form.find('button').prop('disabled',true);
+// 		$('#charge-error').addClass('hidden');
+// 		$form.find('button').prop('disabled',true);
 
-		Stripe.card.createToken({
-	  		number: $('.card-number').val(),
-	 		cvc: $('.card-cvc').val(),
-	  		exp_month: $('.card-expiry-month').val(),
-	  		exp_year: $('.card-expiry-year').val()
-		}, stripeResponseHandler);
+// 		Stripe.card.createToken({
+// 	  		number: $('.card-number').val(),
+// 	 		cvc: $('.card-cvc').val(),
+// 	  		exp_month: $('.card-expiry-month').val(),
+// 	  		exp_year: $('.card-expiry-year').val()
+// 		}, stripeResponseHandler);
 
-		return false;	
-	});
+// 		return false;	
+// 	});
 
 
-	function stripeResponseHandler(status, response){
-			if (response.error) {
-				$('#charge-error').removeClass('hidden');
-				$('#charge-error').text(response.error.message)
-				$form.find('button').prop('disabled',false);
-			} else {
-				// Get the token ID:
-	   			 var token = response.id;
-	   			 // Insert the token into the form so it gets submitted to the server:
-	   		     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-	   		     // Submit the form:
-	    		$form.get(0).submit();	
+// 	function stripeResponseHandler(status, response){
+// 			if (response.error) {
+// 				$('#charge-error').removeClass('hidden');
+// 				$('#charge-error').text(response.error.message)
+// 				$form.find('button').prop('disabled',false);
+// 			} else {
+// 				// Get the token ID:
+// 	   			 var token = response.id;
+// 	   			 // Insert the token into the form so it gets submitted to the server:
+// 	   		     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+// 	   		     // Submit the form:
+// 	    		$form.get(0).submit();	
 
-			}
-	}
+// 			}
+// 	}
 
 var status = "stepone";
 var panels = $('.content').hide();
@@ -60,6 +109,11 @@ $(window).on('hashchange',function(){
 
 $('body').on('click', 'a.firststep', function(event) {
 	event.preventDefault();
+	if ($("form[name='checkout-form']").valid()){
+
+	} else {
+		return false;
+	}
 
 	if(history.pushState) {
 		history.pushState(null, null, '#steptwo');
@@ -320,3 +374,5 @@ function applystyling(){
         }
     }
 }
+
+
