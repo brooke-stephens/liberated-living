@@ -47,48 +47,51 @@ $(function() {
 
 
 
-// Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
-// 	var $form = $('#checkout-form');
+Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
+	var $form = $('#checkout-form');
 	
 
-// 	$form.submit(function(event) {
+	$form.submit(function(event) {
+		// runs the validation 
+		if ($("form[name='checkout-form']").valid()){} else {return false;}
 
-// 		$('#charge-error').addClass('hidden');
-// 		$form.find('button').prop('disabled',true);
+		$('#charge-error').addClass('hidden');
+		$form.find('button').prop('disabled',true);
 
-// 		Stripe.card.createToken({
-// 	  		number: $('.card-number').val(),
-// 	 		cvc: $('.card-cvc').val(),
-// 	  		exp_month: $('.card-expiry-month').val(),
-// 	  		exp_year: $('.card-expiry-year').val()
-// 		}, stripeResponseHandler);
+		Stripe.card.createToken({
+	  		number: $('.card-number').val(),
+	 		cvc: $('.card-cvc').val(),
+	  		exp_month: $('.card-expiry-month').val(),
+	  		exp_year: $('.card-expiry-year').val()
+		}, stripeResponseHandler);
 
-// 		return false;	
-// 	});
+		return false;	
+	});
 
 
-// 	function stripeResponseHandler(status, response){
-// 			if (response.error) {
-// 				$('#charge-error').removeClass('hidden');
-// 				$('#charge-error').text(response.error.message)
-// 				$form.find('button').prop('disabled',false);
-// 			} else {
-// 				// Get the token ID:
-// 	   			 var token = response.id;
-// 	   			 // Insert the token into the form so it gets submitted to the server:
-// 	   		     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-// 	   		     // Submit the form:
-// 	    		$form.get(0).submit();	
+	function stripeResponseHandler(status, response){
 
-// 			}
-// 	}
+			if (response.error) {
+				$('#charge-error').removeClass('hidden');
+				$('#charge-error').text(response.error.message)
+				$form.find('button').prop('disabled',false);
+			} else {
+				// Get the token ID:
+	   			 var token = response.id;
+	   			 // Insert the token into the form so it gets submitted to the server:
+	   		     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+	   		     // Submit the form:
+	    		$form.get(0).submit();	
+
+			}
+	}
 
 var status = "stepone";
 var panels = $('.content').hide();
 var lightgrey = "#d3d3d3";
 var contentcolor ="";
-var activeheadercolour = '#f2f9f9';
-var activecontentcolour = '#F3FFFF'
+var activeheadercolour = 'white';
+var activecontentcolour = '#e4ecf7'
 // var headers = $('.header').css('text-decoration', 'line-through');
 var submitbutton = $('#submitbutton');
 var saveHtml;
@@ -97,6 +100,7 @@ var fname;
 var lname;
 var formsummary;
 var shipmethod = $("input[name='shipmethod']:checked").val();
+
 
 panels.first().show();
 
@@ -109,11 +113,7 @@ $(window).on('hashchange',function(){
 
 $('body').on('click', 'a.firststep', function(event) {
 	event.preventDefault();
-	if ($("form[name='checkout-form']").valid()){
-
-	} else {
-		return false;
-	}
+	if ($("form[name='checkout-form']").valid()){ shippingvalid = 1} else {return false;}
 
 	if(history.pushState) {
 		history.pushState(null, null, '#steptwo');
@@ -207,6 +207,7 @@ $('body').on('click', 'a.secondstep', function(event) {
 });
 
 $('.editsteptwo').on('click', function() {
+	if ($("form[name='checkout-form']").valid()){} else {return false;}
 
 	if(history.pushState) {
 		history.pushState(null, null, '#steptwo');
@@ -259,6 +260,7 @@ function setStatus() {
 }
 
 function setOneInactive(){
+	$( ".headerone" ).find( ".fa-circle" ).css("color", lightgrey); 
 	$('.headercontainerone').css({'background-color': 'white'});
 	$('.headerone').css({'opacity': '0.2',
 									 'background-color': 'white',
@@ -273,9 +275,11 @@ function setOneInactive(){
 			        $("#ajaxresults").html(formsummary).animate({'opacity': 1}, 400);			        
 			        // $(".shipping").animate({'height': '125px','height': '125px','font-size': '12px'}, 400);
 			    }); 
+
 };
 
 function setTwoInactive(){
+	$( ".headertwo" ).find( ".fa-circle" ).css("color", lightgrey); 
 	$('.headercontainertwo').css({'background-color': 'white'});
 	$('.headertwo').css({'opacity': '0.2',
 									 'background-color': 'white',
@@ -284,13 +288,17 @@ function setTwoInactive(){
 	$('.shipmethod').css({'background-color': 'white',
 									'color': lightgrey
 									});
-	$('.shipmethod').animate({'opacity': 0,'height': '50px','font-size': '12px'}, 400, function(){
+	$('.secondstep').hide();
+	$('.shipmethod').animate({'opacity': 0,'height': '100px','font-size': '12px'}, 400, function(){
 		 $(this).html(shipmethod).animate({'opacity': 1}, 400);    
 	});
 };
 
 function setOneActive(){
 	setThreeInactive()
+
+	$( ".headerone" ).find( ".fa-circle" ).css("color", "orange"); 
+
 	$('.headercontainerone').css({'background-color': activeheadercolour});
 	$('.headerone').css({'text-decoration': 'none',
 									 'opacity': '1',
@@ -307,10 +315,13 @@ function setOneActive(){
         $('#lastname').val(lname);   
     });
 
+
+
 }
 
 function setTwoActive(){
 	setThreeInactive();
+	$( ".headertwo" ).find( ".fa-circle" ).css("color", "orange"); 
 	$('.headercontainertwo').css({'background-color': activeheadercolour});
 	$('.headertwo').css({'text-decoration': 'none',
 									 'opacity': '1',
@@ -324,6 +335,7 @@ function setTwoActive(){
 					    
 		});
 	 $('.shipmethod').fadeIn();	
+	 $('.secondstep').show();
 
 	 // this will unhide the shipping method form
 	// $('.shipmethod').animate({'opacity': 0,'height': '400px'}, 400, function(){
@@ -334,10 +346,20 @@ function setTwoActive(){
 
 function setThreeInactive(){
 	$('.paymentmethod').slideUp();
+	$( ".headerthree" ).find( ".fa-circle" ).css("color", lightgrey); 
+	$('.headercontainerthree').css({'text-decoration': 'none',
+									 'opacity': '1',
+									 'background-color': 'white'
+									});
 };
 
 function setThreeactive(){
 	$('.paymentmethod').slideDown();
+	$( ".headerthree" ).find( ".fa-circle" ).css("color", "orange"); 
+	$('.headercontainerthree').css({'text-decoration': 'none',
+									 'opacity': '1',
+									 'background-color': activeheadercolour
+									});
 };
 
 function applystyling(){

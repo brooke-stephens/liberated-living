@@ -25,8 +25,7 @@ footer {
   @media all and (max-width: 600px) {
     footer .navigation {
       display: flex;
-      align-items: 
-      enter;
+      align-items: center;
       justify-content: center;
       flex-direction: column; } }
   footer li {
@@ -227,7 +226,6 @@ pre {
 
 #header {
   background: url("/images/homepage/wispheader.jpg");
-  
   width: 100%;
   height: 100vh;
   -webkit-background-size: cover;
@@ -1135,7 +1133,7 @@ textarea:focus {
   -webkit-flex-direction: column;
   flex-direction: column; }
 
-.rightpanel {
+.videorightpanel {
   min-height: 1000px;
   background-color: #f3f3f3;
   padding-top: 20px; }
@@ -1173,62 +1171,135 @@ textarea:focus {
   font-size: 43px; }
 
 /* ------------------------------checkout --------------------*/
-.leftpanel .card {
-  background-color: transparent;
-  border: 0px solid; }
-.leftpanel .accordion {
-  background-color: #F3FFFF; }
-.leftpanel label {
-  font-weight: 100;
-  font-size: .8em;
-  font-family: raleway, "Book Antiqua", Palatino, serif;
-  margin-bottom: 3px; }
-.leftpanel input[type='text'] {
-  width: 100%;
+.checkoutcontainer hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px dotted #0b4da8;
+  margin: 1em 0;
+  padding: 0; }
+.checkoutcontainer .headercontainer {
   background-color: white;
-  border: 1px solid #cccccc;
-  border-radius: 3px; }
-.leftpanel #ajaxresults {
-  opacity: 0; }
-.leftpanel button {
-  float: right;
-  margin-right: 100px;
-  margin-bottom: 50px;
-  margin-top: 25px; }
-.leftpanel #submitbutton {
-  position: relative;
-  bottom: 200px; }
-.leftpanel .headercontainer {
-  background-color: #F2F9F9;
-  border-top: 1px solid #B7B7B7;
+  border-bottom: 1px dotted #0b4da8;
   padding: 0 15px 0 15px;
   width: 100%;
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center; }
-.leftpanel .header {
+.checkoutcontainer .header {
   width: 100%;
-  color: black; }
-.leftpanel .content {
+  color: #1a1a1a; }
+.checkoutcontainer .rightpanel {
+  padding: 0px 0px 0px 0px;
+  min-height: auto; }
+  .checkoutcontainer .rightpanel .itemcontainer {
+    padding: 10px 10px 0 10px;
+    font-size: 14px;
+    background-color: #e4ecf7;
+    padding-bottom: 70px; }
+  .checkoutcontainer .rightpanel .acceptedcardcontainer {
+    min-height: 150px;
+    padding-top: 20px;
+    width: 100%;
+    background-color: #e4ecf7;
+    display: flex;
+    justify-content: center; }
+  .checkoutcontainer .rightpanel .acceptedcardcontainer ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 0px; }
+  .checkoutcontainer .rightpanel .acceptedcardcontainer ul li {
+    list-style-type: none;
+    margin: 5px 5px 0 5px; }
+  .checkoutcontainer .rightpanel img {
+    width: 40px;
+    height: auto; }
+  .checkoutcontainer .rightpanel table {
+    width: 90%;
+    margin-bottom: 20px; }
+  .checkoutcontainer .rightpanel table tr:first-child td {
+    width: 50px; }
+  .checkoutcontainer .rightpanel td:nth-child(2) {
+    text-align: right;
+    color: #0b4da8;
+    font-weight: bold; }
+  .checkoutcontainer .rightpanel .icon-visa {
+    width: 65px;
+    height: 40px;
+    background: url("/images/homepage/paymentsprites.jpg") 0 0; }
+  .checkoutcontainer .rightpanel .icon-master-card {
+    width: 65px;
+    height: 40px;
+    background: url("/images/homepage/paymentsprites.jpg") -70 0; }
+  .checkoutcontainer .rightpanel .icon-american-express {
+    width: 65px;
+    height: 40px;
+    background: url("/images/homepage/paymentsprites.jpg") -140 0; }
+  .checkoutcontainer .rightpanel i {
+    opacity: 0; }
+.checkoutcontainer .headeritems span {
+  float: right; }
+
+.checkoutcontainer .leftpanel {
+  margin-bottom: 50px; }
+.checkoutcontainer .card {
+  background-color: transparent;
+  border: 0px solid; }
+.checkoutcontainer .accordion {
+  background-color: #e4ecf7; }
+.checkoutcontainer label {
+  font-weight: 100;
+  font-size: 14px;
+  font-family: raleway, "Book Antiqua", Palatino, serif;
+  margin-bottom: 3px;
+  color: #0b4da8; }
+.checkoutcontainer input[type='text'] {
+  width: 97%;
+  background-color: white;
+  border: 1px solid darkgrey;
+  border-radius: 3px;
+  box-shadow: none; }
+.checkoutcontainer input:focus {
+  border: 1px solid orange; }
+.checkoutcontainer select {
+  width: 97%;
+  height: 35px;
+  box-shadow: none;
+  border: 1px solid darkgrey; }
+.checkoutcontainer select:focus {
+  border: 1px solid orange; }
+.checkoutcontainer #ajaxresults {
+  opacity: 0; }
+.checkoutcontainer button {
+  float: right;
+  margin-right: 8px;
+  margin-bottom: 50px;
+  margin-top: 25px; }
+.checkoutcontainer #submitbutton {
+  position: relative;
+  bottom: 200px; }
+.checkoutcontainer .content {
   width: 100%;
-  /*margin: 20px 20px 20px 20px;*/
-  height: 400px;
-  overflow: hidden; }
-.leftpanel .hide {
+  overflow: hidden;
+  padding: 20px 2em 20px 2em; }
+.checkoutcontainer .hide {
   display: none; }
 
-.rightpanel {
-  background-color: grey; }
-
 .fa-circle {
-  color: orange; }
+  color: #DDDDDD; }
+
+.headerone .fa-circle {
+  color: orange;
+  line-height: 45px; }
 
 .fa-inverse {
   font-weight: 100;
   font-family: raleway, "Book Antiqua", Palatino, serif; }
 
-.content {
-  padding-left: 20px;
-  
-}
+.fa-pencil-square-o {
+  font-size: 1.2em; }
+
 /* ------------------------------end checkout --------------------*/
+.error {
+  color: #a42a2b !important; }

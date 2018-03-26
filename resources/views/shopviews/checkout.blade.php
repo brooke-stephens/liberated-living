@@ -10,15 +10,14 @@
 
 <div id="container">
 
-<main class="container">
+<main class="container checkoutcontainer">
 
 <!--     <form action="" id="testform">
       <input type="text" id="firstname" name="firstname">
       <input type="submit" value="sub">
     </form> -->
 
-<h1>Checkout</h1>
-<h2>total: {{ $total }}</h2>
+@if(Session::has('cart'))
 
 <form action="{{ route('checkout') }}" method="post" id="checkout-form" name="checkout-form">
 <div class="row">
@@ -42,49 +41,66 @@
          </span>
          Step 1: Billing/Shipping Address
     </div>
-    <a class="editstepone" href="">Edit</a></div>     
+    <a class="editstepone" href=""><i class="fa fa-pencil-square-o"></i></a>
+
+</div>     
     <dd class="content shipping">
         <div id="ajaxresults"></div>
         <div class="inputContent">
             <div class='form-row'>
-              <div class='col-xs-5 form-group '>
+              <div class='col-xs-6 center-block form-group  '>
                 <label class='control-label'>First Name</label>
                 <input class='form-control' value="{{ old('firstname') }}" size='4' type='text' id="firstname" name="firstname" >
               </div>          
-              <div class='col-xs-5 form-group '>
+              <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Last Name</label>
                 <input class='form-control' value="{{ old('lastname') }}" size='4' type='text' id="lastname" name="lastname" >
               </div>
             </div>
 
             <div class='form-row'>
-              <div class='col-xs-5 form-group '>
-                <label class='control-label'>Address Line 1</label>
+              <div class='col-xs-6 center-block form-group '>
+                <label class='control-label'>Street Address</label>
                 <input class='form-control' value="{{ old('addresslineone') }}" size='4' type='text' id="addresslineone" name="addresslineone" >
               </div>          
-              <div class='col-xs-5 form-group '>
-                <label class='control-label'>Address Line 2</label>
+              <div class='col-xs-6 center-block form-group '>
+                <label class='control-label'>Apt, Suite, etc. (Optional)</label>
                 <input class='form-control' value="{{ old('addresslinetwo') }}" size='4' type='text' id="addresslinetwo" name="addresslinetwo">
               </div>
             </div>
 
             <div class='form-row'>
-              <div class='col-xs-5 form-group '>
+              <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>City</label>
                 <input class='form-control' value="{{ old('city') }}" size='4' type='text' id="city" name="city" >
               </div>
-              <div class='col-xs-5 form-group '>
+              <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Province</label>
-                <input class='form-control' value="{{ old('province') }}" size='4' type='text' id="province" name="province" >
+                <select class="custom-select">
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="YT">Yukon</option>
+                  </select>
+                <!-- <input class='form-control' value="{{ old('province') }}" size='4' type='text' id="province" name="province" > -->
              </div>
             </div>
 
              <div class='form-row'>
-              <div class='col-xs-5 form-group '>
+              <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Postal Code</label>
                 <input class='form-control' value="{{ old('postalcode') }}" size='4' type='text' id="postalcode" name="postalcode" >
               </div>
-              <div class='col-xs-5 form-group '>
+              <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Phone Number</label>
                 <input class='form-control' value="{{ old('phonenumber') }}" size='4' type='text' id="phonenumber" name="phonenumber" >
               </div>
@@ -92,7 +108,7 @@
 
 
     <a class="firststep" href=""><button type="button" class="btn btn-success">Proceed to Shipping</button></a>
-    </div>
+     </div> <!-- end input content -->
     </dd>
 
    <div class="headercontainer headercontainertwo"> 
@@ -103,7 +119,7 @@
            </span>
           Step 2: Shipping Method
       </div>
-    <a class="editsteptwo" href="">Edit</a></div>
+    <a class="editsteptwo" href=""><i class="fa fa-pencil-square-o"></i></a></div>
    <dd class="content shipmethod">
 
      <input type="radio" name="shipmethod" id="shipmethod" value="Expediated Shipping"> Expediated Shipping<br>
@@ -112,8 +128,8 @@
    <a class="secondstep" href="#asdf"><button type="button" class="btn btn-success">Shipping Method</button></a>
    </dd>
 
-    <div class="headercontainer">
-      <div class="header">
+    <div class="headercontainer headercontainerthree">
+      <div class="header headerthree">
         <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-inverse fa-stack-1x">3</i>
@@ -125,11 +141,11 @@
     <dd class="content paymentmethod">
 
             <div class='form-row'>
-              <div class='col-xs-5 form-group'>
+              <div class='col-xs-6 center-block form-group'>
                 <label class='control-label'>Name on Card</label>
                 <input class='form-control' type='text' id="card-name" name="cardname" value="asdf"  >
               </div>
-              <div class='col-xs-5 form-group card '>
+              <div class='col-xs-6 center-block form-group card '>
                 <label class='control-label'>Card Number</label>
                 <input autocomplete='off' class='form-control card-number' value="4242424242424242" type='text' id="card-number" >
               </div>
@@ -150,7 +166,7 @@
             </div>
              
               
-                <button class='btn btn-success pay-submit' type='submit'>Purchase Order</button>                          
+                <button class='btn btn-success pay-submit' type='submit'>Place Order</button>                          
 
            
     </dd>    
@@ -159,6 +175,106 @@
   </div> <!-- end col -->
 
     <div class='col-md-3 rightpanel' >
+      <div class="headercontainer">
+         <div class="header headeritems">        
+         Your Items
+         <a href="{{ Route('product.getShoppingCart') }}"><span>View Cart</span></a>
+         
+        </div>
+      </div>
+      <div class="itemcontainer">
+
+ @foreach($products as $product)
+  <?php 
+     if (!isset($product['item']['product_id'])){
+        $id =  $product['item']['id'];
+     } else {
+        $id =  $product['item']['product_id'];
+     }       
+  ?>
+      <table>
+          <tbody>
+              <tr class="imagecell">
+                 <td rowspan="5">
+                  @foreach ($images as $image)
+                                @if($image->product_id == App\Product::find($id)->id )
+
+                                  <img src="{{ URL::to('/srv/productthumbnails/'.$image->name.'') }}">
+                                  
+                                @endif
+                              @endforeach
+                </td>
+              </tr>
+                <tr>
+                 <td style="font-weight: bold;">
+                   <?php     
+                    echo App\Product::find($id)->title 
+                    ?>
+                 </td>
+                 <td>&nbsp;</td>
+              </tr>
+                <tr>
+                 <td>Size: </td>
+                 <td>{{ $product['item']['size'] }}</td>
+              </tr>
+               <tr>
+                 <td>Qty:  </td>
+                 <td> {{ $product['qty'] }} x ${{ $product['item']['price'] }}</td>
+              </tr>
+               <tr>
+                 <td>Cost:</td>
+                 <td>{{ $product['price'] }}</td>
+              </tr>
+          </tbody>
+      </table>
+@endforeach
+
+
+      <hr>
+      <table> 
+          <tbody>
+              <tr>
+                 <td>Subtotal: </td>
+                 <td>{{ $subTotal }}</td>
+              </tr>
+              <tr>
+                 <td>Shipping</td>
+                 <td>$10.00</td>
+              </tr>
+              <tr>
+                 <td>Tax: </td>
+                 <td>$10.00</td>
+              </tr>
+               <tr>
+                 <td>&nbsp;</td>
+                 <td>&nbsp;</td>
+              </tr>
+               <tr>
+                 <td style="background-color: white;padding: 4px 4px 4px 4px;font-weight: bold;" >Order Total:</td>
+                 <td style="background-color: white;padding: 4px 4px 4px 4px ">$40.00</td>
+              </tr>
+          </tbody>
+      </table>
+    </div> <!-- item container -->
+    <br><br>
+      <div class="headercontainer headeracceptedcards">
+         <div class="header">        
+        Accepted Payment Methods       
+        </div>
+      </div>
+      <div class="acceptedcardcontainer">
+        <ul>
+          <li class=icon-american-express><i title="American Express">American Express</i></li> 
+          <li class=icon-master-card><i title=MasterCard>MasterCard</i></li> 
+          <li class=icon-visa><i title=Visa>Visa</i></li> </ul>
+
+      </div>
+
+      @else
+        <div class="col-sm-6 col-sm-offset-3">
+          <h2>You have no items in your cart.</h2>
+        </div>
+      @endif
 
     </div>
   
@@ -170,41 +286,6 @@
 </form>
 
 
-
-<!-- <div class="row">
-  <dl class="accordion">  
-    <div class='col-md-9 leftpanel' >
-      <div class="firststepcontainer">
-          <div class="firststepheader">
-              Step 1: Billing/Shipping Address 
-          </div>
-          <div class="firststepcontent">
-          ed to shipping</button></a>
-          </div>
-      </div>
-      
-       <div class="firststepcontainer">
-          <div class="firststepheader">
-              Step 2: Shipping Method 
-          </div>
-          <div class="firststepcontent">
-        
-          </div>
-      </div>
-      <div class="firststepcontainer">
-          <div class="firststepheader">
-              Step 3: Payment Method 
-          </div>
-          <div class="firststepcontent">
-        
-          </div>
-      </div>
-    </div>
-    <div class='col-md-3 rightpanel' >
-      saf
-    </div>
-
-</div> -->
 
 
 

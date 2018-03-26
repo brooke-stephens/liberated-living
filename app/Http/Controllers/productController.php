@@ -116,11 +116,18 @@ class productController extends Controller
     			'products' => null,
     		]);
     	} 
+
+            $allproducts = Product::all();
+            $images = ProductImage::where('isprimaryimage', '1')->get();
     		$oldCart = Session::get('cart');
     		$cart = new Cart($oldCart);
-    		$total = $cart->subTotal;
+    		$subtotal = $cart->subTotal;
+            // dd($cart->items);
     		return view('shopviews.checkout',[
-    				'total' => $total 
+                    'products' => $cart->items,
+    				'subTotal' => $subtotal,
+                    'allProducts' => $allproducts,
+                    'images' => $images,
     		]);
     	
     }

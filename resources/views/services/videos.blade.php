@@ -35,7 +35,7 @@
 
 						</div>
 
-						<div class="col-md-5 rightpanel">
+						<div class="col-md-5 videorightpanel">
 						<!-- this is the thumbnail image link -- being used in the youtube api js -->		
 							<div class="apiresults">
 							Click a video to play from our playlist.
