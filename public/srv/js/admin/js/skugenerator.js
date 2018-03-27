@@ -34,8 +34,8 @@ $('#skugenerate').on('click', function(event){
 
 });
 
-$('#vskugenerate').on('click', function(e){
-	event.preventDefault(e);
+$('#vskugenerate').on('click', function(event){
+	event.preventDefault();
 
 	name = $('#name').val();
 	// var code = name.substr(0, 2);
