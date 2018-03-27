@@ -76,7 +76,7 @@
               </div>
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Province</label>
-                <select class="custom-select">
+                <select id="province" name="province" class="custom-select" value="{{ old('province') }} " >
                     <option value="AB">Alberta</option>
                     <option value="BC">British Columbia</option>
                     <option value="MB">Manitoba</option>
@@ -206,12 +206,12 @@
                 </td>
               </tr>
                 <tr>
-                 <td style="font-weight: bold;">
+                 <td style="font-weight: bold;" colspan="2">
                    <?php     
                     echo App\Product::find($id)->title 
                     ?>
                  </td>
-                 <td>&nbsp;</td>
+                 
               </tr>
                 <tr>
                  <td>Size: </td>
@@ -239,11 +239,11 @@
               </tr>
               <tr>
                  <td>Shipping</td>
-                 <td>$10.00</td>
+                 <td>Need Shipping info</td>
               </tr>
               <tr>
                  <td>Tax: </td>
-                 <td>$10.00</td>
+                 <td id="taxamount">Need Shipping info</td>
               </tr>
                <tr>
                  <td>&nbsp;</td>
@@ -251,7 +251,7 @@
               </tr>
                <tr>
                  <td style="background-color: white;padding: 4px 4px 4px 4px;font-weight: bold;" >Order Total:</td>
-                 <td style="background-color: white;padding: 4px 4px 4px 4px ">$40.00</td>
+                 <td id="ordertotal" style="background-color: white;padding: 4px 4px 4px 4px ">${{ $subTotal }}</td>
               </tr>
           </tbody>
       </table>
@@ -263,10 +263,18 @@
         </div>
       </div>
       <div class="acceptedcardcontainer">
-        <ul>
-          <li class=icon-american-express><i title="American Express">American Express</i></li> 
-          <li class=icon-master-card><i title=MasterCard>MasterCard</i></li> 
-          <li class=icon-visa><i title=Visa>Visa</i></li> </ul>
+
+        <div class="cards">
+          <ul>
+            <li class=icon-american-express><i title="American Express">American Express</i></li> 
+            <li class=icon-master-card><i title=MasterCard>MasterCard</i></li> 
+            <li class=icon-visa><i title=Visa>Visa</i></li> 
+          </ul>
+        </div>
+      
+        <div class="stripelogo"><img src="{{URL::asset('/images/homepage/stripebig.png')}}" alt="">
+          <!-- <img src="{{URL::asset('/images/homepage/padlock.png')}}" style="height: 41px; alt=""> -->
+        </div>
 
       </div>
 
@@ -285,13 +293,7 @@
   {{ csrf_field() }}  
 </form>
 
-
-
-
-
-  
-
-          <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
+<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
             
             
        
@@ -307,6 +309,97 @@
 
 
 
+      
+
+
+    
+    
+  
+
+<script>
+
+      var placeSearch, addresslineone;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+ function initAutocomplete() {
+
+        // Create the addresslineone object, restricting the search to geographical
+        // location types.
+        addresslineone = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('addresslineone')),
+            {types: ['geocode'],componentRestrictions: {country: "ca"}});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        addresslineone.addListener('place_changed', fillInAddress);
+        
+}
+
+      function fillInAddress() {
+        // Get the place details from the addresslineone object.
+        var place = addresslineone.getPlace();
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            // document.getElementById(addressType).value = val;
+            if(addressType=="locality") {
+              document.getElementById('city').value = val;
+            }
+            if(addressType=="postal_code") {
+              document.getElementById('postalcode').value = val;
+            }
+            if(addressType=="street_number") {
+              completeadress = val;                       
+            }
+            if(addressType=="route") {
+                completeadress += " " + val;
+                document.getElementById('addresslineone').value = completeadress;
+            }
+            if(addressType=="administrative_area_level_1") {
+              document.getElementById('province').value = val;
+            }   
+
+
+            
+
+          }
+        }
+      }
+
+      // Bias the addresslineone object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            addresslineone.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBLZqLKt6uaThDUpT7Rg_ldp1P3ejSEBk &libraries=places&callback=initAutocomplete"
+        async defer>
+</script>
           
            
           
@@ -336,7 +429,7 @@
 <script src="https://js.stripe.com/v3/"></script>
 <!-- <script src="{{ URL::to('srv/js/checkout.js') }}"></script> -->
 <script type="text/javascript" src="{{URL::to('srv/js/checkout.js')}}"></script>
-
+<script type="text/javascript" src="{{URL::to('srv/js/placeautocomplete.js')}}"></script>
 
 @endsection
 

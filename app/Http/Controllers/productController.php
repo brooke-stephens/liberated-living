@@ -9,6 +9,7 @@ use App\Product;
 use App\ProductImage;
 use App\ProductVariant;
 use App\Cart;
+use App\Tax;
 use Session;
 use Auth;
 use App\Order;
@@ -134,7 +135,69 @@ class productController extends Controller
 
     public function postReviewCheckout(Request $request){
 
-        return $request;
+       
+        switch ($request->province) {
+            case 'AB':
+                $province = "Alberta";
+                break;
+            case 'BC':
+                $province = "British Columbia";
+                break; 
+            case 'MB':
+                $province = "Manitoba";
+                break; 
+            case 'NB':
+                $province = "New Brunswick";
+                break;
+            case 'NL':
+                $province = "Newfoundland and Labrador";
+                break;
+            case 'NS':
+                $province = "Nova Scotia";
+                break; 
+            case 'ON':
+                $province = "Ontario";
+                break; 
+            case 'PE':
+                $province = "Prince Edward Island";
+                break;
+            case 'QC':
+                $province = "Quebec";
+                break;
+            case 'SK':
+                $province = "Saskatchewan";
+                break; 
+            case 'NT':
+                $province = "Northwest Territories";
+                break; 
+            case 'NU':
+                $province = "Nunavut";
+                break;
+            case 'YT':
+                $province = "Yukon";
+                break;                    
+            default:
+                # code...
+                break;
+        }
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $subtotal = $cart->subTotal;
+
+        $taxrate = Tax::where('province', $province)->first();
+        $taxtype = $taxrate->ratetype;
+        $taxamount = $subtotal * $taxrate->taxrate;
+        $ordertotal = $subtotal * (1 + $taxrate->taxrate);
+
+        $cart->taxamount =  $taxamount;
+        $request->session()->put('cart',$cart);
+
+        return $request->all() + [
+            'taxamount' => $taxamount,
+            'taxtype' => $taxtype,
+            'ordertotal' => $ordertotal,
+        ];
 
     }
 
@@ -152,7 +215,7 @@ class productController extends Controller
 
         Stripe::setApiKey('sk_test_uV4yUZgUOsfz7qMNvpXjZExh');
         try {
-            dd($request->firstname);
+            dd($cart->taxamount);
             $charge = Charge::create(array(
               "amount" => $cart->subTotal * 100,
               "currency" => "cad",

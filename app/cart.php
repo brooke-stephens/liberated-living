@@ -10,6 +10,7 @@ class cart {
 		public $items =null;
 		public $totalQty = 0;
 		public $subTotal = 0;
+		public $taxamount;
 
 		public function __construct($oldCart){
 				
@@ -17,6 +18,7 @@ class cart {
 					$this->items = $oldCart->items;	
 					$this->totalQty = $oldCart->totalQty;
 					$this->subTotal = $oldCart->subTotal; 
+					$this->taxamount = $oldCart->taxamount;
 				} 
 
 		}

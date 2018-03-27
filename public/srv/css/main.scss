@@ -1805,6 +1805,10 @@ margin:0px 5px 0px 5px;
 $checkoutbackground:#e4ecf7;
 $accent:#0b4da8;
 
+.pac-container {
+    z-index: 1051 !important;
+}
+
 .checkoutcontainer {
 
 
@@ -1858,9 +1862,19 @@ $accent:#0b4da8;
         padding-top: 20px;
         width: 100%;
         background-color: $checkoutbackground;
-        display: flex;
+        
 
-        justify-content: center;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+    }
+
+    .stripelogo {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
 
     }
 
@@ -1881,8 +1895,10 @@ $accent:#0b4da8;
 
 
     img {
-      width:40px;
-      height: auto;
+   
+      float: left;
+      vertical-align: top;
+      margin-right: 10px;
     }
 
     table {
@@ -1892,6 +1908,7 @@ $accent:#0b4da8;
 
     table tr:first-child td {
      width: 50px;
+     vertical-align: top;
     }
 
 
@@ -1911,19 +1928,22 @@ $accent:#0b4da8;
     .icon-visa {
       width: 65px;
       height: 40px;
-      background: url('/images/homepage/paymentsprites.jpg') 0 0;
+      background: url('/images/homepage/paymentsprites.jpg');
+      background-position: 0px 0px;
     }
 
     .icon-master-card {
       width: 65px;
       height: 40px;
-      background: url('/images/homepage/paymentsprites.jpg') -70 0;
+      background: url('/images/homepage/paymentsprites.jpg');
+      background-position: -70px 0px;
     }
 
     .icon-american-express {
       width: 65px;
       height: 40px;
-      background: url('/images/homepage/paymentsprites.jpg') -140 0;
+      background: url('/images/homepage/paymentsprites.jpg');
+      background-position: -140px 0px;
     }
 
     i {

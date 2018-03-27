@@ -129,22 +129,28 @@ $('body').on('click', 'a.firststep', function(event) {
 	saveHtml = $(".content").html();	
 	fname = $('#firstname').val();
 	lname = $('#lastname').val();
-
+	province = $('#province').val();
 	
 	
     $this.parent().next().find('.header').css('text-decoration', 'none');
     
     // alert($this.parent().next().attr('class'));
 	myData = { 	fname: fname,
-				lname: lname };
+				lname: lname,
+				province:province
+				};
 	 $.ajax({
             type: "POST",
             url : "/reviewcheckout",
             data: myData,
               success: function(data) {
-              	formsummary = myData.fname +' '+myData.lname;			    
+              	// console.log(data);
+              	// +' '+data.taxrate
+              	formsummary = myData.fname +' '+myData.lname+' '+data.taxamount;			    
 				setStatus();
 				applystyling();
+				$('#taxamount').html('(' + data.taxtype + ') ' + data.taxamount);
+				$('#ordertotal').html(data.ordertotal);
               },
               error: function(data){
                   alert("There was an error. Please notify the administrator.");
@@ -171,11 +177,17 @@ $('.editstepone').on('click', function() {
 	setStatus();
 	applystyling();
 
+
 	// $this.parent().next().slideDown();
 	$this.prev().css('text-decoration', 'none');
 	return false;
+
+
+
 	
 });
+
+
 
 $('body').on('click', 'a.secondstep', function(event) {
 	event.preventDefault();
@@ -312,8 +324,10 @@ function setOneActive(){
 	$('.shipping').animate({'opacity': 0,'height': '400px'}, 400, function(){
         $(this).html(saveHtml).animate({'opacity': 1}, 400);
         $('#firstname').val(fname); 
-        $('#lastname').val(lname);   
+        $('#lastname').val(lname); 
+        $('#province').val(province);   
     });
+
 
 
 
@@ -395,6 +409,10 @@ function applystyling(){
 
         }
     }
+
+
+
 }
+
 
 

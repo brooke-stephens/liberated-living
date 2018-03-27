@@ -1171,6 +1171,9 @@ textarea:focus {
   font-size: 43px; }
 
 /* ------------------------------checkout --------------------*/
+.pac-container {
+  z-index: 1051 !important; }
+
 .checkoutcontainer hr {
   display: block;
   height: 1px;
@@ -1201,9 +1204,14 @@ textarea:focus {
     min-height: 150px;
     padding-top: 20px;
     width: 100%;
-    background-color: #e4ecf7;
+    background-color: #e4ecf7; }
+  .checkoutcontainer .rightpanel .cards {
     display: flex;
     justify-content: center; }
+  .checkoutcontainer .rightpanel .stripelogo {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; }
   .checkoutcontainer .rightpanel .acceptedcardcontainer ul {
     display: flex;
     justify-content: flex-start;
@@ -1213,13 +1221,15 @@ textarea:focus {
     list-style-type: none;
     margin: 5px 5px 0 5px; }
   .checkoutcontainer .rightpanel img {
-    width: 40px;
-    height: auto; }
+    float: left;
+    vertical-align: top;
+    margin-right: 10px; }
   .checkoutcontainer .rightpanel table {
     width: 90%;
     margin-bottom: 20px; }
   .checkoutcontainer .rightpanel table tr:first-child td {
-    width: 50px; }
+    width: 50px;
+    vertical-align: top; }
   .checkoutcontainer .rightpanel td:nth-child(2) {
     text-align: right;
     color: #0b4da8;
@@ -1227,15 +1237,18 @@ textarea:focus {
   .checkoutcontainer .rightpanel .icon-visa {
     width: 65px;
     height: 40px;
-    background: url("/images/homepage/paymentsprites.jpg") 0 0; }
+    background: url("/images/homepage/paymentsprites.jpg");
+    background-position: 0px 0px; }
   .checkoutcontainer .rightpanel .icon-master-card {
     width: 65px;
     height: 40px;
-    background: url("/images/homepage/paymentsprites.jpg") -70 0; }
+    background: url("/images/homepage/paymentsprites.jpg");
+    background-position: -70px 0px; }
   .checkoutcontainer .rightpanel .icon-american-express {
     width: 65px;
     height: 40px;
-    background: url("/images/homepage/paymentsprites.jpg") -140 0; }
+    background: url("/images/homepage/paymentsprites.jpg");
+    background-position: -140px 0px; }
   .checkoutcontainer .rightpanel i {
     opacity: 0; }
 .checkoutcontainer .headeritems span {
