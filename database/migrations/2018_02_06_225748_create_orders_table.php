@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->string('payment_id');
             $table->string('saved');
             $table->string('ispaymentcompleted');
-            $table->string('orderstatus')->default(1);
+            $table->string('status_id')->default(1);
             $table->timestamps();
         });
     }

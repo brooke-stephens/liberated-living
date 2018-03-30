@@ -203,7 +203,19 @@ class productController extends Controller
 
     public function postCheckout(Request $request){
         //the tax needs to be applid here
-
+        $this->validate($request,[
+                'firstname' => 'required|min:2',
+                'lastname' => 'required|min:2',
+                'addresslineone' => 'required',
+                'city' => 'required',
+                'province' => 'required',
+                'postalcode' => 'required',
+                'phonenumber' => 'required',
+                'shipmethod' => 'required',
+                'cardname' => 'required',  
+                'card-cvc' => 'required',           
+                 ]);             
+        
         
 
       	if (!Session::has('cart')) {

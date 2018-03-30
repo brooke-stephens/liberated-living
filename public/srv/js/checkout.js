@@ -45,6 +45,15 @@ $(function() {
   });
 });
 
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+
 
 
 Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
@@ -100,7 +109,8 @@ var fname;
 var lname;
 var formsummary;
 var shipmethod = $("input[name='shipmethod']:checked").val();
-
+$('.editstepone').hide();
+$('.editsteptwo').hide();
 
 panels.first().show();
 
@@ -110,6 +120,8 @@ $(window).on('hashchange',function(){
     setStatus();
 	applystyling();
 });
+
+
 
 $('body').on('click', 'a.firststep', function(event) {
 	event.preventDefault();
@@ -287,6 +299,7 @@ function setOneInactive(){
 			        $("#ajaxresults").html(formsummary).animate({'opacity': 1}, 400);			        
 			        // $(".shipping").animate({'height': '125px','height': '125px','font-size': '12px'}, 400);
 			    }); 
+	$('.editstepone').show();
 
 };
 
@@ -304,6 +317,7 @@ function setTwoInactive(){
 	$('.shipmethod').animate({'opacity': 0,'height': '100px','font-size': '12px'}, 400, function(){
 		 $(this).html(shipmethod).animate({'opacity': 1}, 400);    
 	});
+	$('.editsteptwo').show();
 };
 
 function setOneActive(){
@@ -327,8 +341,8 @@ function setOneActive(){
         $('#lastname').val(lname); 
         $('#province').val(province);   
     });
-
-
+	$('.editstepone').hide();
+   
 
 
 }
@@ -350,6 +364,8 @@ function setTwoActive(){
 		});
 	 $('.shipmethod').fadeIn();	
 	 $('.secondstep').show();
+	 $('.editsteptwo').hide();
+	 
 
 	 // this will unhide the shipping method form
 	// $('.shipmethod').animate({'opacity': 0,'height': '400px'}, 400, function(){
@@ -374,7 +390,9 @@ function setThreeactive(){
 									 'opacity': '1',
 									 'background-color': activeheadercolour
 									});
+	
 };
+
 
 function applystyling(){
  

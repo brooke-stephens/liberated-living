@@ -1316,3 +1316,6 @@ textarea:focus {
 /* ------------------------------end checkout --------------------*/
 .error {
   color: #a42a2b !important; }
+
+.has-error {
+  border: 1px solid #e74c3c !important; }

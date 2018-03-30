@@ -19,16 +19,27 @@
 
 @if(Session::has('cart'))
 
-<form action="{{ route('checkout') }}" method="post" id="checkout-form" name="checkout-form">
-<div class="row">
-  <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-    <div class='form-row'>
-         <div class='col-md-12 error form-group hide'>                
+@if (count($errors))
+            <div class="alert alert-danger">            
+                @foreach($errors->all() as $error)
+                    {{ $error }}<br>
+                @endforeach
+
+            </div>
+@endif
+
+  <div class='form-row'>
+         <div class='col-md-12 error form-group'>                
             <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hidden' : ''  }}"> 
                  {{ Session::get('error') }} 
             </div> 
           </div>
      </div>
+
+<form action="{{ route('checkout') }}" method="post" id="checkout-form" name="checkout-form">
+<div class="row">
+  <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
+  
 
   <div class='col-md-9 leftpanel' >
   <dl class="accordion">
@@ -50,18 +61,18 @@
             <div class='form-row'>
               <div class='col-xs-6 center-block form-group  '>
                 <label class='control-label'>First Name</label>
-                <input class='form-control' value="{{ old('firstname') }}" size='4' type='text' id="firstname" name="firstname" >
+                <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('firstname') }}" size='4' type='text' id="firstname" name="firstname" >
               </div>          
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Last Name</label>
-                <input class='form-control' value="{{ old('lastname') }}" size='4' type='text' id="lastname" name="lastname" >
+                <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('lastname') }}" size='4' type='text' id="lastname" name="lastname" >
               </div>
             </div>
 
             <div class='form-row'>
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Street Address</label>
-                <input class='form-control' value="{{ old('addresslineone') }}" size='4' type='text' id="addresslineone" name="addresslineone" >
+                <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('addresslineone') }}" size='4' type='text' id="addresslineone" name="addresslineone" >
               </div>          
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Apt, Suite, etc. (Optional)</label>
@@ -72,11 +83,11 @@
             <div class='form-row'>
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>City</label>
-                <input class='form-control' value="{{ old('city') }}" size='4' type='text' id="city" name="city" >
+                <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('city') }}" size='4' type='text' id="city" name="city" >
               </div>
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Province</label>
-                <select id="province" name="province" class="custom-select" value="{{ old('province') }} " >
+                <select id="province" name="province" class="custom-select {{ $errors->has('firstname') ? 'has-error' : '' }}" value="{{ old('province') }} " >
                     <option value="AB">Alberta</option>
                     <option value="BC">British Columbia</option>
                     <option value="MB">Manitoba</option>
@@ -98,11 +109,11 @@
              <div class='form-row'>
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Postal Code</label>
-                <input class='form-control' value="{{ old('postalcode') }}" size='4' type='text' id="postalcode" name="postalcode" >
+                <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('postalcode') }}" size='4' type='text' id="postalcode" name="postalcode" >
               </div>
               <div class='col-xs-6 center-block form-group '>
                 <label class='control-label'>Phone Number</label>
-                <input class='form-control' value="{{ old('phonenumber') }}" size='4' type='text' id="phonenumber" name="phonenumber" >
+                <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('phonenumber') }}" size='4' type='text' id="phonenumber" name="phonenumber" >
               </div>
             </div>
 
@@ -153,7 +164,7 @@
             <div class='form-row'>
               <div class='col-xs-2 form-group cvc '>
                 <label class='control-label'>CVC</label>
-                <input autocomplete='off' class='form-control card-cvc' value="211" placeholder='ex. 311' size='4' type='text' id="card-cvc" >
+                <input autocomplete='off' class='form-control card-cvc' value="211" placeholder='ex. 311' size='4' type='text' id="card-cvc" name="card-cvc" >
               </div>
               <div class='col-xs-2 form-group expiration '>
                 <label class='control-label'>Expiration</label>
@@ -339,7 +350,7 @@
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
         addresslineone.addListener('place_changed', fillInAddress);
-        
+
 }
 
       function fillInAddress() {
