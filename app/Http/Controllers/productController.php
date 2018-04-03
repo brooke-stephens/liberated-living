@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
+use App\producttosymptom;
 use App\ProductImage;
 use App\ProductVariant;
 use App\Cart;
@@ -359,6 +360,7 @@ class productController extends Controller
         if($request->multiplevariants){            
             $this->validate($request,[ 
                 'name' => 'required|min:4',
+                'brand' => 'required',
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4',
                 'category' => 'required|min:3',
@@ -373,6 +375,7 @@ class productController extends Controller
         } else {
             $this->validate($request,[
                 'name' => 'required|min:4',
+                'brand' => 'required',
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4|unique:products|unique:product_variants,sku',
                 'category' => 'required|min:3',
@@ -385,9 +388,12 @@ class productController extends Controller
             ]);
         }
 
+        
+        
       
         $new_product = new Product;
         $new_product->title = $request->name;
+        $new_product->brand = $request->brand;
         $new_product->description = $request->description;
         $new_product->sku = $request->sku;
         $new_product->category = $request->category;
@@ -395,6 +401,15 @@ class productController extends Controller
         $new_product->quantity = $request->quantity;
         $new_product->size = $request->size;
         $new_product->save();
+
+        if ($request->symptoms){
+            foreach ($request->symptoms as $symptom) {
+                $singlesymptom = new producttosymptom;
+                $singlesymptom->product_id = $new_product->id;
+                $singlesymptom->symptom_id = $symptom;
+                $singlesymptom->save();
+            }
+        }
        
         if($request->vsku){
             $length = count($request->vsku);
@@ -467,6 +482,7 @@ class productController extends Controller
 
             $this->validate($request,[
                 'name' => 'required|min:4',
+                'brand' => 'required',
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4',
                 'category' => 'required|min:3',
@@ -481,6 +497,7 @@ class productController extends Controller
         } else {
             $this->validate($request,[
                 'name' => 'required|min:4',
+                'brand' => 'required',
                 'description' => 'required|min:4',
                 'sku' => 'required|min:4|unique:products,sku,'.$id,
                 'category' => 'required|min:3',
@@ -506,7 +523,18 @@ class productController extends Controller
 
         self::cleanInput($request->description);
         $request->description =  self::$cleanedInput;
-        
+
+        //need to delete the product symtoms before we update so we dont duplicate 
+        DB::table('producttosymptoms')->where('product_id', $id)->delete();
+
+        if ($request->symptoms){
+            foreach ($request->symptoms as $symptom) {
+                $singlesymptom = new producttosymptom;
+                $singlesymptom->product_id = $id;
+                $singlesymptom->symptom_id = $symptom;
+                $singlesymptom->save();
+            }
+        }
         if(Input::hasfile('primaryimage')){
             $this->savePrimaryImage($request);   
             $new_productImage = new ProductImage;
@@ -540,6 +568,8 @@ class productController extends Controller
             $updated_product->price = "";
             $updated_product->quantity = "";
             $updated_product->save();
+
+
 
             DB::table('product_variants')->where('product_id', $id)->delete();   
 

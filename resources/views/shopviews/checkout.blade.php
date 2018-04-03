@@ -60,18 +60,18 @@
         <div class="inputContent">
             <div class='form-row'>
               <div class='col-xs-6 center-block form-group  '>
-                <label class='control-label'>First Name</label>
+                <label class='control-label'>First Name <span class="required">(Required)</span></label>
                 <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('firstname') }}" size='4' type='text' id="firstname" name="firstname" >
               </div>          
               <div class='col-xs-6 center-block form-group '>
-                <label class='control-label'>Last Name</label>
+                <label class='control-label'>Last Name <span class="required">(Required)</span></label>
                 <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('lastname') }}" size='4' type='text' id="lastname" name="lastname" >
               </div>
             </div>
 
             <div class='form-row'>
               <div class='col-xs-6 center-block form-group '>
-                <label class='control-label'>Street Address</label>
+                <label class='control-label'>Street Address <span class="required">(Required)</span></label>
                 <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('addresslineone') }}" size='4' type='text' id="addresslineone" name="addresslineone" >
               </div>          
               <div class='col-xs-6 center-block form-group '>
@@ -82,11 +82,11 @@
 
             <div class='form-row'>
               <div class='col-xs-6 center-block form-group '>
-                <label class='control-label'>City</label>
+                <label class='control-label'>City <span class="required">(Required)</span></label>
                 <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('city') }}" size='4' type='text' id="city" name="city" >
               </div>
               <div class='col-xs-6 center-block form-group '>
-                <label class='control-label'>Province</label>
+                <label class='control-label'>Province <span class="required">(Required)</span></label>
                 <select id="province" name="province" class="custom-select {{ $errors->has('firstname') ? 'has-error' : '' }}" value="{{ old('province') }} " >
                     <option value="AB">Alberta</option>
                     <option value="BC">British Columbia</option>
@@ -108,11 +108,11 @@
 
              <div class='form-row'>
               <div class='col-xs-6 center-block form-group '>
-                <label class='control-label'>Postal Code</label>
+                <label class='control-label'>Postal Code <span class="required">(Required)</span></label>
                 <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('postalcode') }}" size='4' type='text' id="postalcode" name="postalcode" >
               </div>
               <div class='col-xs-6 center-block form-group '>
-                <label class='control-label'>Phone Number</label>
+                <label class='control-label'>Phone Number <span class="required">(Required)</span></label>
                 <input class='form-control {{ $errors->has('firstname') ? 'has-error' : '' }}' value="{{ old('phonenumber') }}" size='4' type='text' id="phonenumber" name="phonenumber" >
               </div>
             </div>

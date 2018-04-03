@@ -27,6 +27,18 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Refunded'],
         ]);
 
+        DB::table('healthsymptoms')->insert([
+            ['name' => 'Inflammation'],
+            ['name' => 'Stress/Energy'], 
+            ['name' => 'Sleep'],
+            ['name' => 'Heart Health'],
+            ['name' => 'Liver Cleansing'], 
+            ['name' => 'Regularity'], 
+            ['name' => 'Adrenal Fatigue'],
+
+        ]);
+
+
         DB::table('roles')->insert([
             ['name' => 'User'],
             ['name' => 'Admin'],

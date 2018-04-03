@@ -50,6 +50,19 @@
                       <label>Name</label>
                       <input type="text" placeholder="Product Name" name="name" id="name" class="form-control" value="{{ old('name') }}">
                     </div>
+                     <div class="form-group">       
+                      <label>Product Brand</label>
+                      <!-- <input type="text" placeholder="Category" name="category" class="form-control" value="{{ old('category') }}"> -->
+                      <select name="brand" id="brand" class="form-control">
+                            <option value="" disabled selected="selected">Choose here</option>  
+                            <option value="Brand 1">Brand 1</option>
+                            <option value="Brand 2">Brand 2</option>
+                            <option value="Brand 3">Brand 3</option>
+                            <option value="Brand 4">Brand 4</option>
+                                         
+                      </select> 
+
+                    </div>
                     <div class="form-group">       
                       <label>Description</label>
                       <!-- <input type="text" placeholder="Product Description" name="description" class="form-control" value="{{ old('description') }}"> -->
@@ -66,6 +79,19 @@
                       </select> 
 
                     </div>
+                    <div class="form-group">
+                                             
+                     <label for="symptoms">Related product symptoms.</label>
+                      <select multiple name="symptoms[]" id="symptoms" title="Select Symptom">
+                        @foreach ($symptoms as $symptom)                             
+                            <option value="{{$symptom->symptom_id}}">{{$symptom->name}}</option>
+                        @endforeach     
+                      </select>
+
+ 
+                      
+                    </div>
+
 
 					         <div class="form-group">       
                       <label>Primary Product Images</label>
@@ -237,13 +263,15 @@
 @endsection
 
 @section('pagescript')
+
     <!-- add sku generator -->
     <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/skugenerator.js') }}"></script> 
         <!-- add products -->
     <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/addproduct.js') }}"></script>
-
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.9.4/trumbowyg.min.js"></script>
-
+    
 
     <script>
       $.trumbowyg.svgPath = "{{ URL::asset('/images/adminimg/icons.svg') }}";
@@ -268,4 +296,8 @@
       });
 
     </script>
+
+<script   src="https://code.jquery.com/jquery-1.6.4.js"   integrity="sha256-VJZPi1gK15WpYvsnBmcV0yga4a0Toov4rt1diFnrrjc="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ URL::to('srv/js/admin/js/jquery.asmselect.js') }}"></script>
+
 @stop

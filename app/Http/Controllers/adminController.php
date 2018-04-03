@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Product;
+use App\producttosymptom;
+use App\healthsymptom;
 use App\ProductVariant;
 use App\ProductImage;
 use App\Category;
@@ -22,8 +24,10 @@ class adminController extends Controller
 
     public function getAddProduct(){
         $categories = Category::all();
+        $symptoms = healthsymptom::all();
     	return view('admin.add_product',[
             'categories' => $categories,
+            'symptoms' => $symptoms,
         ]);
     }
 
@@ -96,11 +100,17 @@ class adminController extends Controller
         // $image = ProductImage::where('product_id', 13)->first();
         // dd($product->title);
 
+
         $id = $request->productId;
+        
+        
+
         $this->DeleteThumbnailImage($id);        
         $this->DeleteAllImages($id);  
-
-        Product::destroy($id);        
+        DB::table('producttosymptoms')->where('product_id', $id)->delete();
+        Product::destroy($id); 
+        
+             
         // $imagesToDelete = ProductImage::where('product_id', $id)->get();
         DB::table('product_images')->where('product_id', $id)->delete(); 
         // dd($alternativeimagenames);      
@@ -158,9 +168,19 @@ class adminController extends Controller
     	$primaryImages = $this->getPrimaryImage($id);
     	$AssociatedImages = $this->getAssociatedImages($id);
         $categories = Category::all();
+        $symptoms = healthsymptom::all();
+        $producttosymptoms = producttosymptom::where('product_id',$id)->get();
 
-
-
+            
+        foreach ($producttosymptoms as $value) {
+            $symptomarray[] = $value->symptom_id;
+        }
+        if (!isset($symptomarray)){
+            $symptomarray = [];
+        }
+         
+       
+        
 
         if (!$productVariants->isEmpty()) { 
            $multipleVariants = 'checked';
@@ -183,6 +203,8 @@ class adminController extends Controller
     		'primaryImage' => $primaryImages,
     		'associatedImages' => $AssociatedImages,
             'categories' => $categories,
+            'symptoms' => $symptoms,
+            'symptomarray' =>  $symptomarray,
     	]);
 
     }

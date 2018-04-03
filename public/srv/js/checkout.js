@@ -1,10 +1,10 @@
 $(function() {
-	// $.validator.addMethod('price', function (value) { 
- //    return /^-?(\d{1,3})(\.\d{1,2})?$/.test(value); 
-	// }, 'Please enter a valid price. ');
-	// $.validator.addMethod('size', function (value) { 
- //    return /^-?(\d{1,8})[a-z]{1,}?$/.test(value); 
-	// }, 'Please enter a valid size. ');
+	$.validator.addMethod('postalcodev', function (value) { 
+    return /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(value); 
+	}, 'Please enter a valid postalcode. ');
+	$.validator.addMethod('phonenumber', function (value) { 
+    return  /^[+]?[0-9]{0,1}[-. ]?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(value); 
+	}, 'Please enter a valid phone number. ');
 	
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
@@ -16,14 +16,36 @@ $(function() {
       // of an input field. Validation rules are defined
       // on the right side
       firstname: {
-      	required: true,   
+      	required: true,
+      	minlength:2,  
       },
       lastname: {
-     	 required: true, 
+     	 required: true,
+     	 minlength:2, 
       },
       cardname: {
      	 required: true, 
       },
+      addresslineone: {
+      	required: true,   
+      },
+      city: {
+     	 required: true, 
+      },
+      postalcode: {
+     	 required: true,
+     	 postalcodev:true, 
+      },
+      phonenumber: {
+     	 required: true,
+     	 phonenumber:true, 
+      },
+      province: {
+     	 required: true, 
+      },
+      // shipmethod: {
+     	//  required: true, 
+      // },
       
       // vquantity: {
      	//  required: true,
@@ -97,7 +119,7 @@ Stripe.setPublishableKey('pk_test_GFsTmM5GC5DhhqiNDZblbMMc');
 
 var status = "stepone";
 var panels = $('.content').hide();
-var lightgrey = "#d3d3d3";
+var lightgrey = "#9c9c9c";
 var contentcolor ="";
 var activeheadercolour = 'white';
 var activecontentcolour = '#e4ecf7'
@@ -107,6 +129,11 @@ var saveHtml;
 var shipmethodHtml;
 var fname;
 var lname;
+var addresslineone;
+var	addresslinetwo;
+var	city;	
+var	postalcode
+var	phonenumber;
 var formsummary;
 var shipmethod = $("input[name='shipmethod']:checked").val();
 $('.editstepone').hide();
@@ -142,6 +169,11 @@ $('body').on('click', 'a.firststep', function(event) {
 	fname = $('#firstname').val();
 	lname = $('#lastname').val();
 	province = $('#province').val();
+	addresslineone = $('#addresslineone').val();
+	addresslinetwo = $('#addresslinetwo').val();
+	city = $('#city').val();	
+	postalcode = $('#postalcode').val();
+	phonenumber = $('#phonenumber').val();
 	
 	
     $this.parent().next().find('.header').css('text-decoration', 'none');
@@ -149,7 +181,12 @@ $('body').on('click', 'a.firststep', function(event) {
     // alert($this.parent().next().attr('class'));
 	myData = { 	fname: fname,
 				lname: lname,
-				province:province
+				province:province,
+				addresslineone:addresslineone,
+				addresslinetwo:addresslinetwo,
+				city:city,
+				postalcode:postalcode,
+				phonenumber:phonenumber
 				};
 	 $.ajax({
             type: "POST",
@@ -158,7 +195,13 @@ $('body').on('click', 'a.firststep', function(event) {
               success: function(data) {
               	// console.log(data);
               	// +' '+data.taxrate
-              	formsummary = myData.fname +' '+myData.lname+' '+data.taxamount;			    
+              	// /.taxamount
+              	if (addresslinetwo){
+              		breakline = '<br>';
+              	} else {
+					breakline = '';
+              	} 
+              	formsummary = myData.fname +' '+myData.lname +'<br> '+ myData.city +', '+  myData.province +', '+myData.postalcode + breakline + myData.addresslinetwo +'<br> ' +myData.phonenumber;			    
 				setStatus();
 				applystyling();
 				$('#taxamount').html('(' + data.taxtype + ') ' + data.taxamount);
@@ -203,6 +246,7 @@ $('.editstepone').on('click', function() {
 
 $('body').on('click', 'a.secondstep', function(event) {
 	event.preventDefault();
+	if ($("form[name='checkout-form']").valid()){} else {return false;}
 
 		if(history.pushState) {
 		history.pushState(null, null, '#stepthree');
@@ -339,10 +383,15 @@ function setOneActive(){
         $(this).html(saveHtml).animate({'opacity': 1}, 400);
         $('#firstname').val(fname); 
         $('#lastname').val(lname); 
-        $('#province').val(province);   
+        $('#province').val(province);
+        $('#addresslineone').val(addresslineone); 
+        $('#addresslinetwo').val(addresslinetwo); 
+        $('#city').val(city); 
+        $('#postalcode').val(postalcode); 
+        $('#phonenumber').val(phonenumber); 
+
     });
 	$('.editstepone').hide();
-   
 
 
 }
