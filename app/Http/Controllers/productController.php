@@ -549,6 +549,7 @@ class productController extends Controller
             DB::table('product_variants')->where('product_id', $id)->delete(); 
             $updated_product = Product::find($id);
             $updated_product->title = $request->name;
+            $updated_product->brand = $request->brand;
             $updated_product->description = $request->description;
             $updated_product->sku = $request->sku;
             $updated_product->category = $request->category;
@@ -561,6 +562,7 @@ class productController extends Controller
 
             $updated_product = Product::find($id);
             $updated_product->title = $request->name;
+            $updated_product->brand = $request->brand;
             $updated_product->description = $request->description;
             $updated_product->sku = $request->sku;
             $updated_product->category = $request->category;

@@ -42,6 +42,8 @@ $(function() {
   });
 });
 
+
+
 var multiplevariants = $('#multiplevariants');
 var unneededelements = $('.elementstohide');
 var openVariantmodal = $('#openVariantmodal');

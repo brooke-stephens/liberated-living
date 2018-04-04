@@ -27,6 +27,14 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Refunded'],
         ]);
 
+        DB::table('brands')->insert([
+            ['name' => 'Harmonics Arts'],
+            ['name' => 'Nature Made'], 
+            ['name' => 'CVS'],
+            ['name' => 'Webber Naturals'],
+
+        ]);
+
         DB::table('healthsymptoms')->insert([
             ['name' => 'Inflammation'],
             ['name' => 'Stress/Energy'], 

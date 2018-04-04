@@ -55,11 +55,10 @@
                       <!-- <input type="text" placeholder="Category" name="category" class="form-control" value="{{ old('category') }}"> -->
                       <select name="brand" id="brand" class="form-control">
                             <option value="" disabled selected="selected">Choose here</option>  
-                            <option value="Brand 1">Brand 1</option>
-                            <option value="Brand 2">Brand 2</option>
-                            <option value="Brand 3">Brand 3</option>
-                            <option value="Brand 4">Brand 4</option>
-                                         
+                            @foreach ($brands as $brand)
+                            <option value="{{$brand->name}}">{{$brand->name}}</option>
+                           
+                            @endforeach
                       </select> 
 
                     </div>
@@ -82,7 +81,7 @@
                     <div class="form-group">
                                              
                      <label for="symptoms">Related product symptoms.</label>
-                      <select multiple name="symptoms[]" id="symptoms" title="Select Symptom">
+                      <select multiple name="symptoms[]" id="symptoms" title="Select Symptom" class="form-control">
                         @foreach ($symptoms as $symptom)                             
                             <option value="{{$symptom->symptom_id}}">{{$symptom->name}}</option>
                         @endforeach     

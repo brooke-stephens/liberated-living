@@ -49,13 +49,11 @@
                     </div>
                     <div class="form-group">       
                       <label>Product Brand</label>
-                      <!-- <input type="text" placeholder="Category" name="category" class="form-control" value="{{ old('category') }}"> -->
-                      <select name="brand" id="brand" class="form-control">
-                            <option value="" disabled selected="selected">Choose here</option>  
-                            <option value="Brand 1">Brand 1</option>
-                            <option value="Brand 2">Brand 2</option>
-                            <option value="Brand 3">Brand 3</option>
-                            <option value="Brand 4">Brand 4</option>
+                         <select name="brand" id="brand" class="form-control">
+                            @foreach ($brands as $brand)
+                            <option value="{{$brand->name}}" {{ ($product->brand === $brand->name ? 'selected' : '') }}>{{$brand->name}}</option>
+                           
+                            @endforeach
                                          
                       </select> 
 
@@ -78,7 +76,7 @@
 
                                              
                      <label for="symptoms">Related product symptoms.</label>
-                      <select multiple="multiple" name="symptoms[]" id="symptoms" title="Select Symptom">
+                      <select multiple="multiple" name="symptoms[]" id="symptoms" title="Select Symptom" class="form-control">
                         @foreach ($symptoms as $symptom)    
                                                   
                             <option {{ (in_array($symptom->symptom_id, $symptomarray) ? 'selected' : '') }} value="{{$symptom->symptom_id}}" >{{$symptom->name}}</option>

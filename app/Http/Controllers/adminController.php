@@ -11,6 +11,7 @@ use App\healthsymptom;
 use App\ProductVariant;
 use App\ProductImage;
 use App\Category;
+use App\Brands;
 use Image;
 use Storage;
 use Illuminate\Support\Facades\Schema;
@@ -25,9 +26,11 @@ class adminController extends Controller
     public function getAddProduct(){
         $categories = Category::all();
         $symptoms = healthsymptom::all();
+        $brands = Brands::all();
     	return view('admin.add_product',[
             'categories' => $categories,
             'symptoms' => $symptoms,
+            'brands' => $brands,
         ]);
     }
 
@@ -168,6 +171,7 @@ class adminController extends Controller
     	$primaryImages = $this->getPrimaryImage($id);
     	$AssociatedImages = $this->getAssociatedImages($id);
         $categories = Category::all();
+        $brands = Brands::all();
         $symptoms = healthsymptom::all();
         $producttosymptoms = producttosymptom::where('product_id',$id)->get();
 
@@ -204,6 +208,7 @@ class adminController extends Controller
     		'associatedImages' => $AssociatedImages,
             'categories' => $categories,
             'symptoms' => $symptoms,
+            'brands' => $brands,
             'symptomarray' =>  $symptomarray,
     	]);
 
