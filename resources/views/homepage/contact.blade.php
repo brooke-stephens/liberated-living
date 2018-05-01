@@ -11,6 +11,10 @@
    				<a id="contact-me"></a>
    				<h1>Contact</h1>	
    				<br>
+   				<h4> <span class="glyphicon glyphicon-phone"></span> (905)-523-1391</h4>
+   				<br>
+   				 <h4><span class="glyphicon glyphicon-home"></span> 45 Prospect St. Hamilton Ont.</h4>
+   				<br><br>
    				<p>Contact me if you have any questions or would like to book an appointment. </p>				
    				<br>
    				<br>
