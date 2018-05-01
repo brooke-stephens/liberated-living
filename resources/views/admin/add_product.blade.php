@@ -296,7 +296,8 @@
 
     </script>
 
-<script   src="https://code.jquery.com/jquery-1.6.4.js"   integrity="sha256-VJZPi1gK15WpYvsnBmcV0yga4a0Toov4rt1diFnrrjc="   crossorigin="anonymous"></script>
+<script   src="https://code.jquery.com/jquery-1.8.2.js"   integrity="sha256-z6aVFjdeJ+VlGcrnHyiBjg5SUVtw5wWmANHbRZmYM1o="   crossorigin="anonymous"></script>
 <script type="text/javascript" src="{{ URL::to('srv/js/admin/js/jquery.asmselect.js') }}"></script>
+
 
 @stop

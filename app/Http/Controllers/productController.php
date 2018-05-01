@@ -134,6 +134,10 @@ class productController extends Controller
     	
     }
 
+    public function getProductProfile(){
+        return view('shopviews.product_profile');
+    }
+
     public function postReviewCheckout(Request $request){
 
        

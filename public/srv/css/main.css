@@ -142,6 +142,10 @@ h1 {
   font-family: sacramento, "Book Antiqua", Palatino, serif;
   font-size: 55px; }
 
+.product_profile h1 {
+  font-family: raleway, "Book Antiqua", Palatino, serif;
+  font-size: 28px; }
+
 h2 {
   font-size: 24px; }
 
@@ -963,142 +967,136 @@ pre {
     top: 350px; } }
 /* ------------------------------end testimonials --------------------*/
 /* ------------------------------Contact fold and forms --------------------*/
-.contacterrors {
-  font-size: 17px;
-  font-family: raleway, "Book Antiqua", Palatino, serif;
-  background-color: rgba(171, 78, 18, 0.9);
-  line-height: 30px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  min-height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 10px 10px 10px 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 60%;
-  color: white;
-  font-weight: bold; }
-
-.centerform {
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 800px; }
-
-label {
-  display: inline-block;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 25px; }
-
-input[type="text"], input[type="email"], input[type="password"] {
-  font-size: 17px;
-  font-family: raleway, "Book Antiqua", Palatino, serif;
-  float: right;
-  padding: 5px;
-  margin-top: -25px;
-  display: inline-block;
-  width: 65%;
-  max-width: 550px;
-  height: 35px;
-  background-color: lightgrey;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px; }
-
-textarea {
-  font-size: 17px;
-  font-family: raleway, "Book Antiqua", Palatino, serif;
-  padding: 10px 5px 10px 5px;
-  display: inline-block;
-  float: right;
-  margin-top: -25px;
-  width: 65%;
-  max-width: 550px;
-  height: 200px;
-  background-color: lightgrey;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px; }
-
-/*.btn-default{
-   display:inline-block;
-
-
-  height: 40px;
-  width: 100px;
-  font-size: 15px;
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  float: right;
-
-
-}
-
-.btn-default:hover {
-
-  background-color: #702424;
-  color: white;
-
-
-}*/
-/* Radial Out */
-.btn-default {
-  color: white;
-  font-size: 17px;
-  font-family: raleway, "Book Antiqua", Palatino, serif;
-  height: 40px;
-  width: 100px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  float: right;
-  background-color: #ab4e12;
-  border: 1px solid #8c3b0e;
-  webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-  margin-top: 20px; }
-
-.btn-default:hover {
-  color: white;
-  font-size: 17px;
-  font-family: raleway, "Book Antiqua", Palatino, serif;
-  height: 40px;
-  width: 100px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  float: right;
-  background-color: #ff9933;
-  border: 1px solid #d87b27;
-  webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-  margin-top: 20px; }
-
-input:focus,
-textarea:focus {
-  border: 1px solid #ff9933;
-  box-shadow: 0 0 5px #702424;
-  -webkit-transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  -ms-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out; }
-
-@media only screen and (max-width: 1200px) {
-  input[type="text"], input[type="email"], input[type="password"], textarea {
+#contact {
+  /*.btn-default{
+     display:inline-block;
+  
+  
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    float: right;
+  
+  
+  }
+  
+  .btn-default:hover {
+  
+    background-color: #702424;
+    color: white;
+  
+  
+  }*/
+  /* Radial Out */ }
+  #contact .contacterrors {
+    font-size: 17px;
+    font-family: raleway, "Book Antiqua", Palatino, serif;
+    background-color: rgba(171, 78, 18, 0.9);
+    line-height: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    min-height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 60%;
+    color: white;
+    font-weight: bold; }
+  #contact .centerform {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 800px; }
+  #contact label {
+    display: inline-block;
+    text-align: left;
     width: 100%;
-    margin-top: 5px; } }
-@media all and (max-width: 1000px) {
-  #contact {
-    margin-top: 50px; } }
+    margin-bottom: 25px; }
+  #contact input[type="text"], #contact input[type="email"], #contact input[type="password"] {
+    font-size: 17px;
+    font-family: raleway, "Book Antiqua", Palatino, serif;
+    float: right;
+    padding: 5px;
+    margin-top: -25px;
+    display: inline-block;
+    width: 65%;
+    max-width: 550px;
+    height: 35px;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; }
+  #contact textarea {
+    font-size: 17px;
+    font-family: raleway, "Book Antiqua", Palatino, serif;
+    padding: 10px 5px 10px 5px;
+    display: inline-block;
+    float: right;
+    margin-top: -25px;
+    width: 65%;
+    max-width: 550px;
+    height: 200px;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; }
+  #contact .btn-default {
+    color: white;
+    font-size: 17px;
+    font-family: raleway, "Book Antiqua", Palatino, serif;
+    height: 40px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    float: right;
+    background-color: #ab4e12;
+    border: 1px solid #8c3b0e;
+    webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    margin-top: 20px; }
+  #contact .btn-default:hover {
+    color: white;
+    font-size: 17px;
+    font-family: raleway, "Book Antiqua", Palatino, serif;
+    height: 40px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    float: right;
+    background-color: #ff9933;
+    border: 1px solid #d87b27;
+    webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    margin-top: 20px; }
+  #contact input:focus,
+  #contact textarea:focus {
+    border: 1px solid #ff9933;
+    box-shadow: 0 0 5px #702424;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out; }
+  @media only screen and (max-width: 1200px) {
+    #contact input[type="text"], #contact input[type="email"], #contact input[type="password"], #contact textarea {
+      width: 100%;
+      margin-top: 5px; } }
+  @media all and (max-width: 1000px) {
+    #contact #contact {
+      margin-top: 50px; } }
+
 /* ------------------------------End contact and forms --------------------*/
 /* ------------------------------scrolling fixes --------------------*/
 #my-services {
@@ -1323,3 +1321,120 @@ textarea:focus {
 .required {
   font-size: 12px;
   color: grey; }
+
+/* ------------------------------product profile --------------------*/
+.product_profile {
+  /*jssor slider loading skin spin css*/
+  @keyframes jssorl-009-spin {
+    from {
+      transform: rotate(0deg); }
+
+    to {
+      transform: rotate(360deg); } }
+
+  /*jssor slider thumbnail skin 121 css*/
+  /*.jssort121 .d:before {content:'\a';white-space:pre;}*/ }
+  .product_profile .product_img {
+    width: 100%;
+    margin-bottom: 50px; }
+  .product_profile .product_profile_btn {
+    width: 100%; }
+  .product_profile .glyphicon-triangle-bottom {
+    font-size: 20px;
+    color: #606060;
+    margin-right: 30px; }
+  .product_profile .glyphicon-search {
+    font-size: 20px;
+    color: #606060; }
+  .product_profile .subcategory-container {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: none; }
+  .product_profile #search_container {
+    margin-bottom: 15px; }
+  .product_profile .stylish-input-group .input-group-addon {
+    background: white !important; }
+  .product_profile .stylish-input-group .form-control {
+    border-right: 0;
+    box-shadow: 0 0 0;
+    border-color: #ccc; }
+  .product_profile .stylish-input-group button {
+    border: 0;
+    background: transparent; }
+  .product_profile .featuredproduct-container img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-bottom: 5px; }
+  .product_profile .featuredproduct-container hr {
+    width: 50%;
+    border-top: 1px solid #c4c4c4; }
+  .product_profile .featuredproduct-container {
+    border-radius: 6px;
+    background-color: #ab4e12;
+    color: #461e04;
+    text-align: center;
+    margin-bottom: 15px; }
+  .product_profile .featuredproduct-container:nth-child(1) {
+    margin-right: 15px; }
+  .product_profile .productparentcontainer {
+    padding: 0px; }
+  .product_profile .featuredproduct-summary {
+    padding: 7px;
+    line-height: 20px;
+    font-weight: bold; }
+  .product_profile .featuredproduct-price {
+    padding: 7px;
+    padding-bottom: 15px;
+    color: white; }
+  .product_profile .jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+  .product_profile .jssort121 .p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: .7; }
+  .product_profile .jssort121 .p .t {
+    position: absolute;
+    padding: 10px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 24px;
+    overflow: hidden; }
+  .product_profile .jssort121 .p .i {
+    margin-right: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 96px;
+    height: 48px;
+    border: none;
+    float: left; }
+  .product_profile .jssort121 .pav, .product_profile .jssort121 .p:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.7); }
+  .product_profile .jssort121 .p:hover {
+    opacity: .75; }
+  .product_profile .jssort121 .pav, .product_profile .jssort121 .p:hover.pdn {
+    opacity: 1; }
+  .product_profile .jssort121 .ti {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold; }
+  .product_profile .jssort121 .d {
+    position: relative;
+    font-size: 12px; }
+
+/* ------------------------------end product profile --------------------*/

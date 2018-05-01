@@ -101,6 +101,12 @@ Route::get('/shop', [
 
 ]);
 
+Route::get('/shop/{category}/{id}', [
+	'uses'=>'productController@getProductProfile',
+	'as' => 'product.product_profile'
+
+]);
+
 
 
 
