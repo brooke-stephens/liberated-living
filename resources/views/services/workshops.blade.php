@@ -26,7 +26,7 @@
 
 					<h3>My workshops and classes include:</h3>
 					<ul>
-						<li>One on one sessions</li>
+					
 						<li>Family sessions</li>
 						<li>Group sessions</li>
 					</ul>
@@ -47,9 +47,9 @@
 								    <input type="hidden" name="appointmentsubject" value="Workshop Appointment">
 								    <input type="submit" class="btn btn-primary" name="appointmentbutton" value="Have a Question?">
 								</form>
+								</td>								
+								<td><button class="btn btn-primary" data-toggle="modal" data-target="#acuityModal" id="appointmentButton">Book Appointment</button>
 								</td>
-								<!-- <td><button class="btn btn-primary" data-toggle="modal" data-target="#acuityModal" id="appointmentButton">Book Appointment</button>
-								</td> -->
 							</tr>
 						</table>
 						

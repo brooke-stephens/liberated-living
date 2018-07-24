@@ -26,9 +26,9 @@
 
 					<h3>Reiki/Energy Work includes:</h3>
 					<ul>
-						<li>What the session provides</li>
-						<li>More Info</li>	
-						<li>More Info</li>					
+						<li>Energy Work to Improve Qi and Health</li>
+						<li>Inner Child Work to Release & Transform Perception</li>	
+						<li>Chakra Balancing to Bring Peace & JOY</li>					
 					</ul>
 
 					<hr>
@@ -36,7 +36,7 @@
 					<div class="text-center">
 						<p>
 							<strong>Practitioner: Susan Stephens</strong>
-							<br>$75 for 1.0 hours
+							<br>$100 for 1.0 hours
 						</p>
 					
 						<table style="margin:0px auto;">

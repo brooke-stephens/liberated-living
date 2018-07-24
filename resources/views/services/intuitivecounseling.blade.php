@@ -37,7 +37,7 @@
 					<div class="text-center">
 						<p>
 							<strong>Practitioner: Susan Stephens</strong>
-							<br>$100 for 1.0 hours
+							<br>$150+tax for 1.5 hrs
 						</p>
 					
 						<table style="margin:0px auto;">
