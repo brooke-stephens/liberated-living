@@ -38,7 +38,7 @@
 					<div class="text-center">
 						<p>
 							<strong>Practitioner: Susan Stephens</strong>
-							<br>$150 for 1.5 hours
+							<br>$195 for 1.5 hours
 						</p>
 						
 						
