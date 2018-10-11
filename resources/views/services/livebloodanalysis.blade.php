@@ -38,7 +38,9 @@
 					<div class="text-center">
 						<p>
 							<strong>Practitioner: Susan Stephens</strong>
-							<br>$195+tax for 1.5 hrs 
+							<br>$195+tax for 1.5 hrs
+							<p>Combo Session (Live Blood Analysis & Intuitive Counselling) 
+2.5 hr session = $295+tax</p>
 						</p>
 						
 						
