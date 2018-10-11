@@ -37,7 +37,7 @@
 					<div class="text-center">
 						<p>
 							<strong>Practitioner: Susan Stephens</strong>
-							<br>$150+tax per session.
+							<br>$175+tax (1.5 hrs).
 						</p>
 					
 						<table style="margin:0px auto;">
